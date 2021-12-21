@@ -1,70 +1,77 @@
-﻿@model IEnumerable<ShoesShopOnline.Models.TaiKhoanNguoiDung>
+﻿@model PagedList.IPagedList<ShoesShopOnline.Models.TaiKhoanNguoiDung>
+@using PagedList.Mvc;
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css">
+@{ ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml"; }
 
-@{
-    ViewBag.Title = "Index";
-    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+<h2>Danh sách khách hàng</h2>
+<head>
+    <style>
+        a {
+            color: white;
+        }
+
+            a:hover {
+                color: yellow;
+            }
+    </style>
+</head>
+<div class="table-settings mb-4">
+    <div class="row align-items-center justify-content-between">
+        <div class="col col-md-6 col-lg-3 col-xl-4">
+            <form>
+                <div class="input-group">
+                    <button class="input-group-text" id="basic-addon2"><span class="fas fa-search">Tìm</span></button>
+                    <input type="text" class="form-control" name="searchString" value="@ViewBag.searchString" id="exampleInputIconLeft" placeholder="Tên đăng nhập" aria-label="Search" aria-describedby="basic-addon2">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<div class="card card-body border-light shadow-sm table-wrapper table-responsive pt-0">
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Tên đăng nhập</th>
+                <th>Họ tên</th>
+                <th>Số điện thoại</th>
+                <th>Địa chỉ</th>
+                <th>Email</th>
+                <th>Trạng thái</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Item -->
+            @foreach (var item in Model)
+            {
+                <tr class="group-info">
+                    <td>
+                        @item.TenDangNhap
+                    </td>
+                    <td>
+                        <span class="font-weight-normal">@item.HoTen</span>
+                    </td>
+                    <td><span class="font-weight-normal">@item.SDT</span></td>
+                    <td><span class="font-weight-normal">@item.DiaChi</span></td>
+                    <td><span class="font-weight-normal">@item.Email</span></td>
+                    <td><span class="font-weight-normal">@Html.DisplayFor(modelItem => item.TrangThai)</span></td>
+
+
+
+                    <td>
+                        <button style="background-color: midnightblue; border-radius: 8px;width:100px">@Html.ActionLink("Xem chi tiết", "Edit", new { id = item.MaTK })</button>
+                        <button style="background-color: red; border-radius: 8px;width:100px">@Html.ActionLink("Xóa", "Delete", new { id = item.MaTK })</button>
+                    </td>
+                </tr>
 }
+        </tbody>
+    </table>
+</div>
+<br />
+@(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) / @Model.PageCount
 
-<h2>Index</h2>
-
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.TenDangNhap)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.MatKhau)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.HoTen)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.SDT)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.DiaChi)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Email)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.TrangThai)
-        </th>
-        <th></th>
-    </tr>
-
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.TenDangNhap)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.MatKhau)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.HoTen)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.SDT)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DiaChi)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Email)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TrangThai)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.MaTK }) |
-            @Html.ActionLink("Details", "Details", new { id=item.MaTK }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.MaTK })
-        </td>
-    </tr>
-}
-
-</table>
+@Html.PagedListPager(Model, page => Url.Action("Index",
+    new { page, pageSize = Model.PageSize, searchString = ViewBag.searchString }))
