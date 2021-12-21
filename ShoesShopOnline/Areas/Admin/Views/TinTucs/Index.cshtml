@@ -1,0 +1,43 @@
+﻿@model IEnumerable<ShoesShopOnline.Models.TinTuc>
+
+@{
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+
+@section script{
+    <script src="~/Areas/Admin/Assets/JS/TinTuc.js"></script>
+}
+<body>
+    <p>
+        @Html.ActionLink("Thêm bài viết mới", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.TenTin)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NgayDang)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr id="row-@item.MaTin">
+                <td>
+                    @Html.DisplayFor(modelItem => item.TenTin)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NgayDang)
+                </td>
+                <td>
+                    @Html.ActionLink("Sửa", "Edit", new { id = item.MaTin }) |
+                    @Html.ActionLink("Xem chi tiết", "Details", new { id = item.MaTin }) |
+                    <a class="btnDelete" dataname="@item.MaTin">Xóa</a>
+                </td>
+            </tr>
+        }
+    </table>
+</body>

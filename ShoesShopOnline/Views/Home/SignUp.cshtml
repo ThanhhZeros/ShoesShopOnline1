@@ -1,0 +1,78 @@
+﻿@model ShoesShopOnline.Models.TaiKhoanNguoiDung
+
+@{
+    ViewBag.Title = "SignUp";
+    Layout = "~/Views/Shared/_LayoutClient.cshtml";
+}
+
+<div class=" container">
+    <div class=" register">
+        <h1>Đăng ký</h1>
+        <form>
+            @using (Html.BeginForm("SignUp", "Home", FormMethod.Post, new { onsubmit = " return check()" }))
+            {
+                <div class="col-md-6 register-top-grid">
+                    <h3>Personal infomation</h3>
+                    <div>
+                        <label>Họ tên</label>
+                        <div>
+                            @Html.TextBoxFor(model => model.HoTen,
+                                        new { @class = "form-control", @name = "hoten", @autoforcus = "autofocus", @required = "required", @placeholder = "Họ tên" })
+                        </div>
+                    </div>
+                    <div>
+                        <label>Địa chỉ</label>
+                        <div>
+                            @Html.TextBoxFor(model => model.DiaChi,
+                                        new { @class = "form-control", @name = "diachi", @required = "required", @placeholder = "Địa chỉ" })
+                        </div>
+                    </div>
+                    <div>
+                        <label>Email</label>
+                        <div><br />
+                            @Html.TextBoxFor(model => model.Email,
+                                       new { @class = "form-control", @type = "email", @name = "email", @required = "required", @placeholder = "Email" })<br />
+                        </div>
+                    </div>
+                    <div>
+                        <label>Số điện thoại</label>
+                        <div>
+                            @Html.TextBoxFor(model => model.SDT,
+                                       new { @class = "form-control", @name = "sodienthoai", @required = "required", @placeholder = "Số điện thoại" })
+                        </div>
+                    </div>
+                </div>
+                @Html.ValidationMessage("ErrorSignUp", new { @class = "text-danger", @id = "error-message" })
+                
+                <div class="col-md-6 register-bottom-grid">
+                        <h3>Login information</h3>
+                        <div>
+                            <label>Tài khoản</label>
+                            <div><br />
+                                @Html.TextBoxFor(model => model.TenDangNhap,
+                                           new { @class = "form-control", @name = "tendangnhap", @required = "required", @placeholder = "Tên đăng nhập" })<br />
+                            </div>
+                        </div>
+                        <div>
+                            <label>Mật khẩu</label>
+                            <div>
+                                <input type="password" class="form-control" id="pwd" name="matkhau" placeholder="Mật khẩu" required><br />
+                            </div>
+                        </div>
+                        <div>
+                            <label>Xác nhận mật khẩu</label>
+                            <div>
+                                <input type="password" class="form-control" id="pwd-confirm" placeholder="Xác nhận mật khẩu" required><br />
+                            </div>
+                        </div>
+                        <div class="terms">
+                            <div class="float-md-right">
+                                <input type="submit" value="ĐĂNG KÝ" />
+                            </div>
+                        </div>
+                    </div>
+                    }
+                    <div class="clearfix"> </div>
+</form>
+    </div>
+</div>

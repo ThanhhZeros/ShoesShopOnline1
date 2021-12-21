@@ -1,0 +1,24 @@
+﻿@model ShoesShopOnline.Models.TinTuc
+
+@{
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<body>
+    <div>
+        <div>
+            <h4>@Model.TenTin</h4>
+            <p>Ngày đăng: @Model.NgayDang</p>
+
+        </div>
+        <hr />
+        <div>
+            @Html.Raw(System.Web.HttpUtility.HtmlDecode(Model.NoiDung))
+        </div>    
+        <p>
+            @Html.ActionLink("Xem chi tiết", "Edit", new { id = Model.MaTin }) |
+            @Html.ActionLink("Trở về", "Index")
+        </p>
+    </div>
+</body>
+
