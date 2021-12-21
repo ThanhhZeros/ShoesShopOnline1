@@ -1,0 +1,512 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutClient.cshtml";
+}
+
+<div class="banner">
+    <div class="container">
+        <script src="~/Assets/Client/js/responsiveslides.min.js"></script>
+        <script>
+            $(function () {
+                $("#slider").responsiveSlides({
+                    auto: true,
+                    nav: true,
+                    speed: 500,
+                    namespace: "callbacks",
+                    pager: true,
+                });
+            });
+        </script>
+        <div id="top" class="callbacks_container">
+            <ul class="rslides" id="slider">
+                <li>
+
+                    <div class="banner-text">
+                        <h3>XSHOP- NÂNG NIU BÀN CHÂN VIỆT </h3>
+                        <p>
+                            XSHOP là đơn vị tiên phong chuyên cung cấp các mẫu giày Thể Thao với mẫu mã đa dạng và
+                            giá cả hợp lí trên toàn quốc
+                        </p>
+                        <a href="single.html">Learn More</a>
+                    </div>
+
+                </li>
+                <li>
+
+                    <div class="banner-text">
+                        <h3>XSHOP- BÀN CHÂN KHÔNG MỎI </h3>
+                        <p>
+                            Hơn 33 năm trôi qua, như một “bước chân không mỏi”, XSHOP đã từng bước xây dưng cho mình
+                            một chiến lược sản xuất tạo ra một thương hiệu gắn liền với nhu cầu, thị hiếu người tiêu
+                            dùng..
+                        </p>
+                        <a href="single.html">Learn More</a>
+
+                    </div>
+
+                </li>
+                <li>
+                    <div class="banner-text">
+                        <h3>XSHOP-BỨT PHÁ ĐỂ THÀNH CÔNG</h3>
+                        <p>
+                            Với tâm niệm phải “Sáng tạo vì sứ mệnh tồn tại và phát triển công ty”, XSHOP tin rằng
+                            các lĩnh vực đầu tư trung
+                            tâm thương mại … với uy tín và chất lượng phục vụ sẽ là tôn chỉ hàng đầu cho mọi hoạt
+                            động sản xuất kinh doanh của doanh nghiệp
+                        </p>
+                        <a href="single.html">Learn More</a>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+    </div>
+</div>
+
+<!--content-->
+<div class="content">
+    <div class="container">
+        <!----TTin---->
+        <div class="infor-product">
+            <div class="item1">
+                <img src="~/Assets/Client/images/iconfinder_truck_1291768-1.png">
+                <div class="item1-content">
+                    <h5>GIAO HÀNG TOÀN QUỐC</h5>
+                    <p>Vận chuyển khắp Việt Nam</p>
+                </div>
+            </div>
+
+            <div class="item1">
+                <img src="~/Assets/Client/images/iconfinder_payment_1954199-3.png">
+                <div class="item1-content">
+                    <h5>THANH TOÁN KHI NHẬN HÀNG</h5>
+                    <p>Nhận hàng tại nhà rồi thanh toán</p>
+                </div>
+            </div>
+
+            <div class="item1">
+                <img src="~/Assets/Client/images/iconfinder_service_repair_phone_mobile_wrench_screw_driver_4014703-1.png">
+                <div class="item1-content">
+                    <h5>BẢO HÀNH DÀI HẠN</h5>
+                    <p>Bảo hành lên đến 60 ngày</p>
+                </div>
+            </div>
+
+            <div class="item1">
+                <img src="~/Assets/Client/images/iconfinder_refresh_3017918-1.png">
+                <div class="item1-content">
+                    <h5>ĐỔI HÀNG DỄ DÀNG</h5>
+                    <p>Đổi hàng thoải mái trong 30 ngày</p>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <div class="content-top">
+            <h1>TOP NHỮNG SẢN PHẨM MỚI NHẤT</h1>
+
+            <div class="grid-in">
+                <div class="col-md-3 grid-top" data-aos="zoom-in">
+                    <a href="single.html" class="b-link-stripe b-animate-go  thickbox">
+                        <img class="img-responsive"
+                             src="~/Assets/Client/images/24.jpg" alt="">
+                        <div class="sale">
+                            <p>GIẢM 20%</p>
+                        </div>
+                    </a>
+
+                    <div class="name">
+                        <h3><a href="single.html">Giày thể thao XSPORT Ni.ke Jordan Low REP</a></h3>
+                        <div class="cost-product">
+                            <span><del>850.000<u>đ</u></del></span><b>550.000<u>đ</u></b>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 grid-top" data-aos="flip-up" data-aos-delay="300">
+                    <a href="single.html" class="b-link-stripe b-animate-go  thickbox">
+                        <img class="img-responsive"
+                             src="~/Assets/Client/images/2.jpg" alt="">
+                        <div class="sale">
+                            <p>GIẢM 15%</p>
+                        </div>
+                    </a>
+                    <div class="name">
+                        <h3><a href="single.html">Giày thể thao XSPORT Nike</a></h3>
+                        <div class="cost-product">
+                            <span><del>1.000.000<u>đ</u></del></span><b>580.000<u>đ</u></b>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3 grid-top" data-aos="flip-up" data-aos-delay="400">
+                    <a href="single.html" class="b-link-stripe b-animate-go  thickbox">
+                        <img class="img-responsive"
+                             src="~/Assets/Client/images/5.jpg" alt="">
+                        <div class="sale">
+                            <p>GIẢM 25%</p>
+                        </div>
+                    </a>
+                    <div class="name">
+                        <h3><a href="single.html">Giày thể thao XSPORT Sục Con.verse 1970s SF</a></h3>
+                        <div class="cost-product">
+                            <span><del>350.000<u>đ</u></del></span><b>280.000<u>đ</u></b>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3 grid-top" data-aos="flip-up" data-aos-delay="500">
+                    <a href="single.html" class="b-link-stripe b-animate-go  thickbox">
+                        <img class="img-responsive"
+                             src="~/Assets/Client/images/4.jpg" alt="">
+                        <div class="sale">
+                            <p>GIẢM 20%</p>
+                        </div>
+                    </a>
+                    <div class="name">
+                        <h3><a href="single.html">Giày thể thao XSPORT MCQ REP 1:1</a></h3>
+                        <div class="cost-product">
+                            <span><del>1.000.000<u>đ</u></del></span><b>750.000<u>đ</u></b>
+                        </div>
+                    </div>
+                </div>
+                <div class="clearfix"> </div>
+            </div>
+
+
+            <div class="grid-in">
+                <div class="col-md-3 grid-top" data-aos="flip-up" data-aos-delay="600">
+                    <a href="single.html" class="b-link-stripe b-animate-go  thickbox">
+                        <img class="img-responsive"
+                             src="~/Assets/Client/images/6.jpg" alt="">
+                        <div class="sale">
+                            <p>GIẢM 25%</p>
+                        </div>
+                    </a>
+
+                    <div class="name">
+                        <h3><a href="single.html">Giày thể thao XSPORT Adi.das A918</a></h3>
+                        <div class="cost-product">
+                            <span><del>5000.000<u>đ</u></del></span><b>400.000<u>đ</u></b>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3 grid-top" data-aos="flip-up" data-aos-delay="700">
+                    <a href="single.html" class="b-link-stripe b-animate-go  thickbox">
+                        <img class="img-responsive"
+                             src="~/Assets/Client/images/7.jpg" alt="">
+                        <div class="sale">
+                            <p>GIẢM 20%</p>
+                        </div>
+
+                    </a>
+                    <div class="name">
+                        <h3><a href="single.html">Giày thể thao XSPORT Nike Full Trắng Rep</a></h3>
+                        <div class="cost-product">
+                            <span><del>600.000<u>đ</u></del></span><b>400.000<u>đ</u></b>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3 grid-top" data-aos="flip-up" data-aos-delay="800">
+                    <a href="single.html" class="b-link-stripe b-animate-go  thickbox">
+                        <img class="img-responsive"
+                             src="~/Assets/Client/images/3.jpg" alt="">
+                        <div class="sale">
+                            <p>GIẢM 20%</p>
+                        </div>
+                    </a>
+                    <div class="name">
+                        <h3><a href="single.html">Giày thể thao XSPORT Nike Jordan 1 Low Xám Đế</a></h3>
+                        <div class="cost-product">
+                            <span><del>850.000<u>đ</u></del></span><b>550.000<u>đ</u></b>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3 grid-top">
+                    <a href="single.html" class="b-link-stripe b-animate-go  thickbox">
+                        <img class="img-responsive"
+                             src="~/Assets/Client/images/8.jpg" alt="">
+                        <div class="sale">
+                            <p>GIẢM 10%</p>
+                        </div>
+                    </a>
+                    <div class="name">
+                        <h3><a href="single.html">Giày thể thao XSPORT Vans Old Skool Mũi nỉ</a></h3>
+                        <div class="cost-product">
+                            <span><del>4000.000<u>đ</u></del></span><b>250.000<u>đ</u></b>
+                        </div>
+                    </div>
+                </div>
+                <div class="clearfix"> </div>
+            </div>
+
+
+
+        </div>
+
+        <div class="content-top">
+            <h2>TOP SẢN PHẨM BÁN CHẠY</h2>
+            <div class="grid-in">
+                <div class="col-md-3 grid-top" data-aos="zoom-in" data-aos-delay="200">
+                    <a href="single.html" class="b-link-stripe b-animate-go  thickbox">
+                        <img class="img-responsive"
+                             src="~/Assets/Client/images/9.jpg" alt="">
+                        <div class="sale">
+                            <p>GIẢM 20%</p>
+                        </div>
+                    </a>
+
+                    <div class="name">
+                        <h3><a href="single.html">Giày thể thao XSPORT Ni.ke Jordan Low REP</a></h3>
+                        <div class="cost-product">
+                            <span><del>850.000<u>đ</u></del></span><b>550.000<u>đ</u></b>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 grid-top" data-aos="zoom-in" data-aos-delay="200">
+                    <a href="single.html" class="b-link-stripe b-animate-go  thickbox">
+                        <img class="img-responsive"
+                             src="~/Assets/Client/images/10.jpg" alt="">
+                        <div class="sale">
+                            <p>GIẢM 15%</p>
+                        </div>
+                    </a>
+                    <div class="name">
+                        <h3><a href="single.html">Giày thể thao XSPORT Nike</a></h3>
+                        <div class="cost-product">
+                            <span><del>1.000.000<u>đ</u></del></span><b>580.000<u>đ</u></b>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3 grid-top" data-aos="zoom-in" data-aos-delay="200">
+                    <a href="single.html" class="b-link-stripe b-animate-go  thickbox">
+                        <img class="img-responsive"
+                             src="~/Assets/Client/images/11.jpg" alt="">
+                        <div class="sale">
+                            <p>GIẢM 25%</p>
+                        </div>
+                        <div class="new">
+                            <p>NEW</p>
+                        </div>
+                    </a>
+                    <div class="name">
+                        <h3><a href="single.html">Giày thể thao XSPORT Vans Vault X Fear OF God Rep</a></h3>
+                        <div class="cost-product">
+                            <span><del>350.000<u>đ</u></del></span><b>280.000<u>đ</u></b>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3 grid-top" data-aos="zoom-in" data-aos-delay="200">
+                    <a href="single.html" class="b-link-stripe b-animate-go  thickbox">
+                        <img class="img-responsive"
+                             src="~/Assets/Client/images/12.jpg" alt="">
+                        <div class="sale">
+                            <p>GIẢM 20%</p>
+                        </div>
+                    </a>
+                    <div class="name">
+                        <h3><a href="single.html">Giày thể thao XSPORT MCQ REP 1:1</a></h3>
+                        <div class="cost-product">
+                            <span><del>1.000.000<u>đ</u></del></span><b>750.000<u>đ</u></b>
+                        </div>
+                    </div>
+                </div>
+                <div class="clearfix"> </div>
+
+
+
+
+
+            </div>
+
+            <div class="grid-in">
+                <div class="col-md-3 grid-top" data-aos="zoom-in" data-aos-delay="200">
+                    <a href="single.html" class="b-link-stripe b-animate-go  thickbox">
+                        <img class="img-responsive"
+                             src="~/Assets/Client/images/13.jpg" alt="">
+                        <div class="sale">
+                            <p>GIẢM 20%</p>
+                        </div>
+                    </a>
+
+                    <div class="name">
+                        <h3><a href="single.html">Giày thể thao XSPORT Ni.ke Jordan Low REP</a></h3>
+                        <div class="cost-product">
+                            <span><del>850.000<u>đ</u></del></span><b>550.000<u>đ</u></b>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 grid-top" data-aos="zoom-in" data-aos-delay="200">
+                    <a href="single.html" class="b-link-stripe b-animate-go  thickbox">
+                        <img class="img-responsive"
+                             src="~/Assets/Client/images/14.jpg" alt="">
+                        <div class="sale">
+                            <p>GIẢM 15%</p>
+                        </div>
+                    </a>
+                    <div class="name">
+                        <h3><a href="single.html">Giày thể thao XSPORT GC F1</a></h3>
+                        <div class="cost-product">
+                            <span><del>1.000.000<u>đ</u></del></span><b>580.000<u>đ</u></b>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3 grid-top" data-aos="zoom-in" data-aos-delay="200">
+                    <a href="single.html" class="b-link-stripe b-animate-go  thickbox">
+                        <img class="img-responsive"
+                             src="~/Assets/Client/images/15.jpg" alt="">
+                        <div class="sale">
+                            <p>GIẢM 25%</p>
+                        </div>
+                        <div class="new">
+                            <p>NEW</p>
+                        </div>
+                    </a>
+                    <div class="name">
+                        <h3>
+                            <a href="single.html">Giày thể thao XSPORT Nike Blazer High Trắng Đen Hồng REP 1:1</a>
+                        </h3>
+                        <div class="cost-product">
+                            <span><del>850.000<u>đ</u></del></span><b>600.000<u>đ</u></b>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3 grid-top" data-aos="zoom-in" data-aos-delay="200">
+                    <a href="single.html" class="b-link-stripe b-animate-go  thickbox">
+                        <img class="img-responsive"
+                             src="~/Assets/Client/images/16.jpg" alt="">
+                        <div class="sale">
+                            <p>GIẢM 20%</p>
+                        </div>
+                    </a>
+                    <div class="name">
+                        <h3><a href="single.html">Giày thể thao XSPORT MCQ REP 1:1</a></h3>
+                        <div class="cost-product">
+                            <span><del>1.000.000<u>đ</u></del></span><b>750.000<u>đ</u></b>
+                        </div>
+                    </div>
+                </div>
+                <div class="clearfix"> </div>
+
+
+
+
+            </div>
+            <br />
+            <div class="content-top-center" data-aos="fade-right" data-aos-delay="100">
+                <div class="introduce">
+                    <p>
+                        Hơn 6 năm phát triển, XSHOP luôn mang đến những mẫu giày chất lượng tốt nhất với giá cả hợp lí
+                        nhất đến tay người tiêu dùng với hệ thống cửa hàng Số 1 Hà Nội và bán online khắp Việt Nam.
+                    </p>
+
+                    <div class="product-sold">
+                        <SPAN>1 349 800</SPAN>
+                        <p>SẢN PHẨM ĐÃ BÁN</p>
+                    </div>
+
+
+                </div>
+
+                <div class="video">
+                    <a href="https://www.youtube.com/watch?v=a1ILAowCiOw&list=TLGG3l7cyXWDlJEzMDExMjAyMQ&t=12s">
+                        <img class="img-responsive"
+                             src="~/Assets/Client/images/hqdefault.jpg">
+                    </a>
+                </div>
+
+
+
+            </div>
+            <div class="content-top">
+                <h1>TIN TỨC MỚI NHẤT</h1>
+                <div class="grid-in">
+                    <div class="col-md-4 grid-top" data-aos="flip-up" data-aos-delay="100">
+                        <div class="col-md-4a">
+                            <a href="single.html" class="b-link-stripe b-animate-go thickbox">
+                                <img class="img-responsive" src="~/Assets/Client/images/17.jpg" alt="">
+                                <div class="infor-fashion">
+                                    <p>TIN TỨC THỜI TRANG</p>
+                                </div>
+                            </a>
+
+                            <div class="name1">
+                                <h3><a href="">7 cách bảo quản giày thể thao tốt nhất</a></h3>
+                                <div class="see-detail">
+                                    <p>Xem chi tiết<span><i class="far fa-arrow-alt-circle-right"></i></span></p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-4 grid-top" data-aos="flip-up" data-aos-delay="200">
+                        <div class="col-md-4a">
+                            <a href="single.html" class="b-link-stripe b-animate-go  thickbox">
+                                <img class="img-responsive" src="~/Assets/Client/images/h1.jpg" alt="">
+                                <div class="infor-fashion">
+                                    <p>MẸO SHOPPING</p>
+                                </div>
+
+                            </a>
+                            <div class="name1">
+                                <h3><a href="">Giữ "phong độ" cho sneaker trắng ra sao</a></h3>
+                                <div class="see-detail">
+                                    <p>Xem chi tiết<span><i class="far fa-arrow-alt-circle-right"></i></span></p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                    <div class="col-md-4 grid-top" data-aos="flip-up" data-aos-delay="300">
+                        <div class="col-md-4a">
+                            <a href="single.html" class="b-link-stripe b-animate-go  thickbox">
+                                <img class="img-responsive" src="~/Assets/Client/images/20.jpg" alt="">
+                                <div class="infor-fashion">
+                                    <p>MẸO SHOPPING</p>
+                                </div>
+                            </a>
+                            <div class="name1">
+                                <h3><a href="">9 kỹ thuật làm đẹp cho chị em phụ nữ</a></h3>
+                                <div class="see-detail">
+                                    <p>Xem chi tiết<span><i class="far fa-arrow-alt-circle-right"></i></span></p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="clearfix"> </div>
+                </div>
+
+            </div>
+            <!------->
+        </div>
+        <!----->
+        <!----->
+
+
+    </div>
+
+    <div class="shoes-system" data-aos="zoom-in" data-aos-delay="200">
+        <img src="~/Assets/Client/images/21.PNG">
+    </div>
+
+
+</div>
+
+
+
+

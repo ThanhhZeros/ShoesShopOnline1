@@ -1,0 +1,92 @@
+﻿@model ShoesShopOnline.Areas.Admin.Data.LoginAccount
+
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_LayoutClient.cshtml";
+}
+
+
+<div class="container">
+    <div class="account">
+        <h1>Đăng nhập</h1>
+        <div class="account-pass">
+            <div class="col-md-8 account-top">
+                <form>
+                    @using (Html.BeginForm("Login", "Home", FormMethod.Post))
+                    {
+                        @Html.ValidationMessage("ErrorLogin", new { @class = "text-danger" })
+                        <hr />
+                        <div>
+                            <span>Tài khoản *</span>
+                            @Html.TextBoxFor(model => model.username,
+                                        new { @class = "form-control", @name = "username", @autoforcus = "autofocus", @required = "required", @placeholder = "Tài khoản" })
+                        </div>
+                        <div>
+                            <span>Mật khẩu *</span>
+                            @Html.PasswordFor(model => model.password,
+                                       new { @class = "form-control", @name = "password", @required = "required", @placeholder = "Mật khẩu" })
+                        </div>
+                        <!-- <p class="lost-password"><a href="forgot-password.html">Forgot password?</a></p> -->
+                        <input type="submit" value="ĐĂNG NHẬP"/>
+                    }
+                    
+                </form>
+                <p><i>Quên mật khẩu</i></p>
+                <div class="loginby">
+                    <p>Hoặc đăng nhập bằng</p>
+                    <div class="face">
+                        <a href="http://www.facebook.com"><img src="~/Assets/Client/images/face.PNG"/></a>
+                        
+                        <a href="http://www.google.com"><img src="~/Assets/Client/images/google.PNG" />
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-md-4 left-account ">
+                <a href="single.html"><img class="img-responsive " src="~/Assets/Client/images/s1.jpg" alt=""></a>
+                <div class="five">
+                    <h2>25% </h2><span>discount</span>
+                </div>
+                <a href="@Url.Action("SignUp","Home")" class="create">Create an account</a>
+                <div class="clearfix"> </div>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+    </div>
+
+</div>
+<div class="login-hashtag">
+    <div class="hashtag-container">
+        <div class="login-hashtag-title">
+            <h2>HASHTAG <a href="index.html">XSHOP</a> ĐỂ CÓ CƠ HỘI XUẤT HIỆN TRÊN WEBSITE CỦA CHÚNG TÔI</h2>
+        </div>
+        <div class="login-hashtag-image">
+            <div class="login-hashtag-image-item1">
+                <img src="~/Assets/Client/images/29.jpg">
+            </div>
+
+            <div class="login-hashtag-image-item1">
+                <img src="~/Assets/Client/images/30.jpg">
+            </div>
+            <div class="login-hashtag-image-item1">
+                <img src="~/Assets/Client/images/12.jpg">
+            </div>
+            <div class="login-hashtag-image-item1">
+                <img src="~/Assets/Client/images/2.jpg">
+            </div>
+            <div class="login-hashtag-image-item1">
+                <img src="~/Assets/Client/images/3.jpg">
+            </div>
+            <div class="login-hashtag-image-item1">
+                <img src="~/Assets/Client/images/7.jpg">
+            </div>
+            <div class="login-hashtag-image-item1">
+                <img src="~/Assets/Client/images/9.jpg">
+            </div>
+            <div class="login-hashtag-image-item1">
+                <img src="~/Assets/Client/images/30.jpg">
+            </div>
+        </div>
+    </div>
+</div>
