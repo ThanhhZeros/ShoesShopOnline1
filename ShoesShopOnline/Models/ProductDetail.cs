@@ -44,6 +44,7 @@ namespace ShoesShopOnline.Models
         [StringLength(300)]
         [DisplayName("Các size sẵn có")]
         public string Size { get; set; }
+        public int maAnh { get; set; }
 
         public virtual DanhMucSP DanhMucSP { get; set; }
 
