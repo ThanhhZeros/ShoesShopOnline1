@@ -232,7 +232,6 @@ D:\ASP.NET\BTL\ShoesShopOnline1\ShoesShopOnline\bin\System.Web.Webpages.Razor.xm
 D:\ASP.NET\BTL\ShoesShopOnline1\ShoesShopOnline\bin\System.Web.Helpers.xml
 D:\ASP.NET\BTL\ShoesShopOnline1\ShoesShopOnline\bin\System.Web.Mvc.xml
 D:\ASP.NET\BTL\ShoesShopOnline1\ShoesShopOnline\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-D:\ASP.NET\BTL\ShoesShopOnline1\ShoesShopOnline\obj\Debug\ShoesShopOnline.csproj.AssemblyReference.cache
 D:\ASP.NET\BTL\ShoesShopOnline1\ShoesShopOnline\obj\Debug\ShoesShopOnline.csproj.CoreCompileInputs.cache
 D:\ASP.NET\BTL\ShoesShopOnline1\ShoesShopOnline\obj\Debug\ShoesShopOnline.dll
 D:\ASP.NET\BTL\ShoesShopOnline1\ShoesShopOnline\obj\Debug\ShoesShopOnline.pdb

@@ -1990,6 +1990,7 @@
     <Content Include="Assets\Client\js\responsiveslides.min.js" />
     <Content Include="Assets\Client\js\simpleCart.min.js" />
     <Content Include="Content\PagedList.css" />
+    <Content Include="DATA\FILES\4.jpg" />
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
   </ItemGroup>
