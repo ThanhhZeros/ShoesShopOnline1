@@ -1,55 +1,203 @@
-﻿@model IEnumerable<ShoesShopOnline.Models.ChiTietSanPham>
-
+﻿@using ShoesShopOnline.Models
+@model ShoesShopOnline.Models.ProductDetail
 @{
-    ViewBag.Title = "Chi tiết sản phẩm";
+    ViewBag.Title = "ProductDetail";
     Layout = "~/Views/Shared/_LayoutClient.cshtml";
-    var info = System.Globalization.CultureInfo.GetCultureInfo("vi-VN");
 }
 
-<!DOCTYPE html>
+<!--content-->
+<!---->
+<div class="product">
+    <div class="container">
+        <div class="col-md-12 product-price1">
+            <div class="col-md-7 single-top">
+                <div class="flexslider">
+                    <ul class="slides">
+                        @{
+                            string filePath = "~/wwwroot/images/" + Model.Anh;
+                        }
+                        <li data-thumb="">
+                            <img src="@Url.Content(filePath)">
+                        </li>
+                    </ul>
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>ProductDetail</title>
-</head>
-<body>
-    <p>
-        @Html.ActionLink("Create New", "Create")
-    </p>
-    <table class="table">
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.AnhMoTa.MaSP)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.SizeGiay.Loai)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.GiaBan)
-            </th>
-            <th></th>
-        </tr>
-    
-    @foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.AnhMoTa.MaSP)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.SizeGiay.Loai)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.GiaBan)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
-            </td>
-        </tr>
-    }
-    
-    </table>
-</body>
-</html>
+                </div>
+                <!-- FlexSlider -->
+
+                <script defer src="~/Assets/Client/js/jquery.flexslider.js"></script>
+                <link rel="stylesheet" href="~/Assets/Client/css/flexslider.css" type="text/css" media="screen" />
+                <script>
+                    // Can also be used with $(document).ready()
+                    $(window).load(function () {
+                        $('.flexslider').flexslider({
+                            animation: "slide",
+                            controlNav: "thumbnails"
+                        });
+                    });
+                </script>
+
+                <div class="description">
+                    <p class="desc_title">Mô tả</p>
+                    <hr>
+                    @Model.MoTa;
+                </div>
+            </div>
+            <div class="col-md-5 single-top-in simpleCart_shelfItem">
+                <div class="single-para ">
+                    <h4>@Model.TenSP</h4>
+                    <div class="star-on">
+                        <div class="review">
+                            <a href="#">
+                                Chất liệu cao cấp,bền đẹp theo thời gian.Thiết kế thời trang. Kiểu dáng
+                                phong cách. Độ bền cao. Dễ phối đồ.
+                            </a>
+
+                        </div>
+                        <div class="clearfix"> </div>
+                    </div>
+
+                    <div class="cost-product1">
+                        <span><del>350.000<u>đ</u></del></span><b>@Model.GiaBan<u>đ</u></b>
+                    </div>
+                    <div class="color_container ">
+                        <p class="color_title">Màu sắc</p>
+                        <div class="color_image">
+                            @foreach (var item in ViewBag.Images)
+                            {
+
+                                <div class="color_image--1">
+                                    <a href="@Url.Action("ProductDetail","Product", new { id = item.MaSP, maImage = item.MaAnh,madm = Model.MaDM })">
+                                        @{
+                                            string filePathColor = "~/wwwroot/images/" + item.HinhAnh;
+                                        }
+                                        <img src="@Url.Content(filePathColor)">
+                                    </a>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                    <div class="Size">
+
+                        <p class="title">Kích cỡ</p>
+                        <div class="attribute-swatch">
+                            @foreach (var item in ViewBag.SizeList)
+                            {
+                                <div class="swatchinput">
+                                    <label style="min-width: 69px;">@item.KichCo</label>
+                                </div>
+                            }
+
+                        </div>
+                    </div>
+
+                    <a href="checkout.html" class="add-cart item_add">
+                        MUA NGAY
+                        <p class="ship">	<span>Giao tận nhà - Đổi trả dễ dàng</span></p>
+
+                    </a>
+                </div>
+                <div class="clearfix"> </div>
+
+                <div class="accordion-container1">
+                    <div class="accordion-head">
+                        <a href="">CHÍNH SÁCH GIAO HÀNG VÀ ĐỔI TRẢ</a>
+                    </div>
+                    <div class="accordion-head">
+                        <a href="">HƯỚNG DẪN BẢO QUÀN</a>
+                    </div>
+                    <div class="accordion-head">
+                        <a href="">
+                            TỔNG ĐÀI BÁN HÀNG : <span><i class="fas fa-phone-square-alt"></i> 097.789.123</span>
+                            <p>Miễn phí từ(8:30-21:30) mỗi ngày</p>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="clearfix"> </div>
+        </div>
+        <div class="col-md-12 product-pricel" style="margin-bottom:100px ;">
+            <div class="col-md-6 single-top">
+                <div class="item-shoe">
+                    <img src="~/wwwroot/images/chatluong.PNG">
+                    <div class="content">
+                        <h5>Chất lượng sản phẩm?</h5>
+                        <p>Sản phẩm luôn được XShop kiểm định, đánh giá cao trước khi đến tay khách hàng</p>
+                    </div>
+                </div>
+
+                <div class="item-shoe">
+                    <img src="~/wwwroot/images/mausac.PNG">
+                    <div class="content">
+                        <h5>Sai màu sản phẩm?</h5>
+                        <p>Vì 1 số yếu tố khách quan như độ sáng màn hình nên sản phẩm có thể không đúng màu</p>
+                    </div>
+                </div>
+
+                <div class="item-shoe">
+                    <img src="~/wwwroot/images/danhgia.PNG">
+                    <div class="content">
+                        <h5>Hàng có sẵn không?</h5>
+                        <p>Sản phẩm luôn có sẵn tại XShop </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 single-top">
+                <div class="item-shoe">
+                    <img src="~/wwwroot/images/clock.PNG">
+                    <div class="content">
+                        <h5>Thời gian giao hàng?</h5>
+                        <p>
+                            Chúng tôi sử dụng đơn vi vận chuyển
+                            uy tín và nhanh chóng nhất, thời dự kiến từ 1-4 ngày tuy khu vực.
+                        </p>
+                    </div>
+                </div>
+                <div class="item-shoe">
+                    <img src="~/wwwroot/images/clock.PNG">
+                    <div class="content">
+                        <h5>Thời gian làm việc?</h5>
+                        <p>Hệ thống cửa hàng và Online làm việc từ 8:30 - 22:00 hàng ngày. </p>
+                    </div>
+                </div>
+                <div class="item-shoe">
+                    <img src="~/wwwroot/images/clock.PNG">
+                    <div class="content">
+                        <h5>Đổi hàng như nào</h5>
+                        <p>Việc đổi hàng rất dễ dàng và chúng tôi luôn muốn khách hàng ưng ý nhất. Hãy liên hệ fanpage để đổi!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="content-top">
+            <h5>SẢN PHẨM TƯƠNG TỰ</h5>
+            <div class="grid-in">
+                @*<h2>@ViewBag.check</h2>*@
+                @foreach (ProductDetail item in ViewBag.ListRelate)
+                {
+                    <div class="col-md-3 grid-top">
+                        @{
+                            string productRelatePath = "~/wwwroot/images/" + item.Anh;
+                        }
+                        <a href="@Url.Action("ProductDetail","Product", new { id = item.MaSP, maImage = item.maAnh,madm = item.MaDM })" class="b-link-stripe b-animate-go  thickbox">
+                            <img class="img-responsive" src="@Url.Content(productRelatePath)" alt="">
+                            <div class="sale">
+                                <p>GIẢM 20%</p>
+                            </div>
+                        </a>
+
+                        <div class="name">
+                            <h3><a href="">@item.TenSP</a></h3>
+                            <div class="cost-product">
+                                <span><del>850.000<u>đ</u></del></span><b>@item.GiaBan<u>đ</u></b>
+                            </div>
+                        </div>
+                    </div>
+                }
+                <div class="clearfix"> </div>
+            </div>
+        </div>
+    </div>
+    <!--//content-->
+</div>
