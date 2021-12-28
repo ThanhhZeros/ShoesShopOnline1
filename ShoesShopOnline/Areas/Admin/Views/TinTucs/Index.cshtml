@@ -1,43 +1,66 @@
 ﻿@model IEnumerable<ShoesShopOnline.Models.TinTuc>
 
 @{
+    ViewBag.Title = "Tin tức";
     Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-
-@section script{
-    <script src="~/Areas/Admin/Assets/JS/TinTuc.js"></script>
-}
-<body>
-    <p>
-        @Html.ActionLink("Thêm bài viết mới", "Create")
-    </p>
-    <table class="table">
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.TenTin)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.NgayDang)
-            </th>
-            <th></th>
-        </tr>
-
-        @foreach (var item in Model)
-        {
-            <tr id="row-@item.MaTin">
-                <td>
-                    @Html.DisplayFor(modelItem => item.TenTin)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.NgayDang)
-                </td>
-                <td>
-                    @Html.ActionLink("Sửa", "Edit", new { id = item.MaTin }) |
-                    @Html.ActionLink("Xem chi tiết", "Details", new { id = item.MaTin }) |
-                    <a class="btnDelete" dataname="@item.MaTin">Xóa</a>
-                </td>
-            </tr>
+<h2>Danh sách tin tức</h2>
+<head>
+    <style>
+        a {
+            color: white;
         }
+
+            a:hover {
+                color: yellow;
+            }
+    </style>
+</head>
+<p>
+    <button style="background-color: black; border-radius: 8px;width:100px">@Html.ActionLink("Thêm mới", "Create")</button>
+</p>
+<div class="table-settings mb-4">
+    <div class="row align-items-center justify-content-between">
+        <div class="col col-md-6 col-lg-3 col-xl-4">
+            <form>
+                <div class="input-group">
+                    <button class="input-group-text" id="basic-addon2"><span class="fas fa-search">Tìm</span></button>
+                    <input type="text" class="form-control" name="searchString" value="@ViewBag.searchString" id="exampleInputIconLeft" placeholder="Tên tin" aria-label="Search" aria-describedby="basic-addon2">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="card card-body border-light shadow-sm table-wrapper table-responsive pt-0">
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Mã tin tức</th>
+                <th>Tên tin tức</th>
+                <th>Ngày đăng</th>
+                <th>Địa chỉ</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Item -->
+            @foreach (var item in Model)
+            {
+                <tr class="group-info">
+                    <td>
+                        @item.MaTin
+                    </td>
+                    <td>
+                        <span class="font-weight-normal">@item.TenTin</span>
+                    </td>
+                    <td><span class="font-weight-normal">@item.NgayDang</span></td>
+                    <td>
+                        <button style="background-color: midnightblue; border-radius: 8px;width:100px">@Html.ActionLink("Xem chi tiết", "Edit", new { id = item.MaTin })</button>
+                        <button style="background-color: red; border-radius: 8px;width:100px">@Html.ActionLink("Xóa", "Delete", new { id = item.MaTin })</button>
+                    </td>
+                </tr>
+            }
+        </tbody>
     </table>
-</body>
+</div>

@@ -1,4 +1,4 @@
-﻿@model PagedList.IPagedList<ShoesShopOnline.Models.AnhMoTa>
+﻿@model PagedList.IPagedList<ShoesShopOnline.Models.ProductDetail>
 @using PagedList.Mvc;
 <link href="~/Content/PagedList.css" rel="stylesheet" type="text/css">
 @{
@@ -8,81 +8,167 @@
 }
 
 
-<div class="main-shop-page pt-100 pb-100 ptb-sm-60">
+<div class="bannerdoi">
     <div class="container">
-        <!-- Row End -->
-        <div class="row" style="justify-content: center;">
-            <!-- Product Categorie List Start -->
-            <div class="col-lg-9 order-1 order-lg-2">
-                <!-- Grid & List View Start -->
-                @*<div class="grid-list-top border-default universal-padding d-md-flex justify-content-md-between align-items-center mb-30">
-                        <div class="grid-list-view  mb-sm-15">
-                            <ul class="nav tabs-area d-flex align-items-center">
-                                <li><a class="active" data-toggle="tab" href="#grid-view"><i class="fa fa-th"></i></a></li>
-                                <li><a data-toggle="tab" href="#list-view"><i class="fa fa-list-ul"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>*@
-                <!-- Grid & List View End -->
-                <div class="main-categorie mb-all-40">
-                    <!-- Grid & List Main Area End -->
-                    <div class="tab-content fix">
-                        <div id="grid-view" class="tab-pane fade show active">
-                            <div class="row">
-                                @foreach (var item in Model)
-                                {
-                                    <!-- Single Product Start -->
-                                    <div class="col-lg-4 col-md-4 col-sm-6 col-6">
-                                        <div class="single-product">
-                                            <!-- Product Image Start -->
-                                            <div class="pro-img">
-                                                <a href="@Url.Action("ProductDetail","Product",new { id = item.MaSP })">
-                                                    <img class="primary-img" src="@item.HinhAnh" alt="single-product">
-                                                    <img class="secondary-img" src="@item.HinhAnh" alt="single-product">
-                                                </a>
-                                                <a href="#" onclick="loadSanPham(@item.MaSP)" class="quick_view" data-toggle="modal" data-target="#myModal" title="Xem nhanh"><i class="lnr lnr-magnifier"></i></a>
-                                            </div>
-                                            <!-- Product Image End -->
-                                            <!-- Product Content Start -->
-                                            <div class="pro-content">
-                                                <div class="pro-info">
-                                                    <h4><a href="@Url.Action("ProductDetail","Product", new { id = item.MaSP })">@item.SanPham.TenSP</a></h4>
-                                                    <p><span class="price">@string.Format(info, "{0:c0}", item.MaAnh)</span></p>
-                                                </div>
-                                                <div class="pro-actions">
-                                                    <div class="actions-primary" style="margin-top: 20px;">
-                                                        <a onclick="loadSanPham(@item.MaSP)" class="quick_view" data-toggle="modal" data-target="#myModal" href="#" title="Thêm"> + Thêm vào giỏ</a>
-                                                    </div>
-
-                                                </div>
-                                            </div>
-                                            <!-- Product Content End -->
-                                        </div>
-                                    </div>
-                                    <!-- Single Product End -->
-                                }
-                            </div>
-                            <!-- Row End -->
-                        </div>
-                        <div class="pro-pagination">
-                            <ul class="blog-pagination">
-                                @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) / @Model.PageCount
-
-                                @Html.PagedListPager(Model, page => Url.Action("Shop",
-                                    new { page, pageSize = Model.PageSize, searchString = ViewBag.searchString, madm = ViewBag.madm }))
-                            </ul>
-                            <!-- <div class="product-pagination">
-                                <span class="grid-item-list">Hiển thị 1-12</span>
-                            </div> -->
-                        </div>
-                        <!-- Product Pagination Info -->
-                    </div>
-                    <!-- Grid & List Main Area End -->
-                </div>
-            </div>
-            <!-- product Categorie List End -->
-        </div>
-        <!-- Row End -->
+        <div class="title"> <h1>@ViewBag.tendm</h1></div>
     </div>
-    <!-- Container End -->
 </div>
+<!--content-->
+<!---->
+<div class="product">
+    <div class="container">
+        <div class="col-md-3 product-price">
+
+            <div class=" rsidebar span_1_of_left">
+                <div class="of-left">
+                    <h3 class="cate">DANH MỤC SẢN PHẨM</h3>
+                </div>
+                <ul class="memenu1 skyblue">
+                    <li class="itemm1">
+                        <a href="products.html">Giày Vans </a>
+
+
+                    </li>
+                    <li>
+                        <a class="color1" href="products.html">Giày Nike</a>
+
+                    </li>
+                    <li class="item3">
+                        <a href="productsnam.html">Giày nam</a>
+                    </li>
+                    <li class="item4">
+                        <a href="productsnu.html">Giày nữ</a>
+                    </li>
+
+                    <li class="item5">
+                        <a href="products.html">Giày Adidas</a>
+
+
+                    </li>
+                    <li class="item6">
+                        <a href="products.html">Giày Nike</a>
+
+                    </li>
+                </ul>
+
+            </div>
+
+
+            <div class=" rsidebar1 span_1_of_left">
+                <div class="of-left">
+                    <h3 class="cate">CHÍNH SÁCH ĐỔI TRẢ</h3>
+                </div>
+                <ul class="menu">
+                    <li class="itemm1">
+                        <a href="#">Giao hàng miễn phí 100% </a>
+
+
+                    </li>
+                    <li class="item2">
+                        <a href="#">An toàn với nhận hàng  </a>
+
+
+                    </li>
+                    <li class="item3">
+                        <a href="#">Bảo hành trong 60 ngày</a>
+
+                    </li>
+
+                </ul>
+            </div>
+
+            <div class=" rsidebar1 span_1_of_left">
+                <div class="of-left">
+                    <h3 class="cate">Hướng dẫn bảo quản</h3>
+                </div>
+                <ul class="menu">
+                    <li class="itemm1">
+                        <a href="#">Khử mùi bên trong giày</a>
+
+
+                    </li>
+
+                    <li class="item3">
+                        <a href="#">Bảo quản giày</a>
+
+                    </li>
+
+                </ul>
+            </div>
+
+
+            <!--initiate accordion-->
+            <script type="text/javascript">
+                $(function () {
+                    var menu_ul = $('.menu > li > ul'),
+                        menu_a = $('.menu > li > a');
+                    menu_ul.hide();
+                    menu_a.click(function (e) {
+                        e.preventDefault();
+                        if (!$(this).hasClass('active')) {
+                            menu_a.removeClass('active');
+                            menu_ul.filter(':visible').slideUp('normal');
+                            $(this).addClass('active').next().stop(true, true).slideDown('normal');
+                        } else {
+                            $(this).removeClass('active');
+                            $(this).next().stop(true, true).slideUp('normal');
+                        }
+                    });
+
+                });
+            </script>
+
+
+
+        </div>
+        <div class="col-md-9 product1">
+            <div class=" bottom-product">
+                @foreach (var item in Model)
+                {
+                    <div class="col-md-4 bottom-cd simpleCart_shelfItem">
+                        <div class="product-at ">
+                            <a href="@Url.Action("ProductDetail","Product", new { id = item.MaSP, maImage = item.maAnh,madm = item.MaDM })">
+                                @{
+                                    string filePath = "~/wwwroot/images/" + item.Anh;
+                                }
+                                <img class="img-responsive" src="@Url.Content(filePath)" alt="">
+                                <div class="sale">
+                                    <p>GIẢM 20%</p>
+                                </div>
+                                <div class="pro-grid">
+                                    <span class="buy-in">Buy Now</span>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="name">
+                            <h3><a href="single.html">@item.TenSP</a></h3>
+                            <div class="cost-product">
+                                <span><del>850.000<u>đ</u></del></span><b>@item.GiaBan<u>đ</u></b>
+                            </div>
+                        </div>
+                    </div>
+                }
+
+
+            </div>
+            <div class="clearfix"> </div>
+            <nav class="in">
+                Trang @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) / @Model.PageCount
+                @Html.PagedListPager(Model, page => Url.Action("Index", new
+           {
+               page,
+               madm = ViewBag.madm
+               //sortOrder = ViewBag.CurrentSort,
+               //currentFiltermin = ViewBag.CurrentFiltermin,
+               //currentFiltermax = ViewBag.CurrentFiltermax,
+           }))
+            </nav>
+        </div>
+
+    </div>
+</div>
+<!---->
+<!--//content-->
+<!---->
+<!--//content-->

@@ -6,6 +6,7 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using PagedList;
 using ShoesShopOnline.Models;
 
 namespace ShoesShopOnline.Areas.Admin.Controllers
@@ -15,10 +16,20 @@ namespace ShoesShopOnline.Areas.Admin.Controllers
         private Shoes db = new Shoes();
 
         // GET: Admin/HoaDons
-        public ActionResult Index()
+        public ActionResult Index(int? page, DateTime? searchString)
         {
-            var hoaDons = db.HoaDons.Include(h => h.TaiKhoanNguoiDung);
-            return View(hoaDons.ToList());
+
+            List<HoaDon> hoaDons = db.HoaDons.Include(h => h.TaiKhoanNguoiDung).Select(p => p).ToList();
+            if (searchString != null)
+            {
+                ViewBag.searchString = searchString.Value.ToString("yyyy-MM-dd");
+                string search = searchString.Value.ToString("dd/MM/yyyy");
+                hoaDons = hoaDons.Where(hd => hd.NgayLap.ToString().Contains(search)).ToList();
+            }
+            int pageSize = 6;
+            int pageNumber = (page ?? 1);
+
+            return View(hoaDons.OrderBy(hd => hd.NgayLap).ToPagedList(pageNumber, pageSize));
         }
 
         // GET: Admin/HoaDons/Details/5
@@ -48,7 +59,7 @@ namespace ShoesShopOnline.Areas.Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "MaHD,MaTK,HoTenNguoiNhan,SDTNguoiNhan,DiaChiNhan,EmailNguoiNhan,NgayLap,TongTien,TrangThai,GhiChu")] HoaDon hoaDon)
+        public ActionResult Create([Bind(Include = "MaHD,MaTK,HoTenNguoiNhan,SDTNguoiNhan,DiaChiNhan,EmailNguoiNhan,NgayLap,TrangThai,GhiChu")] HoaDon hoaDon)
         {
             if (ModelState.IsValid)
             {
@@ -82,16 +93,25 @@ namespace ShoesShopOnline.Areas.Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "MaHD,MaTK,HoTenNguoiNhan,SDTNguoiNhan,DiaChiNhan,EmailNguoiNhan,NgayLap,TongTien,TrangThai,GhiChu")] HoaDon hoaDon)
+        public ActionResult Edit(int id, string TrangThai)
         {
-            if (ModelState.IsValid)
+            try
             {
-                db.Entry(hoaDon).State = EntityState.Modified;
-                db.SaveChanges();
+                if (ModelState.IsValid)
+                {
+                    var hoaDon = db.HoaDons.Find(id);
+                    hoaDon.TrangThai = TrangThai;
+                    db.Entry(hoaDon).State = EntityState.Modified;
+                    db.SaveChanges();
+
+                }
                 return RedirectToAction("Index");
             }
-            ViewBag.MaTK = new SelectList(db.TaiKhoanNguoiDungs, "MaTK", "TenDangNhap", hoaDon.MaTK);
-            return View(hoaDon);
+            catch (Exception ex)
+            {
+                ViewBag.Error = "Lỗi edit dữ liệu! " + ex.Message;
+                return View();
+            }
         }
 
         // GET: Admin/HoaDons/Delete/5
@@ -127,6 +147,16 @@ namespace ShoesShopOnline.Areas.Admin.Controllers
                 db.Dispose();
             }
             base.Dispose(disposing);
+        }
+        [HttpPost]
+        public ActionResult ChangeStatus()
+        {
+            HoaDon hoaDon = db.HoaDons.Select(p => p).FirstOrDefault();
+            if (hoaDon != null)
+            {
+                String trangthai = Request.Form["trangthai"];
+            }
+            return View();
         }
     }
 }

@@ -14,7 +14,42 @@ namespace ShoesShopOnline.Controllers
         // GET: About
         public ActionResult Index()
         {
-            return View();
+            //ViewBag.searchString = searchString;
+            var sanphams = from s in db.SanPhams select new ProductDetail { };
+            sanphams = from p in db.SanPhams
+                       join a in db.AnhMoTas on p.MaSP equals a.MaSP
+                       orderby p.NgayTao
+                       select new ProductDetail()
+                       {
+                           MaDM = p.MaDM,
+                           MaSP = p.MaSP,
+                           TenSP = p.TenSP,
+                           GiaBan = p.GiaBan,
+                           maAnh = a.MaAnh,
+                           Anh = a.HinhAnh,
+                           MoTa = p.MoTa
+                       };
+            var products = new List<ProductDetail>();
+            foreach (ProductDetail item in sanphams)
+            {
+                int dem = 0;
+                foreach (var t in products)
+                {
+                    if (item.MaSP.Equals(t.MaSP))
+                        dem++;
+                }
+                if (dem == 0 && products.Count() < 8)
+                {
+                    products.Add(item);
+                }
+            }
+            /*var topBanChay = (from s in db.SanPhams
+                              join a in db.AnhMoTas on s.MaSP equals a.MaSP
+                              join dh in db.ChiTietHoaDons on a.MaAnh equals dh.MaAnh
+                              group s by s.MaSP into g
+                              select g).ToList();*/
+            return View(products.ToList());
+
         }
         [HttpGet]
         public ActionResult Login()
