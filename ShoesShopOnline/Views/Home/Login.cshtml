@@ -15,13 +15,17 @@
                 {
                     @Html.ValidationMessage("ErrorLogin", new { @class = "text-danger" })
                     <hr />
-                    <div>
-                        <span>Tài khoản *</span>
+                    <div class="clearfix large_form">
+                        <label class="icon-field">
+                            <i class="far fa-envelope"></i>
+                        </label>
                         @Html.TextBoxFor(model => model.username,
                                     new { @class = "form-control", @name = "username", @autoforcus = "autofocus", @required = "required", @placeholder = "Tài khoản" })
                     </div>
-                    <div>
-                        <span>Mật khẩu *</span>
+                    <div class="clearfix large_form">
+                        <label class="icon-field">
+                            <i class="fas fa-lock"></i>
+                        </label>
                         @Html.PasswordFor(model => model.password,
                                    new { @class = "form-control", @name = "password", @required = "required", @placeholder = "Mật khẩu" })
                     </div>
