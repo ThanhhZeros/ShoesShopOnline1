@@ -66,6 +66,10 @@ create table TaiKhoanNguoiDung(
 	HoTenUser		nvarchar(50) not null,
 	LoaiTK			nvarchar(50) not null,
 	TrangThai		bit not null,
+	SDT			char(20),
+	DiaChi		nvarchar(500),
+	Email		varchar(50)
+	
  )
 
 create table HoaDon(
@@ -94,7 +98,7 @@ Create table TinTuc(
 	TenTin		nvarchar(100),
 	NgayDang	datetime,
 	MaTK		int foreign key references TaiKhoanQuanTri(MaTK) on delete cascade on update cascade,
-	NoiDung		nvarchar(4000),
+	NoiDung		ntext,
 )
 
 ------
@@ -339,17 +343,310 @@ insert into TaiKhoanNguoiDung(DiaChi, Email, HoTen, SDT, TenDangNhap,MatKhau, Tr
 ('Ha Noi', 'NguyenB@gmail.com', N'Nguyen Van B', '098765543','NguyenB','456', '1')
 
 
-insert into TaiKhoanQuanTri(HoTenUser,TenDangNhap,MatKhau,LoaiTK,TrangThai) values
-(N'Quách Phương Thảo', 'QuachThao','123','QuanLy','1'),
-(N'Lê Thị Thanh Mỹ', 'ThanhMy','123','QuanLy','1'),
-(N'Phạm Thị Thanh', 'PhamThanh','123','QuanLy','1'),
-(N'Vũ Ngọc Tâm', 'NgocTam','123','QuanLy','1')
+insert into TaiKhoanQuanTri(HoTenUser,TenDangNhap,MatKhau,LoaiTK,TrangThai,DiaChi,Email,SDT) values
+(N'Quách Phương Thảo', 'QuachThao','123','QuanLy','1',N'Hà Nội','quachthao@gmail.com','0987654345'),
+(N'Lê Thị Thanh Mỹ', 'ThanhMy','123','QuanLy','1',N'Thanh Hóa','thanhmy@gmail.com','0987654345'),
+(N'Phạm Thị Thanh', 'PhamThanh','123','QuanLy','1',N'Thái Bình','thanhpham@gmail.com','0987654345'),
+(N'Vũ Ngọc Tâm', 'NgocTam','123','QuanLy','1',N'Nam Định','ngoctam@gmail.com','0987654345')
 
 --insert into LienHe(MaLienHe, )
 insert into TinTuc (TenTin,MaTK,NgayDang,NoiDung) values
-(N'7 cách bảo quản giày thể thao tốt nhất',1,'2/3/2020','This is a content'),
-(N'9 kỹ thuật làm đẹp cho u30',1,'2/3/2020','This is a content')
+(N'Mua giày ở đâu?',3,'2/3/2020',N'<h2 style="font-style:normal; text-align:left">1 SneakerLand</h2>
 
+<p style="margin-left:0px; margin-right:0px; text-align:left"><span style="font-size:16px"><span style="color:#231f20"><span style="font-family:Pangea,sans-serif"><span style="background-color:#ffffff">Nằm tr&ecirc;n phố Thịnh Y&ecirc;n, Sneaker Land&nbsp;được nhiều bạn trẻ biết đến l&agrave; cửa h&agrave;ng chuy&ecirc;n b&aacute;n v&agrave; order gi&agrave;y sneakers v&agrave; phụ kiện. Sneaker Land cam k&ecirc;t mang đến cho kh&aacute;ch h&agrave;ng c&aacute;c sản phẩm gi&agrave;y ch&iacute;nh h&atilde;ng, 100% authentic, US shipped. Rất nhiều kh&aacute;ch h&agrave;ng đ&atilde; mua, trải nghiệm v&agrave; đ&aacute;nh gi&aacute; về nguồn gốc của h&agrave;ng n&ecirc;n bạn kh&ocirc;ng cần phải lo lắng ch&uacute;t n&agrave;o khi mua gi&agrave;y tại đ&acirc;y. Điều đặc biệt khiến SneakerLand được nhiều người biết đến bởi tại đ&acirc;y cung cấp nhiều mẫu m&atilde; gi&agrave;y đa dạng k&egrave;m c&aacute;c loại phụ kiện ph&ugrave; hợp với c&aacute; t&iacute;nh ri&ecirc;ng của từng kh&aacute;ch h&agrave;ng. Từ những mẫu gi&agrave;y basic đến những chiếc gi&agrave;y c&aacute; t&iacute;nh, ph&aacute; c&aacute;ch, cửa h&agrave;ng lu&ocirc;n update v&agrave; đưa đến cho kh&aacute;ch h&agrave;ng những mẫu gi&agrave;y mới thường xuy&ecirc;n n&ecirc;n bạn c&oacute; thể t&igrave;m được mẫu gi&agrave;y mới, ưng &yacute; v&agrave; chất lượng nhất tại đ&acirc;y.</span></span></span></span></p>
+
+<p style="margin-left:0px; margin-right:0px; text-align:left"><span style="font-size:16px"><span style="color:#231f20"><span style="font-family:Pangea,sans-serif"><span style="background-color:#ffffff"><img alt="địa chỉ bán giày nam" src="https://mcdn.coolmate.me/image/December2020/just4-min.jpg" style="border-radius:20px; border-style:none; box-sizing:border-box; color:rgba(0, 0, 0, 0); display:block; height:auto; image-rendering:-webkit-optimize-contrast; margin-left:auto; margin-right:auto; max-width:100%; vertical-align:middle; width:500px" /></span></span></span></span></p>
+
+<div class="info-box" style="-webkit-text-stroke-width:0px; border-radius:16px; padding:24px; text-align:left">
+<p style="margin-left:0px; margin-right:0px"><span style="font-size:16px"><span style="background-color:#f1f1f1"><span style="color:#231f20"><span style="font-family:Pangea,sans-serif"><span style="font-size:16px">Địa chỉ:&nbsp;2H Thịnh Y&ecirc;n, P. Phố Huế, Hai B&agrave; Trưng, H&agrave; Nội.</span></span></span></span></span></p>
+
+<p style="margin-left:0px; margin-right:0px"><span style="font-size:16px"><span style="background-color:#f1f1f1"><span style="color:#231f20"><span style="font-family:Pangea,sans-serif"><span style="font-size:16px">Hotline:&nbsp;0918361962</span></span></span></span></span></p>
+
+<p style="margin-left:0px; margin-right:0px"><span style="font-size:16px"><span style="background-color:#f1f1f1"><span style="color:#231f20"><span style="font-family:Pangea,sans-serif"><span style="font-size:16px">Facebook:&nbsp;https://www.facebook.com/sneakerlandshop</span></span></span></span></span></p>
+
+<p style="margin-left:0px; margin-right:0px"><span style="font-size:16px"><span style="background-color:#f1f1f1"><span style="color:#231f20"><span style="font-family:Pangea,sans-serif"><span style="font-size:16px">Instagram:&nbsp;https://www.instagram.com/sneakerland.hn/</span></span></span></span></span></p>
+
+<p style="margin-left:0px; margin-right:0px"><span style="font-size:16px"><span style="background-color:#f1f1f1"><span style="color:#231f20"><span style="font-family:Pangea,sans-serif"><span style="font-size:16px">Website:&nbsp;http://sneakerland-shop.com/</span></span></span></span></span></p>
+</div>
+
+<p style="margin-left:0px; margin-right:0px; text-align:left">&nbsp;</p>
+
+<h2 style="font-style:normal; text-align:left">2 Authentic Shoes</h2>
+
+<p style="margin-left:0px; margin-right:0px; text-align:left"><span style="font-size:16px"><span style="color:#231f20"><span style="font-family:Pangea,sans-serif"><span style="background-color:#ffffff">Authentic Shoes kh&ocirc;ng chỉ giới hạn ở việc b&aacute;n những mẫu gi&agrave;y sneaker ch&iacute;nh h&atilde;ng m&agrave; c&ograve;n chuy&ecirc;n order quần &aacute;o v&agrave; phụ kiện. Cửa h&agrave;ng c&oacute; mặt bằng nằm tại phố T&acirc;y Sơn, l&agrave; con phố mua sắm sầm uất với nhiều shop quần &aacute;o, gi&agrave;y d&eacute;p nổi tiếng.&nbsp;Với quy m&ocirc; mẫu m&atilde; v&ocirc; c&ugrave;ng phong ph&uacute; với h&agrave;ng trăm mẫu Sneaker cực đa dạng đến từ c&aacute;c brands nổi tiếng tr&ecirc;n thế giới như: Nike, Adidas, Converse, Vans, Fila,....,&nbsp;Authentic Shoes&nbsp;mang đến cho bạn những nguồn h&agrave;ng, sẩn phẩm chất lượng từ c&aacute;c thương hiệu đ&igrave;nh đ&aacute;m, đồng thời tự tin c&oacute; thể lu&ocirc;n lu&ocirc;n khiến bạn h&agrave;i l&ograve;ng khi sử dụng dịch vụ của cửa h&agrave;ng. Tất cả sản phẩm&nbsp;Authentic Shoes&nbsp;được cam kết ch&iacute;nh h&atilde;ng, 100% Authentic với nguồn gốc từ c&aacute;c cửa h&agrave;ng tr&ecirc;n thế giới, vậy n&ecirc;n c&aacute;c ch&agrave;ng nếu muốn t&igrave;m kiếm những cửa h&agrave;ng gi&agrave;y sneaker ch&iacute;nh h&atilde;ng th&igrave; đừng bỏ qua Authentic Shoes.</span></span></span></span></p>
+
+<p style="margin-left:0px; margin-right:0px; text-align:left"><span style="font-size:16px"><span style="color:#231f20"><span style="font-family:Pangea,sans-serif"><span style="background-color:#ffffff"><img alt="giày thể thao nam chính hãng" src="https://mcdn.coolmate.me/image/December2020/unnamed_37.jpg" style="border-radius:20px; border-style:none; box-sizing:border-box; color:rgba(0, 0, 0, 0); display:block; height:auto; image-rendering:-webkit-optimize-contrast; margin-left:auto; margin-right:auto; max-width:100%; vertical-align:middle; width:500px" /></span></span></span></span></p>
+
+<div class="info-box" style="-webkit-text-stroke-width:0px; border-radius:16px; padding:24px; text-align:left">
+<p style="margin-left:0px; margin-right:0px"><span style="font-size:16px"><span style="background-color:#f1f1f1"><span style="color:#231f20"><span style="font-family:Pangea,sans-serif"><span style="font-size:16px">Địa chỉ:&nbsp;Tầng 4 số 70-72 T&acirc;y Sơn, Quận Đống Đa, H&agrave; Nội, Việt Nam</span></span></span></span></span></p>
+
+<p style="margin-left:0px; margin-right:0px"><span style="font-size:16px"><span style="background-color:#f1f1f1"><span style="color:#231f20"><span style="font-family:Pangea,sans-serif"><span style="font-size:16px">Hotline:&nbsp;0913576123</span></span></span></span></span></p>
+
+<p style="margin-left:0px; margin-right:0px"><span style="font-size:16px"><span style="background-color:#f1f1f1"><span style="color:#231f20"><span style="font-family:Pangea,sans-serif"><span style="font-size:16px">Facebook:&nbsp;https://www.facebook.com/NXHsneakerstore/</span></span></span></span></span></p>
+
+<p style="margin-left:0px; margin-right:0px"><span style="font-size:16px"><span style="background-color:#f1f1f1"><span style="color:#231f20"><span style="font-family:Pangea,sans-serif"><span style="font-size:16px">Website:&nbsp;https://authentic-shoes.com/</span></span></span></span></span></p>
+</div>
+
+<h2 style="font-style:normal; text-align:left">3 HNM Sneaker</h2>
+
+<p style="margin-left:0px; margin-right:0px; text-align:left"><span style="font-size:16px"><span style="color:#231f20"><span style="font-family:Pangea,sans-serif"><span style="background-color:#ffffff">HNM Sneaker&nbsp;được coi l&agrave; một trong những của h&agrave;ng nổi tiếng chuy&ecirc;n gi&agrave;y tại H&agrave; Nội. C&oacute; địa chỉ tại 212 phố Huế l&agrave; một trong những con phố sầm uất bậc nhất H&agrave; Nội, HNM Sneaker chuy&ecirc;n cung cấp tất cả c&aacute;c mẫu gi&agrave;y độc, đẹp v&agrave; chất lượng của c&aacute;c cả c&aacute;c h&atilde;ng gi&agrave;y thể thao lớn. HNM khiến kh&aacute;ch h&agrave;ng tin tưởng v&agrave; ủng hộ bởi c&aacute;c dịch vụ hậu đ&atilde;i tuyệt vời. Điều tuyệt vời m&agrave; HNM mang lại cho kh&aacute;ch h&agrave;ng đ&oacute; l&agrave; sự bảo đảm tuyệt đối cho c&aacute;c sản phẩm. B&ecirc;n cạnh sự phong ph&uacute; v&agrave; chuy&ecirc;n nghiệp trong c&aacute;c sản phẩm gi&agrave;y m&agrave; HNM mang lại, bạn cũng c&oacute; thể tham khảo v&ocirc; v&agrave;n sản phẩm kh&aacute;c, từ c&aacute;c loại phụ kiện tới quần &aacute;o với thiết kế v&ocirc; c&ugrave;ng &quot;chất&quot;.</span></span></span></span></p>
+
+<p style="margin-left:0px; margin-right:0px; text-align:left"><span style="font-size:16px"><span style="color:#231f20"><span style="font-family:Pangea,sans-serif"><span style="background-color:#ffffff"><img alt="nên mua giày nam chính hãng ở đâu" src="https://mcdn.coolmate.me/image/December2020/shop-giay-sneaker-da-nang-7.1.jpg" style="border-radius:20px; border-style:none; box-sizing:border-box; color:rgba(0, 0, 0, 0); display:block; height:auto; image-rendering:-webkit-optimize-contrast; margin-left:auto; margin-right:auto; max-width:100%; vertical-align:middle; width:500px" /></span></span></span></span></p>
+
+<p style="margin-left:0px; margin-right:0px; text-align:left"><span style="font-size:16px"><span style="color:#231f20"><span style="font-family:Pangea,sans-serif"><span style="background-color:#ffffff">Đặc biệt hơn, khi mua sắm, trở th&agrave;nh kh&aacute;ch h&agrave;ng của HNM, kh&aacute;ch h&agrave;ng sẽ nhận được ưu đ&atilde;i ri&ecirc;ng, quyền lợi m&agrave; chỉ kh&aacute;ch h&agrave;ng của HNM nhận được như g&oacute;i bảo vệ đế gi&agrave;y, vệ sinh gi&agrave;y free c&ugrave;ng c&aacute;c dịch vụ đi k&egrave;m như hỗ trợ đổi trả, l&ecirc;n đời, thay thế model&hellip; c&ugrave;ng với đ&oacute; l&agrave; dịch vụ chăm s&oacute;c kh&aacute;ch h&agrave;ng nhiệt t&igrave;nh, chuy&ecirc;n nghiệp</span></span></span></span></p>
+
+<div class="info-box" style="-webkit-text-stroke-width:0px; border-radius:16px; padding:24px; text-align:left">
+<p style="margin-left:0px; margin-right:0px"><span style="font-size:16px"><span style="background-color:#f1f1f1"><span style="color:#231f20"><span style="font-family:Pangea,sans-serif"><span style="font-size:16px">Địa chỉ:&nbsp;212 Ph&ocirc;́ Huế, phường Ng&ocirc; Thì Nh&acirc;̣m, qu&acirc;̣n Hai Bà Trưng, Hà N&ocirc;̣i</span></span></span></span></span></p>
+
+<p style="margin-left:0px; margin-right:0px"><span style="font-size:16px"><span style="background-color:#f1f1f1"><span style="color:#231f20"><span style="font-family:Pangea,sans-serif"><span style="font-size:16px">Hotline:&nbsp;0981462410</span></span></span></span></span></p>
+
+<p style="margin-left:0px; margin-right:0px"><span style="font-size:16px"><span style="background-color:#f1f1f1"><span style="color:#231f20"><span style="font-family:Pangea,sans-serif"><span style="font-size:16px">Facebook:&nbsp;www.facebook.com/hnmsneaker.UK/</span></span></span></span></span></p>
+
+<p style="margin-left:0px; margin-right:0px"><span style="font-size:16px"><span style="background-color:#f1f1f1"><span style="color:#231f20"><span style="font-family:Pangea,sans-serif"><span style="font-size:16px">Instagram:&nbsp;www.instagram.com/hnmsneaker/</span></span></span></span></span></p>
+
+<p style="margin-left:0px; margin-right:0px"><span style="font-size:16px"><span style="background-color:#f1f1f1"><span style="color:#231f20"><span style="font-family:Pangea,sans-serif"><span style="font-size:16px">Website:&nbsp;hnmsneaker.com.vn/</span></span></span></span></span></p>
+</div>
+
+<h2 style="font-style:normal; text-align:left">4 Just Sneaker Store - JSS</h2>
+
+<p style="margin-left:0px; margin-right:0px; text-align:left"><span style="font-size:16px"><span style="color:#231f20"><span style="font-family:Pangea,sans-serif"><span style="background-color:#ffffff">Just Sneaker Store c&oacute; lẽ l&agrave; c&aacute;i t&ecirc;n qu&aacute; quen thuộc v&agrave; nổi tiếng khu vực quận Ho&agrave;n Kiếm n&oacute;i ri&ecirc;ng v&agrave; H&agrave; Nội n&oacute;i chung. Kh&ocirc;ng giống với c&aacute;c store kh&aacute;c, bạn c&oacute; thể t&igrave;m kiếm cả những mẫu quần &aacute;o hay phụ kiện đi k&egrave;m tại c&aacute;c store gi&agrave;y b&igrave;nh thường, tuy nhi&ecirc;n ở Just Sneaker Store, đ&uacute;ng như t&ecirc;n gọi bạn sẽ chỉ thấy ở đ&acirc;y chỉ chuy&ecirc;n gi&agrave;y với đủ loại mẫu m&atilde;, m&agrave;u sắc, thương hiệu. JSS hoạt động kinh doanh dưới cả 2 h&igrave;nh thực b&aacute;n trực tiếp tại cửa h&agrave;ng v&agrave; nhận order. C&aacute;c mẫu sẵn tại shop đều l&agrave; c&aacute;c mẫu chọn lọc, casual, dễ đi với cả nam v&agrave; nữ. Những c&aacute;i t&ecirc;n quen thuộc như Van Vault OG Old Skool, Adidas Original Sand Smith, Puma flatfom&hellip; chuẩn auth đều c&oacute; tại&nbsp;JSS&nbsp;cho c&aacute;c bạn thỏa sức lựa chọn.</span></span></span></span></p>
+
+<p style="margin-left:0px; margin-right:0px; text-align:left"><span style="font-size:16px"><span style="color:#231f20"><span style="font-family:Pangea,sans-serif"><span style="background-color:#ffffff"><img alt="mua giày sneaker cho nam chính hãng" src="https://mcdn.coolmate.me/image/December2020/Footlocker-Sneaker-Resale-GQ-02082019_3x2.jpg" style="border-radius:20px; border-style:none; box-sizing:border-box; color:rgba(0, 0, 0, 0); display:block; height:auto; image-rendering:-webkit-optimize-contrast; margin-left:auto; margin-right:auto; max-width:100%; vertical-align:middle; width:500px" /></span></span></span></span></p>
+
+<p style="margin-left:0px; margin-right:0px; text-align:left"><span style="font-size:16px"><span style="color:#231f20"><span style="font-family:Pangea,sans-serif"><span style="background-color:#ffffff">Ngo&agrave;i ra,&nbsp;JSS&nbsp;c&ograve;n v&ocirc; c&ugrave;ng t&acirc;m l&yacute; khi b&aacute;n k&egrave;m cả những đồ l&agrave;m sạch gi&agrave;y, khi&ecirc;n đ&ocirc;i gi&agrave;y của bạn lu&ocirc;n lu&ocirc;n trong trạng th&aacute;i tuyệt vời nhất.&nbsp;JSS&nbsp;c&ograve;n kh&aacute; l&agrave; đầu tư về mặt h&igrave;nh ảnh v&agrave; lu&ocirc;n update li&ecirc;n tục l&ecirc;n website của shop, gi&uacute;p mọi người cập nhật c&aacute;c mẫu h&agrave;ng mới v&ocirc; c&ugrave;ng nhanh v&agrave; dễ d&agrave;ng.</span></span></span></span></p>
+
+<p style="margin-left:0px; margin-right:0px; text-align:left">&nbsp;</p>
+
+<div class="info-box" style="-webkit-text-stroke-width:0px; border-radius:16px; padding:24px; text-align:left">
+<p style="margin-left:0px; margin-right:0px">&nbsp;</p>
+
+<p style="margin-left:0px; margin-right:0px"><span style="font-size:16px"><span style="background-color:#f1f1f1"><span style="color:#231f20"><span style="font-family:Pangea,sans-serif"><span style="font-size:16px">Địa chỉ:&nbsp;32b Nh&agrave; Chung, Ho&agrave;n Kiếm, H&agrave; Nội</span></span></span></span></span></p>
+
+<p style="margin-left:0px; margin-right:0px"><span style="font-size:16px"><span style="background-color:#f1f1f1"><span style="color:#231f20"><span style="font-family:Pangea,sans-serif"><span style="font-size:16px">Hotline&nbsp;: 097 666 0268</span></span></span></span></span></p>
+
+<p style="margin-left:0px; margin-right:0px"><span style="font-size:16px"><span style="background-color:#f1f1f1"><span style="color:#231f20"><span style="font-family:Pangea,sans-serif"><span style="font-size:16px">Instagram:&nbsp;www.instagram.com/justsneakerstore/</span></span></span></span></span></p>
+
+<p style="margin-left:0px; margin-right:0px"><span style="font-size:16px"><span style="background-color:#f1f1f1"><span style="color:#231f20"><span style="font-family:Pangea,sans-serif"><span style="font-size:16px">Facebook:&nbsp;www.facebook.com/JustSneakerStore/</span></span></span></span></span></p>
+
+<p style="margin-left:0px; margin-right:0px"><span style="font-size:16px"><span style="background-color:#f1f1f1"><span style="color:#231f20"><span style="font-family:Pangea,sans-serif"><span style="font-size:16px">Website:&nbsp;justsneakerstore.com</span></span></span></span></span></p>
+
+<p style="margin-left:0px; margin-right:0px">&nbsp;</p>
+</div>
+
+<p style="margin-left:0px; margin-right:0px; text-align:left">&nbsp;</p>
+
+<h2 style="font-style:normal; text-align:left">5 Crown King Shop</h2>
+
+<p style="margin-left:0px; margin-right:0px; text-align:left"><span style="font-size:16px"><span style="color:#231f20"><span style="font-family:Pangea,sans-serif"><span style="background-color:#ffffff">B&ecirc;n tr&ecirc;n l&agrave; những shop gi&agrave;y được đ&aacute;nh gi&aacute; uy t&iacute;n tại H&agrave; Nội. C&ograve;n ở TPHCM Crown King Shop được biết đến l&agrave; một trong c&aacute;c cửa h&agrave;ng kinh doanh Sneaker l&acirc;u đời với nhiều năm kinh nghiệm trong việc nhận c&aacute;c đơn đặt h&agrave;ng gi&agrave;y d&eacute;p, quần &aacute;o, phụ kiện thời trang từ H&agrave;n Quốc, Mỹ, Singapore,&hellip; Rất nhiều kh&aacute;ch h&agrave;ng đ&atilde; tin tường v&agrave; lựa chọn Crown King Shop l&agrave; địa điểm để sắm những đ&ocirc;i gi&agrave;y cho m&igrave;nh. Đồng thời ở đ&acirc;y cũng được đ&aacute;nh gi&aacute; l&agrave; chất lượng thuộc nh&oacute;m cửa h&agrave;ng uy t&iacute;n, cực k&igrave; tốt. B&ecirc;n cạnh đ&oacute; shop c&ograve;n c&oacute; dịch vụ chăm s&oacute;c kh&aacute;ch h&agrave;ng sau khi mua h&agrave;ng. Một điểm kh&aacute;c với những shop kh&aacute;c m&agrave; bạn cần lưu &yacute; đ&oacute; l&agrave; Crown King Shop kh&ocirc;ng cung cấp h&agrave;ng sẵn m&agrave; chỉ nhận order h&agrave;ng của kh&aacute;ch cho n&ecirc;n rất ph&ugrave; hợp cho bạn n&agrave;o muốn c&oacute; đ&ocirc;i gi&agrave;y độc-lạ-chất.</span></span></span></span></p>
+
+<p style="margin-left:0px; margin-right:0px; text-align:left"><span style="font-size:16px"><span style="color:#231f20"><span style="font-family:Pangea,sans-serif"><span style="background-color:#ffffff"><img alt="địa chỉ mua sneaker chính hãng ở sài gòn" src="https://mcdn.coolmate.me/image/December2020/88eb8da8719d48f39bc970a33e2fef1c.jpg" style="border-radius:20px; border-style:none; box-sizing:border-box; color:rgba(0, 0, 0, 0); display:block; height:auto; image-rendering:-webkit-optimize-contrast; margin-left:auto; margin-right:auto; max-width:100%; vertical-align:middle; width:500px" /></span></span></span></span></p>
+
+<p style="margin-left:0px; margin-right:0px; text-align:left">&nbsp;</p>
+
+<div class="info-box" style="-webkit-text-stroke-width:0px; border-radius:16px; padding:24px; text-align:left">
+<p style="margin-left:0px; margin-right:0px">&nbsp;</p>
+
+<p style="margin-left:0px; margin-right:0px"><span style="font-size:16px"><span style="background-color:#f1f1f1"><span style="color:#231f20"><span style="font-family:Pangea,sans-serif"><span style="font-size:16px">Th&ocirc;ng tin li&ecirc;n hệ<br />
+FB:&nbsp;facebook.com/CrownKingShop.<br />
+Address:&nbsp;18A/1 Nguyễn Thị Minh Khai, P.Đakao, Q.1, TPHCM.</span></span></span></span></span></p>
+
+<p style="margin-left:0px; margin-right:0px">&nbsp;</p>
+</div>
+
+<p style="margin-left:0px; margin-right:0px; text-align:left">&nbsp;</p>
+
+<h2 style="font-style:normal; text-align:left">6 Authenticity</h2>
+
+<p style="margin-left:0px; margin-right:0px; text-align:left"><span style="font-size:16px"><span style="color:#231f20"><span style="font-family:Pangea,sans-serif"><span style="background-color:#ffffff">Authenticity c&oacute; t&ecirc;n gọi cũ l&agrave; Nguyen K Huan Shop. Mặc d&ugrave; c&oacute; gia nhập v&agrave;o thị trường gi&agrave;y sneaker sau Crown King Shop nhưng Authenticity với số lượng mẫu m&atilde; sản phẩm phong ph&uacute; c&ugrave;ng dịch vụ chăm s&oacute;c kh&aacute;ch h&agrave;ng cực tốt đ&atilde; trở th&agrave;nh một địa điểm đ&aacute;ng tin cậy cho t&iacute;n đồ Sneaker. B&ecirc;n cạnh đ&oacute; th&igrave; c&aacute;ch thức hoạt đ&ocirc;ng của Authenticity cũng c&oacute; kh&aacute;c biệt so với Crown King Shop ở chỗ: Authenticity ngo&agrave;i nhận c&aacute;c order c&ograve;n c&oacute; h&igrave;nh thức b&aacute;n trực tiếp tại cửa h&agrave;ng c&aacute;c mẫu gi&agrave;y mới, đẹp.</span></span></span></span></p>
+
+<p style="margin-left:0px; margin-right:0px; text-align:left"><span style="font-size:16px"><span style="color:#231f20"><span style="font-family:Pangea,sans-serif"><span style="background-color:#ffffff"><img alt="nên mua giày nam chính hãng ở đâu uy tín" src="https://mcdn.coolmate.me/image/December2020/moda3-1024x683.jpg" style="border-radius:20px; border-style:none; box-sizing:border-box; color:rgba(0, 0, 0, 0); display:block; height:auto; image-rendering:-webkit-optimize-contrast; margin-left:auto; margin-right:auto; max-width:100%; vertical-align:middle; width:500px" /></span></span></span></span></p>
+
+<p style="margin-left:0px; margin-right:0px; text-align:left">&nbsp;</p>
+
+<div class="info-box" style="-webkit-text-stroke-width:0px; border-radius:16px; padding:24px; text-align:left">
+<p style="margin-left:0px; margin-right:0px">&nbsp;</p>
+
+<p style="margin-left:0px; margin-right:0px"><span style="font-size:16px"><span style="background-color:#f1f1f1"><span style="color:#231f20"><span style="font-family:Pangea,sans-serif"><span style="font-size:16px">Th&ocirc;ng tin li&ecirc;n hệ<br />
+FB: facebook.com/authenticitystore.<br />
+Address: Ngay nh&agrave; thờ Hạnh Th&ocirc;ng T&acirc;y &ndash; Quang Trung &ndash; P.10 &ndash; Q. G&ograve; Vấp &ndash;HCM.</span></span></span></span></span></p>
+
+<p style="margin-left:0px; margin-right:0px">&nbsp;</p>
+</div>
+
+<p style="margin-left:0px; margin-right:0px; text-align:left">&nbsp;</p>
+
+<h2 style="font-style:normal; text-align:left">7 G-Lap</h2>
+
+<p style="margin-left:0px; margin-right:0px; text-align:left"><span style="font-size:16px"><span style="color:#231f20"><span style="font-family:Pangea,sans-serif"><span style="background-color:#ffffff">Đ&acirc;y c&oacute; lẽ l&agrave; c&aacute;i t&ecirc;n kh&aacute; quen thuộc với giới trẻ, đặc biệt l&agrave; d&acirc;n thể thao b&oacute;ng rổ. G &ndash; Lap mang đến cho bạn những sản phẩm chất lượng. G &ndash; Lap lu&ocirc;n nỗ lực x&acirc;y dựng văn ho&aacute; gi&agrave;y đa dạng, đặc sắc từ c&aacute;c thương hiệu uy t&iacute;n, nổi tiếng tr&ecirc;n thế giới như Adidas, Jordan, Nike,&hellip; Với lợi thế, shop c&oacute; nguồn gi&agrave;y kh&aacute; dồi d&agrave;o v&agrave; đa dạng, n&ecirc;n kh&aacute;ch h&agrave;ng khi đến đ&acirc;y c&oacute; thể chọn cho m&igrave;nh một đ&ocirc;i gi&agrave;y với k&iacute;ch thước như &yacute;, kh&ocirc;ng phải tốn qu&aacute; nhiều thời gian sau order. T&ugrave;y thuộc v&agrave;o mục đ&iacute;ch sử dụng, tại đ&acirc;y kh&aacute;ch h&agrave;ng sẽ c&oacute; những mẫu gi&agrave;y kh&aacute;c nhau.</span></span></span></span></p>
+
+<p style="margin-left:0px; margin-right:0px; text-align:left"><span style="font-size:16px"><span style="color:#231f20"><span style="font-family:Pangea,sans-serif"><span style="background-color:#ffffff"><img alt="mua giày tại store chính hãng" src="https://mcdn.coolmate.me/image/December2020/shop-giay-nam-1-1200x868.jpg" style="border-radius:20px; border-style:none; box-sizing:border-box; color:rgba(0, 0, 0, 0); display:block; height:auto; image-rendering:-webkit-optimize-contrast; margin-left:auto; margin-right:auto; max-width:100%; vertical-align:middle; width:500px" /></span></span></span></span></p>
+
+<p style="margin-left:0px; margin-right:0px; text-align:left">&nbsp;</p>
+
+<div class="info-box" style="-webkit-text-stroke-width:0px; border-radius:16px; padding:24px; text-align:left">
+<p style="margin-left:0px; margin-right:0px">&nbsp;</p>
+
+<p style="margin-left:0px; margin-right:0px"><span style="font-size:16px"><span style="background-color:#f1f1f1"><span style="color:#231f20"><span style="font-family:Pangea,sans-serif"><span style="font-size:16px">Th&ocirc;ng tin li&ecirc;n hệ<br />
+FB: facebook.com/glab.vn<br />
+Address:&nbsp;135/58 Trần Hưng Đạo, Q.1, TPHCM.</span></span></span></span></span></p>
+
+<p style="margin-left:0px; margin-right:0px">&nbsp;</p>
+</div>
+
+<p style="margin-left:0px; margin-right:0px; text-align:left">&nbsp;</p>
+
+<h2 style="font-style:normal; text-align:left">8 S&agrave;i G&ograve;n Sneaker Store</h2>
+
+<p style="margin-left:0px; margin-right:0px; text-align:left"><span style="font-size:16px"><span style="color:#231f20"><span style="font-family:Pangea,sans-serif"><span style="background-color:#ffffff">L&agrave; shop chuy&ecirc;n kinh doanh gi&agrave;y sneaker v&agrave; l&agrave; địa điểm y&ecirc;u th&iacute;ch của nhiều người khi t&igrave;m kiếm cho m&igrave;nh những đ&ocirc;i sneaker ch&iacute;nh h&atilde;ng. S&agrave;i G&ograve;n Sneaker Store được tin tưởng v&agrave; lựa chọn l&agrave;m điểm mua sắm cho m&igrave;nh bởi tại đ&acirc;y bạn c&oacute; thể t&igrave;m cho m&igrave;nh những đ&ocirc;i gi&agrave;y với đa dạng mẫu m&atilde; của c&aacute;c thương hiệu nổi tiếng như: Adidas, Nike, Puma,&hellip; Phương ch&acirc;m &ldquo;chất lượng &ndash; uy t&iacute;n&rdquo; đặt l&ecirc;n h&agrave;ng đầu, v&igrave; vậy, shop rất ch&uacute; trọng đến chất lượng dịch vụ, hỗ trợ v&agrave; cung cấp th&ocirc;ng tin cho kh&aacute;ch h&agrave;ng. Hiện nay, Saigon Sneaker Store c&oacute; nhận cả c&aacute;c đơn h&agrave;ng từ USA, &Uacute;c v&agrave; c&aacute;c nước trong khu vực với gi&aacute; cả phải chăng.</span></span></span></span></p>
+
+<p style="margin-left:0px; margin-right:0px; text-align:left"><span style="font-size:16px"><span style="color:#231f20"><span style="font-family:Pangea,sans-serif"><span style="background-color:#ffffff"><img alt="top địa chỉ mua sneaker uy tín" src="https://mcdn.coolmate.me/image/December2020/ed8daf975ef1c4d4f8f8f276c06d0303.jpg" style="border-radius:20px; border-style:none; box-sizing:border-box; color:rgba(0, 0, 0, 0); display:block; height:auto; image-rendering:-webkit-optimize-contrast; margin-left:auto; margin-right:auto; max-width:100%; vertical-align:middle; width:500px" /></span></span></span></span></p>
+'),
+(N'Giữ phong độ cho sneaker trắng ra sao',1,'2/3/2020',N'<h2>Những c&aacute;ch bảo quản gi&agrave;y trắng</h2>
+
+<h3>Tr&aacute;nh &aacute;nh s&aacute;ng trực tiếp của mặt trời</h3>
+
+<p>Với những đ&ocirc;i gi&agrave;y Sneaker m&agrave;u th&igrave; &aacute;nh s&aacute;ng mặt trời ch&iacute;nh l&agrave; thủ phạm hằng đầu khiến cho m&agrave;u phai nhanh. C&ograve;n đối với những chiếc gi&agrave;y trắng th&igrave; &aacute;nh nắng lại khiến khả năng bị ố v&agrave;ng trở n&ecirc;n cao hơn. V&igrave; vậy kh&ocirc;ng phải nhắc nhở bạn l&agrave; kh&ocirc;ng được đeo gi&agrave;y trắng v&agrave;o ng&agrave;y nắng, m&agrave; việc bạn cất giữ đ&ocirc;i gi&agrave;y l&agrave;m sao để &aacute;nh nắng kh&ocirc;ng chiếu v&agrave;o khi kh&ocirc;ng sử dụng nh&eacute;.</p>
+
+<h3>Tuyệt đối kh&ocirc;ng giặt gi&agrave;y bằng m&aacute;y giặt</h3>
+
+<p>Gi&agrave;y trắng hay bất kể đ&ocirc;i gi&agrave;y n&agrave;o kh&aacute;c bạn cũng kh&ocirc;ng được lười v&agrave; bỏ ch&uacute;ng v&agrave;o m&aacute;y giặt. Như vậy l&agrave; khiến cho gi&agrave;y bị mất form, vải sẽ bị sờn, c&ograve;n đối với loại gi&agrave;y da, da sẽ bị bong tr&oacute;c. Kh&ocirc;ng kể tới việc gi&agrave;y c&oacute; đế cứng sẽ l&agrave;m cho m&aacute;y giặt nh&agrave; bạn phải chật vật đấy. Tốt nhất lu&ocirc;n n&oacute;i kh&ocirc;ng với giặt gi&agrave;y trắng bằng m&aacute;y giặt nh&eacute;.</p>
+
+<h3>Giặt gi&agrave;y bằng nước ấm</h3>
+
+<p>Nhiệt độ ấm vừa phải l&agrave; th&iacute;ch hợp nhất để bạn giặt gi&agrave;y. Đối với những sợi d&acirc;y gi&agrave;y th&igrave; bạn n&ecirc;n ng&acirc;m ch&uacute;ng v&agrave;o nước ầm pha bột giặt v&agrave; v&ograve; bằng tay. C&ograve;n với đ&ocirc;i d&agrave;y của bạn th&igrave; d&ugrave;ng b&agrave;n chải thấm nước giặt rồi ch&agrave; nhẹ nh&agrave;ng.</p>
+
+<h3>D&ugrave;ng b&agrave;n chải đ&aacute;nh răng</h3>
+
+<p><img alt="Dùng bàn chải đánh răng" src="https://moitruongdeal.vn/ckfinder/userfiles/images/bao-quan-giay-trang-3.jpg" /></p>
+
+<p>&nbsp;</p>
+
+<p>Với những vị tr&iacute; kh&oacute; ch&agrave; rửa tới bằng chiếc b&agrave;n chải to th&igrave; sử dụng b&agrave;n chải đ&aacute;nh răng ch&iacute;nh l&agrave; c&aacute;ch gi&uacute;p bạn. Bạn cũng l&agrave;m tương tự, nh&uacute;ng b&agrave;n chải đ&aacute;nh răng v&agrave;o nước pha bột giặt rồi ch&agrave; l&ecirc;n những khu vực kh&oacute; như mu gi&agrave;y v&agrave; b&ecirc;n trong gi&agrave;y.</p>
+
+<h3>L&agrave;m sạch vết dầu mỡ tr&ecirc;n gi&agrave;y bằng dầu gội</h3>
+
+<p>Nếu bạn chẳng may khiến cho đ&ocirc;i gi&agrave;y trắng của m&igrave;nh bị d&iacute;nh vết dầu mỡ thức ăn th&igrave; phải l&agrave;m sao? Việc sử dụng bột hay nước giặt dường như kh&ocirc;ng mang lại hiệu quả cao. Dầu gội ch&iacute;nh l&agrave; sản phẩm thay thế ho&agrave;n hảo. Bạn chỉ cần pha dầu gội v&agrave;o nước rồi ch&agrave; nhẹ nh&agrave;ng l&ecirc;n gi&agrave;y. Chiếc gi&agrave;y sẽ trở n&ecirc;n sạch sẽ v&agrave; trắng s&aacute;ng trở lại.</p>
+
+<h3>Chữa vết xước tr&ecirc;n gi&agrave;y bằng nước sơn m&oacute;ng tay</h3>
+
+<p>Gi&agrave;y trắng bị xước ở phần đế thường để lại hậu quả đ&oacute; l&agrave; khu vực l&otilde;m v&agrave;o trở n&ecirc;n đen khiến chiếc gi&agrave;y trở n&ecirc;n xấu x&iacute;. Để giải quyết bạn c&oacute; thể l&agrave;m như sau, d&ugrave;ng kem đ&aacute;nh răng v&agrave; b&agrave;n chải đ&aacute;nh răng ch&agrave; l&ecirc;n khu vực bị xước cho thật sạch bụi bẩn b&ecirc;n trong. Tiến h&agrave;nh lau sạch đi rồi tiếp đ&oacute; phết một ch&uacute;t nước sơn m&oacute;ng tay l&ecirc;n tr&ecirc;n khu vực xước. Kết quả l&agrave; vết xước l&otilde;m bị lấp đầy v&agrave; bạn kh&ocirc;ng lo bị bụi bẩn lẻn v&agrave;o l&agrave;m xấu gi&agrave;y nữa.</p>
+
+<h3>D&ugrave;ng g&ocirc;m để l&agrave;m sạch vết bẩn</h3>
+
+<p>Bạn c&oacute; thể d&ugrave;ng tẩy để tẩy vết ố tr&ecirc;n gi&agrave;y trắng. Đặc biệt khi sử dụng gi&agrave;y l&agrave;m từ chất liệu cao su, da PU hay da lộn th&igrave; cục tẩy sẽ tẩy sạch mọi vết bẩn. Tuy nhi&ecirc;n, c&aacute;ch n&agrave;y chỉ ph&ugrave; hợp với những đ&ocirc;i gi&agrave;y hầu như kh&ocirc;ng c&oacute; vết bẩn hoặc trầy xước nhẹ.</p>
+
+<h3>Xịt nano</h3>
+
+<p>Đối với gi&agrave;y da lộn, da Nubuck v&agrave; c&aacute;c loại vải, sử dụng b&igrave;nh xịt nano l&agrave; c&aacute;ch bảo quản gi&agrave;y trắng l&yacute; tưởng. B&igrave;nh xịt nano gi&uacute;p tạo th&agrave;nh một lớp mỏng trong suốt gi&uacute;p nước kh&ocirc;ng d&iacute;nh v&agrave;o bề mặt gi&agrave;y trắng. Đặc biệt, khi được phun nhiều lớp tr&ecirc;n bề mặt da, đ&ocirc;i gi&agrave;y sẽ c&oacute; khả năng chống thấm nước tốt.</p>
+
+<h3>Cất gi&agrave;y v&agrave;o hộp khi kh&ocirc;ng sử dụng</h3>
+
+<p>Khi bảo quản v&agrave; giữ g&igrave;n gi&agrave;y sạch sẽ, bạn kh&ocirc;ng được bỏ qua những chiếc hộp đựng gi&agrave;y tiện lợi n&agrave;y. Trước khi cho gi&agrave;y v&agrave;o hộp, bạn n&ecirc;n l&oacute;t những mảnh giấy b&aacute;o để giữ nguy&ecirc;n h&igrave;nh d&aacute;ng của đ&ocirc;i gi&agrave;y, đồng thời th&ecirc;m chất h&uacute;t ẩm để loại bỏ hơi ẩm trong gi&agrave;y.</p>
+
+<p>&nbsp;</p>
+
+<p>Tốt nhất, g&oacute;i h&uacute;t ẩm n&ecirc;n được đặt v&agrave;o trong gi&agrave;y hoặc hộp đựng gi&agrave;y. Nếu c&oacute; điều kiện hơn, bạn c&oacute; thể mua hộp đựng gi&agrave;y h&uacute;t ch&acirc;n kh&ocirc;ng.</p>
+'),
+(N'Cách buộc dây giày',1,'2/3/2020',N'<h2><strong>I. C&aacute;ch buộc d&acirc;y gi&agrave;y converse cổ thấp</strong></h2>
+
+<p>Ngo&agrave;i những c&aacute;ch buộc d&acirc;y gi&agrave;y truyền thống, m&agrave;&nbsp;<strong>MrBo</strong>&nbsp;đ&atilde; c&oacute; dịp chia sẻ với c&aacute;c bạn trước đ&acirc;y. H&ocirc;m nay m&igrave;nh sẽ mang đến cho c&aacute;c bạn những c&aacute;ch buộc d&acirc;y mới với gi&agrave;y cổ thấp.</p>
+
+<p>Những c&aacute;ch n&agrave;y c&oacute; thể &aacute;p dụng cho&nbsp;buộc d&acirc;y gi&agrave;y converse 5 lỗ, 6 lỗ, hoặc 7 lỗ t&ugrave;y theo đ&ocirc;i gi&agrave;y của bạn.</p>
+
+<p><strong>Video cach buoc day giay converse truyen thong</strong></p>
+
+<h3>1. Thắt d&acirc;y kiểu zipper</h3>
+
+<p>Phương ph&aacute;p n&agrave;y &ldquo;kho&aacute;&rdquo; d&acirc;y gi&agrave;y ở phần giữa mỗi cặp lỗ x&acirc;u, tạo n&ecirc;n những n&uacute;t thắt tr&ocirc;ng kh&aacute; th&uacute; vị, nh&igrave;n qua tr&ocirc;ng như một chiếc kh&oacute;a k&eacute;o hạy dọc đ&ocirc;i gi&agrave;y.</p>
+
+<p>Với những t&iacute;n đồ y&ecirc;u th&iacute;ch m&ocirc;n trượt v&aacute;n, c&aacute;ch thắt n&agrave;y l&agrave; sự lựa chọn l&yacute; tưởng v&igrave; phần d&acirc;y gi&agrave;y ở ph&iacute;a gần mũi gi&agrave;y được thắt rất chặt. (Kết quả đẹp nhất với gi&agrave;y converse 7 lỗ)</p>
+
+<p><strong>Th&agrave;nh quả khi thắt xong</strong></p>
+
+<p><img alt="Thắt dây converse kiểu zipper" src="https://kiza.vn/blog/wp-content/uploads/2018/06/cach-that-day-giay-kieu-zipper.jpeg" style="height:360px; width:640px" /></p>
+
+<p>Thắt d&acirc;y converse kiểu zipper</p>
+
+<p><strong>C&aacute;c bước thực hiện</strong></p>
+
+<p><img alt="" src="https://kiza.vn/blog/wp-content/uploads/2018/06/kieu-zipper-buoc-1.png" style="height:320px; width:197px" /></p>
+
+<p><img alt="" src="https://kiza.vn/blog/wp-content/uploads/2018/06/kieu-zipper-buoc-2.png" style="height:319px; width:198px" /></p>
+
+<ul>
+	<li>Xỏ hai d&acirc;y v&agrave;o lỗ x&acirc;u cao hơn kế tiếp v&agrave; tiếp tục.</li>
+	<li>Lặp lại v&ograve;ng lặp cho đến khi kết th&uacute;c.</li>
+</ul>
+
+<p><em><strong>Đặc điểm của c&aacute;ch thắt kh&oacute;a:</strong></em></p>
+
+<ul>
+	<li>C&oacute; t&aacute;c dụng rang tr&iacute;</li>
+	<li>D&acirc;y thắt kh&ocirc;ng bị xộc xệch.</li>
+	<li>Kh&oacute; thắt chặt.</li>
+	<li>Ngắn hơn 3% (kết th&uacute;c).</li>
+</ul>
+
+<p><strong>Lưu &yacute; :</strong></p>
+
+<p>Một trong những kh&oacute; khăn lớn nhất khi thắt chặt d&acirc;y gi&agrave;y kiểu n&agrave;y l&agrave; giữ chặt c&aacute;c phần dưới trong khi phải l&agrave;m việc với phần tr&ecirc;n.</p>
+
+<p>Thắt d&acirc;y kiểu kh&oacute;a k&eacute;o giữ d&acirc;y gi&agrave;y thắt chặt tại mỗi mắt lưới. Điều n&agrave;y khiến n&oacute; trở th&agrave;nh n&uacute;t thắt tuyệt vời nhất đối với gi&agrave;y trượt băng, ủng, gi&agrave;y leo n&uacute;i, hoặc bất kỳ gi&agrave;y d&eacute;p m&agrave; cần hỗ trợ vững chắc.</p>
+
+<h3>2. Kiểu buộc d&acirc;y gi&agrave;y converse Loop Back</h3>
+
+<p>Kiểu buộc d&acirc;y gi&agrave;y Loop Back v&ocirc; c&ugrave;ng ấn tượng bởi những n&uacute;t xoắn ở giữa th&acirc;n tr&ecirc;n của gi&agrave;y, tạo cho đ&ocirc;i gi&agrave;y d&aacute;ng khỏe khoắn, năng động nhưng kh&ocirc;ng k&eacute;m phần nổi bật.</p>
+
+<h4>H&igrave;nh ảnh thực tế sau khi&nbsp;đan d&acirc;y gi&agrave;y</h4>
+
+<p><img alt="Cách thắt dây giày converse cổ thấp 6 lỗ" src="https://kiza.vn/blog/wp-content/uploads/2018/06/buoc-day-giay-converse-kiey-loopback-look.jpeg" style="height:600px; width:600px" /></p>
+
+<p>C&aacute;ch thắt d&acirc;y gi&agrave;y converse cổ thấp 6 lỗ</p>
+
+<p>C&aacute;c bước thực hiện thắt d&acirc;y&nbsp;<strong>Loop Back</strong></p>
+
+<h4><strong>C&aacute;c bước thực hiện x&acirc;u d&acirc;y gi&agrave;y</strong></h4>
+
+<p><img alt="Thắt dây giày converse đẹp đơn giản" src="https://kiza.vn/blog/wp-content/uploads/2018/06/kieu-buoc-day-giay-converse-loop-back.gif" style="height:322px; width:199px" /></p>
+
+<p>Thắt d&acirc;y gi&agrave;y converse đẹp đơn giản</p>
+
+<ul>
+	<li><strong>Bước 1</strong>: Xỏ d&acirc;y v&agrave;o 2 lỗ xỏ h&agrave;ng ngang đầu ti&ecirc;n sao cho phần d&acirc;y thừa nằm b&ecirc;n ngo&agrave;i gi&agrave;y (xỏ từ dưới l&ecirc;n tr&ecirc;n).</li>
+	<li><strong>Bước 2</strong>: Vắt ch&eacute;o hai phần d&acirc;y với Đưa phần d&acirc;y m&agrave;u xanh xỏ v&agrave;o lỗ thứ 2 b&ecirc;n tr&aacute;i, đưa phần d&acirc;y m&agrave;u v&agrave;ng xỏ v&agrave;o lỗ thứ 2 b&ecirc;n phải.</li>
+	<li><strong>Bước 3</strong>: Tiếp tục như vậy cho đến hết th&igrave; buộc lại.</li>
+</ul>
+
+<h3>3. Kiểu buộc d&acirc;y gi&agrave;y zig-zag</h3>
+
+<p>Kỹ thuật x&acirc;u d&acirc;y gi&agrave;y converse n&agrave;y &iacute;t bạn trẻ biết đến, v&agrave; thực hiện được. Tuy nhi&ecirc;n, nếu th&agrave;nh c&ocirc;ng th&igrave; sẽ tạo n&ecirc;n sự kh&aacute;c biệt rất lớn đ&oacute; c&aacute;c bạn.</p>
+
+<p>C&aacute;c bạn tham khảo video c&aacute;ch xỏ d&acirc;y gi&agrave;y zig-zag dưới đ&acirc;y nh&eacute;!</p>
+
+<h4>Th&agrave;nh quả sau khi cột d&acirc;y gi&agrave;y xong</h4>
+
+<p><img alt="cách xỏ dây giày converse" src="https://kiza.vn/blog/wp-content/uploads/2018/06/cach-that-day-giay-converse-kieu-Zig-zag.jpeg" style="height:260px; width:665px" /></p>
+
+<p>Thắt d&acirc;y gi&agrave;y converse zig zag</p>
+
+<p>C&oacute; thể bạn chưa thực hiện được ngay trong lần đầu ti&ecirc;n. H&atilde;y ki&ecirc;n tr&igrave; bạn nh&eacute;, kiza sẽ hướng dẫn bạn thực hiện qua từng bước dưới đ&acirc;y.</p>
+
+<h4>C&aacute;c bước thực hiện</h4>
+
+<p><img alt="xỏ dây giày converse" src="https://kiza.vn/blog/wp-content/uploads/2018/06/tung-buoc-thuc-hien-buoc-day-giay-kieu-Zig-zag.gif" style="height:319px; width:200px" /></p>
+
+<p>C&aacute;ch thắt d&acirc;y gi&agrave;y converse kiểu zig zag</p>
+
+<ul>
+	<li><strong>Bước 1</strong>: Xỏ d&acirc;y gi&agrave;y từ lỗ xỏ b&ecirc;n tr&aacute;i (xỏ từ dưới l&ecirc;n tr&ecirc;n) sang lỗ xỏ b&ecirc;n phải (xỏ từ dưới l&ecirc;n)</li>
+	<li><strong>Bước 2</strong>: Đưa phần d&acirc;y b&ecirc;n tr&aacute;i (m&agrave;u xanh) xỏ v&agrave;o lỗ xỏ kế b&ecirc;n ở h&agrave;ng dưới (xỏ từ dưới l&ecirc;n tr&ecirc;n)</li>
+	<li><strong>Bước 3</strong>: Đưa phần d&acirc;y b&ecirc;n phải (m&agrave;u v&agrave;ng) qua lỗ được tạo bởi bước 2 v&agrave; xỏ sang lỗ xỏ h&agrave;ng thứ 2 c&ograve;n lại.</li>
+	<li><strong>Bước 4</strong>: Đưa phần d&acirc;y m&agrave;u v&agrave;ng xỏ qua lỗ xỏ thứ 3 kế b&ecirc;n (xỏ từ dưới l&ecirc;n tr&ecirc;n)</li>
+	<li><strong>Bước 5</strong>: Đưa phần d&acirc;y m&agrave;u xanh xỏ qua lỗ được tạo bởi bước 4 v&agrave; xỏ sang lỗ xỏ h&agrave;ng thứ 4</li>
+	<li><strong>Bước 6</strong>: Lặp lại c&aacute;c bước với từng b&ecirc;n d&acirc;y cho đến hết th&igrave; buộc lại.</li>
+</ul>
+')
+--delete from TinTuc where MaTin=8
 
 select * from SanPham
 
