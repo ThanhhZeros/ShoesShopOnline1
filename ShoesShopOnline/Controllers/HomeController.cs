@@ -1,4 +1,5 @@
-﻿using ShoesShopOnline.Models;
+﻿using ShoesShopOnline.Areas.Admin.Data;
+using ShoesShopOnline.Models;
 using ShoesShopOnline.Session;
 using System;
 using System.Collections.Generic;
@@ -54,32 +55,39 @@ namespace ShoesShopOnline.Controllers
         [HttpGet]
         public ActionResult Login()
         {
+            TaiKhoanNguoiDung session = (TaiKhoanNguoiDung)Session[ShoesShopOnline.Session.ConstaintUser.USER_SESSION];
+            if (session != null)
+            {
+                return RedirectToAction("PageNotFound", "Error");
+            }
             return View();
         }
 
         [HttpPost]
-        public ActionResult Login(TaiKhoanNguoiDung user)
+        public ActionResult Login(LoginAccount loginAccount)
         {
-            TaiKhoanNguoiDung kh = db.TaiKhoanNguoiDungs.Where
-            (a => a.TenDangNhap.Equals(user.TenDangNhap) && a.MatKhau.Equals(user.MatKhau)).FirstOrDefault();
-            if (kh != null)
+            if (ModelState.IsValid)
             {
-                if (kh.TrangThai == false)
+                TaiKhoanNguoiDung tk = db.TaiKhoanNguoiDungs.Where
+                (a => a.TenDangNhap.Equals(loginAccount.username) && a.MatKhau.Equals(loginAccount.password)).FirstOrDefault();
+                if (tk != null)
                 {
-                    ModelState.AddModelError("ErrorLogin", "Tài khoản của bạn đã bị vô hiệu hóa !");
+                    if (tk.TrangThai == false)
+                    {
+                        ModelState.AddModelError("ErrorLogin", "Tài khoản của bạn đã bị vô hiệu hóa !");
+                    }
+                    else
+                    {
+                        Session.Add(ConstaintUser.USER_SESSION, tk);
+                        return RedirectToAction("Index", "Home");
+                    }
                 }
                 else
                 {
-                    Session.Add(ConstaintUser.USER_SESSION, kh);
-                    return RedirectToAction("Index", "Home");
+                    ModelState.AddModelError("ErrorLogin", "Tài khoản hoặc mật khẩu không đúng!");
                 }
             }
-            else
-            {
-                ModelState.AddModelError("ErrorLogin", "Tài khoản hoặc mật khẩu không đúng!");
-            }
-
-            return View(user);
+            return View(loginAccount);
         }
 
         [HttpGet]

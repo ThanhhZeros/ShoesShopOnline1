@@ -1,7 +1,8 @@
-namespace ShoesShopOnline.Models
+﻿namespace ShoesShopOnline.Models
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
@@ -10,16 +11,21 @@ namespace ShoesShopOnline.Models
     public partial class TinTuc
     {
         [Key]
+        [DisplayName("Mã tin")]
         public int MaTin { get; set; }
 
         [StringLength(100)]
+        [DisplayName("Tên tin")]
         public string TenTin { get; set; }
 
+        [DisplayName("Ngày đăng")]
         public DateTime NgayDang { get; set; }
 
+        [DisplayName("Mã tài khoản")]
         public int? MaTK { get; set; }
 
         [StringLength(4000)]
+        [DisplayName("Nội dung")]
         public string NoiDung { get; set; }
 
         public virtual TaiKhoanQuanTri TaiKhoanQuanTri { get; set; }

@@ -1,7 +1,8 @@
-namespace ShoesShopOnline.Models
+﻿namespace ShoesShopOnline.Models
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
@@ -16,24 +17,30 @@ namespace ShoesShopOnline.Models
         }
 
         [Key]
+        [DisplayName("Mã tài khoản")]
         public int MaTK { get; set; }
 
         [Required]
         [StringLength(50)]
+        [DisplayName("Tên đăng nhập")]
         public string TenDangNhap { get; set; }
 
         [Required]
         [StringLength(50)]
+        [DisplayName("Mật khẩu")]
         public string MatKhau { get; set; }
 
         [Required]
         [StringLength(50)]
+        [DisplayName("Họ tên")]
         public string HoTenUser { get; set; }
 
         [Required]
         [StringLength(50)]
+        [DisplayName("Loại tài khoản")]
         public string LoaiTK { get; set; }
 
+        [DisplayName("Trạng thái")]
         public bool TrangThai { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

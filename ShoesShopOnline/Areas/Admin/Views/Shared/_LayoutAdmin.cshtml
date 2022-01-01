@@ -1,4 +1,9 @@
-﻿<!DOCTYPE html>
+﻿@{
+    ShoesShopOnline.Models.TaiKhoanQuanTri tk =
+            (ShoesShopOnline.Models.TaiKhoanQuanTri)HttpContext.Current.Session[ShoesShopOnline.Session.ConstaintUser.ADMIN_SESSION];
+}
+
+<!DOCTYPE html>
 <html dir="ltr" lang="en">
 
 <head>
@@ -169,27 +174,21 @@
                         <!-- User profile and search -->
                         <!-- ============================================================== -->
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark pro-pic" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark pro-pic" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color:black">
                                 <img src="~/Assets/Admin/assets/images/users/4.jpg" alt="user" class="rounded-circle" width="31">
+                                @tk.HoTenUser
                             </a>
                             <ul class="dropdown-menu dropdown-menu-end user-dd animated" aria-labelledby="navbarDropdown">
-                                <
                                 <li>
-                                    <a class="dropdown-item" href="javascript:void(0)">
-                                        <i class="ti-user me-1 ms-1"></i>
-                                        My Profile
-                                    </a>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item" href="javascript:void(0)">
-                                        <i class="ti-wallet me-1 ms-1"></i>
-                                        My Balance
-                                    </a>
-                                </li>
+                                @Html.ActionLink("Thông tin tài khoản", "AdminInfor", "Profile", new { id = tk.MaTK }, new { @class = "dropdown-item" })
+
+                                
+
+</li>
+                                
                                 <li>
                                     <a class="dropdown-item" href="@Url.Action("Index","Login")">
-                                        <i class="ti-email me-1 ms-1"></i>
-                                        Logout
+                                        Đăng xuất
                                     </a>
                                 </li>
                             </ul>
@@ -278,7 +277,7 @@
         @RenderSection("Ckeditor", required: false)
         @RenderSection("scripts", false)
     </div>
-    
+
 </body>
 </html>
 
