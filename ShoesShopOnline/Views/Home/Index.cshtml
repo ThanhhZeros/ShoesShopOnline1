@@ -4,7 +4,7 @@
     Layout = "~/Views/Shared/_LayoutClient.cshtml";
 }
 
-<div class="banner">
+<div class="banner" style="margin-top:90px">
     <div class="container">
         <script src="~/Assets/Client/js/responsiveslides.min.js"></script>
         <script>
@@ -128,7 +128,7 @@
                         <div class="name">
                             <h3><a href="single.html">@item.TenSP</a></h3>
                             <div class="cost-product">
-                                <span></span><b>@item.GiaBan<u>đ</u></b>
+                                <span></span><b>@String.Format("{0:0,0}", @item.GiaBan)<u>đ</u></b>
                             </div>
                         </div>
                     </div>
@@ -158,7 +158,7 @@
                         <div class="name">
                             <h3><a href="single.html">@item.TenSP</a></h3>
                             <div class="cost-product">
-                                <span></span><b>@item.GiaBan<u>đ</u></b>
+                                <span></span><b>@String.Format("{0:0,0}", @item.GiaBan)<u>đ</u></b>
                             </div>
                         </div>
                     </div>

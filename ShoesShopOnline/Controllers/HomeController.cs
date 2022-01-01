@@ -1,4 +1,5 @@
-﻿using ShoesShopOnline.Models;
+﻿using ShoesShopOnline.Areas.Admin.Data;
+using ShoesShopOnline.Models;
 using ShoesShopOnline.Session;
 using System;
 using System.Collections.Generic;
@@ -58,10 +59,10 @@ namespace ShoesShopOnline.Controllers
         }
 
         [HttpPost]
-        public ActionResult Login(TaiKhoanNguoiDung user)
+        public ActionResult Login(LoginAccount user)
         {
             TaiKhoanNguoiDung kh = db.TaiKhoanNguoiDungs.Where
-            (a => a.TenDangNhap.Equals(user.TenDangNhap) && a.MatKhau.Equals(user.MatKhau)).FirstOrDefault();
+            (a => a.TenDangNhap.Equals(user.username) && a.MatKhau.Equals(user.password)).FirstOrDefault();
             if (kh != null)
             {
                 if (kh.TrangThai == false)
@@ -71,6 +72,7 @@ namespace ShoesShopOnline.Controllers
                 else
                 {
                     Session.Add(ConstaintUser.USER_SESSION, kh);
+                    //Session["Taikhoan"] = kh;
                     return RedirectToAction("Index", "Home");
                 }
             }
@@ -144,6 +146,19 @@ namespace ShoesShopOnline.Controllers
         {
             IEnumerable<DanhMucSP> danhmucs = db.DanhMucSPs.Select(p => p);
             return PartialView(danhmucs);
+        }
+
+        [ChildActionOnly]
+        public PartialViewResult HeaderCart()
+        {
+            var cart = Session[ConstainCart.CartSession];
+            var list = new List<CartItem>();
+
+            if (cart != null)
+            {
+                list = (List<CartItem>)cart;
+            }
+            return PartialView(list);
         }
     }
 }

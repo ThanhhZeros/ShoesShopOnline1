@@ -144,7 +144,7 @@
                         <div class="name">
                             <h3><a href="single.html">@item.TenSP</a></h3>
                             <div class="cost-product">
-                                <span><del>850.000<u>đ</u></del></span><b>@item.GiaBan<u>đ</u></b>
+                                <span><del>850.000<u>đ</u></del></span><b>@String.Format("{0:0,0}", @item.GiaBan)<u>đ</u></b>
                             </div>
                         </div>
                     </div>
@@ -159,9 +159,6 @@
            {
                page,
                madm = ViewBag.madm
-               //sortOrder = ViewBag.CurrentSort,
-               //currentFiltermin = ViewBag.CurrentFiltermin,
-               //currentFiltermax = ViewBag.CurrentFiltermax,
            }))
             </nav>
         </div>

@@ -94,7 +94,7 @@ Create table TinTuc(
 	TenTin		nvarchar(100),
 	NgayDang	datetime,
 	MaTK		int foreign key references TaiKhoanQuanTri(MaTK) on delete cascade on update cascade,
-	NoiDung		nvarchar(4000),
+	NoiDung		ntext,
 )
 
 ------
@@ -343,8 +343,8 @@ insert into TaiKhoanQuanTri(HoTenUser,TenDangNhap,MatKhau,LoaiTK,TrangThai) valu
 (N'Quách Phương Thảo', 'QuachThao','123','QuanLy','1'),
 (N'Lê Thị Thanh Mỹ', 'ThanhMy','123','QuanLy','1'),
 (N'Phạm Thị Thanh', 'PhamThanh','123','QuanLy','1'),
-(N'Vũ Ngọc Tâm', 'NgocTam','123','QuanLy','1')
-
+(N'Vũ Ngọc Tâm', 'NgocTam','123','QuanLy','1'),
+(N'Admin', 'Admin','123','Admin','1')
 --insert into LienHe(MaLienHe, )
 insert into TinTuc (TenTin,MaTK,NgayDang,NoiDung) values
 (N'7 cách bảo quản giày thể thao tốt nhất',1,'2/3/2020','This is a content'),

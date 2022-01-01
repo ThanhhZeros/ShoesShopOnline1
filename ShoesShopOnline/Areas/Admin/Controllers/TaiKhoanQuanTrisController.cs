@@ -10,7 +10,7 @@ using ShoesShopOnline.Models;
 
 namespace ShoesShopOnline.Areas.Admin.Controllers
 {
-    public class TaiKhoanQuanTrisController : Controller
+    public class TaiKhoanQuanTrisController : BaseController
     {
         private Shoes db = new Shoes();
 
