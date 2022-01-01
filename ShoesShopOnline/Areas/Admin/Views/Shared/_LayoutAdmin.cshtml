@@ -1,4 +1,8 @@
-﻿<!DOCTYPE html>
+﻿@{
+   ShoesShopOnline.Models.TaiKhoanQuanTri tk = (ShoesShopOnline.Models.TaiKhoanQuanTri)HttpContext.Current.Session[ShoesShopOnline.Session.ConstaintUser.ADMIN_SESSION];
+}
+
+<!DOCTYPE html>
 <html dir="ltr" lang="en">
 
 <head>
@@ -241,13 +245,17 @@
                                 <span class="hide-menu">Quản lý khách hàng</span>
                             </a>
                         </li>
-                        <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="@Url.Action("Index","TaiKhoanQuanTris")"
-                               aria-expanded="false">
-                                <i class="mdi mdi-arrange-bring-forward"></i>
-                                <span class="hide-menu">Quản lý tài khoản</span>
-                            </a>
-                        </li>
+                        @if (tk.LoaiTK == "Admin")
+                        {
+                            <li class="sidebar-item">
+                                <a class="sidebar-link waves-effect waves-dark sidebar-link" href="@Url.Action("Index","TaiKhoanQuanTris")"
+                                   aria-expanded="false">
+                                    <i class="mdi mdi-arrange-bring-forward"></i>
+                                    <span class="hide-menu">Quản lý tài khoản</span>
+                                </a>
+                            </li>
+                        }
+                        
                         <li class="sidebar-item">
                             <a class="sidebar-link waves-effect waves-dark sidebar-link" href="@Url.Action("Index","TinTucs")"
                                aria-expanded="false">
@@ -278,7 +286,7 @@
         @RenderSection("Ckeditor", required: false)
         @RenderSection("scripts", false)
     </div>
-    
+
 </body>
 </html>
 

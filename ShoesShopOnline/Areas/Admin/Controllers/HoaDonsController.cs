@@ -4,14 +4,13 @@ using System.Data;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
-using System.Web;
 using System.Web.Mvc;
 using PagedList;
 using ShoesShopOnline.Models;
 
 namespace ShoesShopOnline.Areas.Admin.Controllers
 {
-    public class HoaDonsController : Controller
+    public class HoaDonsController : BaseController
     {
         private Shoes db = new Shoes();
 

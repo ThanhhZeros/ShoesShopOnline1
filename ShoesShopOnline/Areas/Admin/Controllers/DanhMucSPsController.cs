@@ -12,7 +12,7 @@ using ShoesShopOnline.Models;
 
 namespace ShoesShopOnline.Areas.Admin.Controllers
 {
-    public class DanhMucSPsController : Controller
+    public class DanhMucSPsController : BaseController
     {
         private Shoes db = new Shoes();
 

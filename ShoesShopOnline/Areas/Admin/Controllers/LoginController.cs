@@ -1,10 +1,7 @@
 ﻿using ShoesShopOnline.Areas.Admin.Data;
 using ShoesShopOnline.Models;
 using ShoesShopOnline.Session;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace ShoesShopOnline.Areas.Admin.Controllers

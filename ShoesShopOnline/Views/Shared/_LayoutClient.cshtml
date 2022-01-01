@@ -43,14 +43,16 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <script src="~/Assets/Client/js/simpleCart.min.js"></script>
 
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    @*thông báo json*@
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </head>
 
 <body>
     <!--header-->
-    <div class="header">
-        <div class="header-top">
+    <div class="header" style="height:90px">
+        <div class="header-top" style="height:40px;">
             <div class="container">
-                <div class="search">
+                <div class="search" style="margin-top:0">
                     <form>
                         @Html.TextBox("SearchString")
                         <input type="submit" value="Go">
@@ -62,31 +64,18 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <li><a href="@Url.Action("SignUp","Home")">Đăng ký</a></li>
 
                     </ul>
-                    <div class="cart box_1">
-                        <a href="checkout.html">
-                            <h3>
-                                <div class="total">
-                                    <span class="simpleCart_total"></span> (<span id="simpleCart_quantity"
-                                                                                  class="simpleCart_quantity"></span> items)
-                                </div>
-                                <img src="~/Assets/Client/images/cart.png" alt="" />
-
-                            </h3>
-                        </a>
-                        <p><a href="javascript:;" class="simpleCart_empty">Empty Cart</a></p>
-
-                    </div>
+                    @{ Html.RenderAction("HeaderCart", "Home");}
                     <div class="clearfix"> </div>
                 </div>
                 <div class="clearfix"> </div>
             </div>
         </div>
-        <div class="container">
+        <div class="container" style="height:50px;">
             <div class="head-top">
                 <div class="logo">
-                    <a href="@Url.Action("Index","Home")"><img src="~/Assets/Client/images/logoxshop.PNG" alt=""></a>
+                    <a href="@Url.Action("Index","Home")"><img src="~/Assets/Client/images/logoxshop.PNG" alt="" style="height:40px"></a>
                 </div>
-                <div class=" h_menu4">
+                <div class=" h_menu4" style="margin-top:7px">
                     <ul class="memenu skyblue">
 
                         <li class="grid">
@@ -111,9 +100,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         </li>
                         <li><a class="color4" href="@Url.Action("Blog","Home")">BLOG</a></li>
                         <li><a class="color6" href="@Url.Action("Contact","Home")">CONTACT</a></li>
+                        <li><a class="color4" href="@Url.Action("Index","Home")">TRANG CHỦ</a></li>
                     </ul>
                 </div>
-
                 <div class="clearfix"> </div>
             </div>
         </div>
@@ -121,11 +110,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     </div>
 
 
-
     <!--content-->
-    @RenderBody()
-
-
+    <div style="margin-top:50px">
+        @RenderBody()
+    </div>
 
     <div class="footer">
         <div class="container">
@@ -178,6 +166,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         </div>
 
     </div>
+    @RenderSection("jsFooter", required: false)
     <script>
 
 

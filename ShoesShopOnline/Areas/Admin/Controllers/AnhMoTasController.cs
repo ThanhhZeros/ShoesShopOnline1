@@ -10,7 +10,7 @@ using ShoesShopOnline.Models;
 
 namespace ShoesShopOnline.Areas.Admin.Controllers
 {
-    public class AnhMoTasController : Controller
+    public class AnhMoTasController : BaseController
     {
         private Shoes db = new Shoes();
 
