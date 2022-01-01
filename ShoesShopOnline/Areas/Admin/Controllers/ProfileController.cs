@@ -27,7 +27,7 @@ namespace ShoesShopOnline.Areas.Admin.Controllers
         }
 
         [HttpPost]
-        public ActionResult AdminInfor([Bind(Include = "MaTK,HoTenUser,TenDangNhap,MatKhau,LoaiTK")] TaiKhoanQuanTri tk)
+        public ActionResult AdminInfor([Bind(Include = "MaTK,HoTenUser,TenDangNhap,MatKhau,LoaiTK,DiaChi,Email,SDT")] TaiKhoanQuanTri tk)
         {
             TaiKhoanQuanTri edit = db.TaiKhoanQuanTris.Where(a => a.MaTK.Equals(tk.MaTK)).FirstOrDefault();
             try
@@ -36,6 +36,9 @@ namespace ShoesShopOnline.Areas.Admin.Controllers
                 edit.TenDangNhap = tk.TenDangNhap;
                 edit.MatKhau = tk.MatKhau;
                 edit.LoaiTK = tk.LoaiTK;
+                edit.DiaChi = tk.DiaChi;
+                edit.Email = tk.Email;
+                edit.SDT = tk.SDT;
                 db.SaveChanges();
                 Session[ShoesShopOnline.Session.ConstaintUser.USER_SESSION] = edit;
             }

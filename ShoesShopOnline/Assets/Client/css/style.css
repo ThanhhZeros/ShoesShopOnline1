@@ -472,13 +472,14 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                 .grid-top img {
                     width: 100%;
                 }
-                
+
                 .grid-top .name {
                     font-size: 1.1em;
                     margin: 1.5em 0 0;
+                    height: 100px;
                     font-weight: 500;
                     line-height: 35px;
-                }
+}
                 
                 .grid-top .name h3 {
                     font-size: 14px;
@@ -495,6 +496,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                 
                 .bottom-product .name {
                     text-align: center;
+                    height:100px;
                     margin-top: 10px;
                 }
                 

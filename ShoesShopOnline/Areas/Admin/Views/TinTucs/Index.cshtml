@@ -54,7 +54,7 @@
                     <td>
                         <span class="font-weight-normal">@item.TenTin</span>
                     </td>
-                    <td><span class="font-weight-normal">@item.NgayDang</span></td>
+                    <td><span class="font-weight-normal">@item.NgayDang.ToString("dd/MM/yyyy")</span></td>
                     <td>
                         <button style="background-color: midnightblue; border-radius: 8px;width:100px">@Html.ActionLink("Xem chi tiết", "Edit", new { id = item.MaTin })</button>
                         <button style="background-color: red; border-radius: 8px;width:100px">@Html.ActionLink("Xóa", "Delete", new { id = item.MaTin })</button>

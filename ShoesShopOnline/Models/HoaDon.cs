@@ -30,20 +30,20 @@
 
         [Required]
         [StringLength(20)]
-        [DisplayName("Số điện thoại")]
+        [DisplayName("SĐT nhận")]
         public string SDTNguoiNhan { get; set; }
 
         [Required]
         [StringLength(100)]
-        [DisplayName("Địa chỉ")]
+        [DisplayName("Địa chỉ nhận")]
         public string DiaChiNhan { get; set; }
 
         [StringLength(50)]
-        [DisplayName("Email")]
+        [DisplayName("Email nhận")]
         public string EmailNguoiNhan { get; set; }
 
         [DisplayName("Ngày lập")]
-        public DateTime? NgayLap { get; set; }
+        public DateTime NgayLap { get; set; }
 
         [StringLength(50)]
         [DisplayName("Trạng thái")]

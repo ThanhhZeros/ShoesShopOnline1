@@ -24,7 +24,7 @@
         [DisplayName("Mã tài khoản")]
         public int? MaTK { get; set; }
 
-        [StringLength(4000)]
+        [Column(TypeName = "ntext")]
         [DisplayName("Nội dung")]
         public string NoiDung { get; set; }
 

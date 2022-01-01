@@ -1,5 +1,5 @@
 ﻿@{
-    ShoesShopOnline.Models.TaiKhoanNguoiDung tk =
+    ShoesShopOnline.Models.TaiKhoanNguoiDung t =
             (ShoesShopOnline.Models.TaiKhoanNguoiDung)HttpContext.Current.Session[ShoesShopOnline.Session.ConstaintUser.USER_SESSION];
 }
 
@@ -72,7 +72,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 </div>
                 <div class="header-left">
                     <ul class="navbar-nav float-end" style="display:flex;">
-                        @if (tk != null)
+                        @if (t != null)
                         {
                             @*<li><a href="/UsersInformation/UsersInf/@tk.MaTK">Xin chào, @tk.HoTen</a></li>
                             <li><a href="@Url.Action("Logout", "Home")">Thoát</a></li>*@
@@ -80,11 +80,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                 <!-- Cho nay da thay doi them click -->
                                 <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark pro-pic" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     <img src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Circle-icons-profile.svg" class="rounded-circle" alt="avt" style="width: 35px">
-                                    <span><strong style="font-size: 12px;">@tk.HoTen</strong></span>
+                                    <span><strong style="font-size: 12px;">@t.HoTen</strong></span>
                                 </a>
                                 <ul class="dropdown-menu dropdown-menu-end user-dd animated" aria-labelledby="navbarDropdown" style="background-color: #CDC0B0; font-size: 12px">
                                     <li>@Html.ActionLink("Đơn hàng của bạn", "ListBills", "Bill", null, new { @class = "dropdown-item" })</li>
-                                    <li>@Html.ActionLink("Thông tin tài khoản", "UserInfor", "AccountUser", new { id = tk.MaTK }, new { @class = "dropdown-item" })</li>
+                                    <li>@Html.ActionLink("Thông tin tài khoản", "UserInfor", "AccountUser", new { id = t.MaTK }, new { @class = "dropdown-item" })</li>
                                     <li>@Html.ActionLink("Đổi mật khẩu", "ChangePassWord", "AccountUser", null, new { @class = "dropdown-item" })</li>
                                     <li><a class="dropdown-item" href="@Url.Action("Logout","Home")">Đăng xuất</a></li>
                                 </ul>
@@ -92,7 +92,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         }
 
 
-                        @if (tk == null)
+                        @if (t == null)
                         {
                             <li><a href="@Url.Action("Login","Home")" >Đăng nhập</a></li>
                             <li><a href="@Url.Action("SignUp","Home")">Đăng ký</a></li>

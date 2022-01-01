@@ -43,6 +43,18 @@
         [DisplayName("Trạng thái")]
         public bool TrangThai { get; set; }
 
+        [StringLength(20)]
+        [DisplayName("Số điện thoại")]
+        public string SDT { get; set; }
+
+        [StringLength(500)]
+        [DisplayName("Địa chỉ")]
+        public string DiaChi { get; set; }
+
+        [StringLength(50)]
+        [DisplayName("Email")]
+        public string Email { get; set; }
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TinTuc> TinTucs { get; set; }
     }

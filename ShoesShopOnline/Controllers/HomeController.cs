@@ -55,11 +55,11 @@ namespace ShoesShopOnline.Controllers
         [HttpGet]
         public ActionResult Login()
         {
-            TaiKhoanNguoiDung session = (TaiKhoanNguoiDung)Session[ShoesShopOnline.Session.ConstaintUser.USER_SESSION];
+            /*TaiKhoanNguoiDung session = (TaiKhoanNguoiDung)Session[ShoesShopOnline.Session.ConstaintUser.USER_SESSION];
             if (session != null)
             {
                 return RedirectToAction("PageNotFound", "Error");
-            }
+            }*/
             return View();
         }
 
