@@ -3,14 +3,19 @@
 @{
     ViewBag.Title = "ProductDetail";
     Layout = "~/Views/Shared/_LayoutClient.cshtml";
+<<<<<<< HEAD
     var listAnh = ViewBag.Images;
     int maAnh = listAnh[0].MaAnh;
     int KichCo;
+=======
+    var info = System.Globalization.CultureInfo.GetCultureInfo("vi-VN");
+>>>>>>> 3ef677c70d3ebdedd570a5cebc28b220eb812637
 }
 @section jsFooter{
     <script src="~/Assets/Client/controller/cartController.js"></script>
 }
 <link href="~/Assets/Client/css/CustomButton.css" rel="stylesheet" />
+
 
 <!--content-->
 <!---->
@@ -206,15 +211,15 @@
                         }
                         <a href="@Url.Action("ProductDetail","Product", new { id = item.MaSP, maImage = item.maAnh,madm = item.MaDM })" class="b-link-stripe b-animate-go  thickbox">
                             <img class="img-responsive" src="@Url.Content(productRelatePath)" alt="">
-                            <div class="sale">
-                                <p>GIẢM 20%</p>
-                            </div>
+                            @*<div class="sale">
+                                    <p>GIẢM 20%</p>
+                                </div>*@
                         </a>
 
                         <div class="name">
-                            <h3><a href="">@item.TenSP</a></h3>
+                            <h3><a href="@Url.Action("ProductDetail","Product", new { id = item.MaSP, maImage = item.maAnh,madm = item.MaDM })">@item.TenSP</a></h3>
                             <div class="cost-product">
-                                <span><del>850.000<u>đ</u></del></span><b>@item.GiaBan<u>đ</u></b>
+                                <span></span><b>@string.Format(info, "{0:c0}", item.GiaBan)</b>
                             </div>
                         </div>
                     </div>

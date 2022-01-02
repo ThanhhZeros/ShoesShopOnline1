@@ -78,15 +78,25 @@ namespace ShoesShopOnline.Areas.Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "MaTK,TenDangNhap,MatKhau,HoTenUser,LoaiTK,TrangThai")] TaiKhoanQuanTri taiKhoanQuanTri)
+        public ActionResult Edit(int id, bool TrangThai)
         {
-            if (ModelState.IsValid)
+            try
             {
-                db.Entry(taiKhoanQuanTri).State = EntityState.Modified;
-                db.SaveChanges();
+                if (ModelState.IsValid)
+                {
+                    var taiKhoanQuanTri = db.TaiKhoanQuanTris.Find(id);
+                    taiKhoanQuanTri.TrangThai = TrangThai;
+                    db.Entry(taiKhoanQuanTri).State = EntityState.Modified;
+                    db.SaveChanges();
+
+                }
                 return RedirectToAction("Index");
             }
-            return View(taiKhoanQuanTri);
+            catch (Exception ex)
+            {
+                ViewBag.Error = "Lỗi edit dữ liệu! " + ex.Message;
+                return View();
+            }
         }
 
         // GET: Admin/TaiKhoanQuanTris/Delete/5

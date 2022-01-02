@@ -1,18 +1,33 @@
 ﻿body {
+<<<<<<< HEAD
     padding-top: 50px;
     padding-bottom: 20px;
+=======
+	padding-top: 50px;
+	padding-bottom: 20px;
+>>>>>>> 3ef677c70d3ebdedd570a5cebc28b220eb812637
 }
 
 /* Set padding to keep content from hitting the edges */
 .body-content {
+<<<<<<< HEAD
     padding-left: 15px;
     padding-right: 15px;
+=======
+	padding-left: 15px;
+	padding-right: 15px;
+>>>>>>> 3ef677c70d3ebdedd570a5cebc28b220eb812637
 }
 
 /* Set width on the form input elements since they're 100% wide by default */
 input,
 select,
 textarea {
+<<<<<<< HEAD
     max-width: 280px;
 }
 
+=======
+	max-width: 280px;
+}
+>>>>>>> 3ef677c70d3ebdedd570a5cebc28b220eb812637

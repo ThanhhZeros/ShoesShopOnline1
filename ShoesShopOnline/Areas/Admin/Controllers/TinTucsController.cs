@@ -2,10 +2,8 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
-using System.Globalization;
 using System.Linq;
 using System.Net;
-using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using ShoesShopOnline.Models;
@@ -16,12 +14,20 @@ namespace ShoesShopOnline.Areas.Admin.Controllers
     {
         private Shoes db = new Shoes();
 
-        public ActionResult Index()
+        // GET: Admin/TinTucs
+        public ActionResult Index(string searchString)
         {
-            var tinTucs = db.TinTucs.Include(t => t.TaiKhoanQuanTri);
-            return View(tinTucs.ToList());
+            //var tinTucs = db.TinTucs.Include(t => t.TaiKhoanQuanTri);
+            ViewBag.searchString = searchString;
+            var tinTucs = db.TinTucs.Select(tk => tk);
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                tinTucs = tinTucs.Where(tk => tk.TenTin.Contains(searchString));
+            }
+            return View(tinTucs.OrderBy(tk => tk.NgayDang).ToList());
         }
 
+        // GET: Admin/TinTucs/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -36,35 +42,34 @@ namespace ShoesShopOnline.Areas.Admin.Controllers
             return View(tinTuc);
         }
 
+        // GET: Admin/TinTucs/Create
         public ActionResult Create()
         {
             ViewBag.MaTK = new SelectList(db.TaiKhoanQuanTris, "MaTK", "TenDangNhap");
             return View();
         }
 
+        // POST: Admin/TinTucs/Create
+        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
+        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateInput(false)]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "MaTin,TenTin,NgayDang,MaTK,NoiDung")] TinTuc tinTuc)
         {
-            try
+            if (ModelState.IsValid)
             {
-                if (ModelState.IsValid)
-                {
-                    db.TinTucs.Add(tinTuc);
-                    db.SaveChanges();
-                }
+                tinTuc.NgayDang = DateTime.Now;
+                db.TinTucs.Add(tinTuc);
+                db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            catch(Exception ex)
-            {
-                ViewBag.Error = "Lỗi nhập dữ liệu !" + ex.Message;
-                ViewBag.MaTK = new SelectList(db.TaiKhoanQuanTris, "MaTK", "TenDangNhap", tinTuc.MaTK);
-                return View(tinTuc);
-            }
+
+            ViewBag.MaTK = new SelectList(db.TaiKhoanQuanTris, "MaTK", "TenDangNhap", tinTuc.MaTK);
+            return View(tinTuc);
         }
 
-       
+        // GET: Admin/TinTucs/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -80,49 +85,48 @@ namespace ShoesShopOnline.Areas.Admin.Controllers
             return View(tinTuc);
         }
 
-        
+        // POST: Admin/TinTucs/Edit/5
+        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
+        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateInput(false)]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "MaTin,TenTin,NgayDang,MaTK,NoiDung")] TinTuc tinTuc)
         {
-            try
+            if (ModelState.IsValid)
             {
-                if (ModelState.IsValid)
-                {
-                    //var tintuc = db.TinTucs.Where(p => p.MaTin == tinTuc.MaTin).FirstOrDefault();
-                    //tintuc.MaTK = tinTuc.MaTK;
-                    //tintuc.NgayDang = tinTuc.NgayDang;
-                    //tintuc.TenTin = tinTuc.TenTin;
-                    //tintuc.NoiDung = tinTuc.NoiDung;
-                    db.Entry(tinTuc).State = EntityState.Modified;
-                    db.SaveChanges();
-                    
-                }
+                db.Entry(tinTuc).State = EntityState.Modified;
+                db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            catch (Exception ex)
-            {
-                ViewBag.Error = "Lỗi nhập dữ liệu !" + ex.Message;
-                ViewBag.MaTK = new SelectList(db.TaiKhoanQuanTris, "MaTK", "TenDangNhap", tinTuc.MaTK);
-                return View(tinTuc);
-            }
+            ViewBag.MaTK = new SelectList(db.TaiKhoanQuanTris, "MaTK", "TenDangNhap", tinTuc.MaTK);
+            return View(tinTuc);
         }
 
-        [HttpPost]
-        public async Task<JsonResult> Delete(int id)
+        // GET: Admin/TinTucs/Delete/5
+        public ActionResult Delete(int? id)
         {
-            try
+            if (id == null)
             {
-                TinTuc tinTuc = db.TinTucs.Find(id);
-                db.TinTucs.Remove(tinTuc);
-                db.SaveChanges();
-                return Json(new { status = true });
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            catch (Exception)
+            TinTuc tinTuc = db.TinTucs.Find(id);
+            if (tinTuc == null)
             {
-                return Json(new { status = false });
+                return HttpNotFound();
             }
+            return View(tinTuc);
+        }
+
+        // POST: Admin/TinTucs/Delete/5
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteConfirmed(int id)
+        {
+            TinTuc tinTuc = db.TinTucs.Find(id);
+            db.TinTucs.Remove(tinTuc);
+            db.SaveChanges();
+            return RedirectToAction("Index");
         }
 
         protected override void Dispose(bool disposing)

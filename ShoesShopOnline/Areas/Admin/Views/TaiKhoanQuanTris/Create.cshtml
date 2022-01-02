@@ -5,14 +5,13 @@
     Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-<h2>Create</h2>
+<h2>Thêm mới</h2>
 
 @using (Html.BeginForm()) 
 {
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>TaiKhoanQuanTri</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
@@ -42,8 +41,13 @@
         <div class="form-group">
             @Html.LabelFor(model => model.LoaiTK, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.LoaiTK, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.LoaiTK, "", new { @class = "text-danger" })
+                @Html.RadioButtonFor(model => model.LoaiTK, "Admin")
+                <span>Admin</span>
+                &emsp;
+                @Html.RadioButtonFor(model => model.LoaiTK, "Quản lý")
+                <span>Quản lý</span>
+            </div>
+
             </div>
         </div>
 
@@ -59,12 +63,12 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
+                <input type="submit" value="Thêm mới" class="btn btn-default" style="background-color:darkgreen" />
             </div>
         </div>
-    </div>
+    
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Trở về", "Index")
 </div>

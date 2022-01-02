@@ -85,6 +85,15 @@ namespace ShoesShopOnline.Models
                 .IsUnicode(false);
 
             modelBuilder.Entity<TaiKhoanQuanTri>()
+                .Property(e => e.SDT)
+                .IsFixedLength()
+                .IsUnicode(false);
+
+            modelBuilder.Entity<TaiKhoanQuanTri>()
+                .Property(e => e.Email)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<TaiKhoanQuanTri>()
                 .HasMany(e => e.TinTucs)
                 .WithOptional(e => e.TaiKhoanQuanTri)
                 .WillCascadeOnDelete();

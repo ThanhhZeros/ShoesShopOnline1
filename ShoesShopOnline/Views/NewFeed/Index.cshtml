@@ -1,8 +1,10 @@
-﻿
+﻿@model ShoesShopOnline.Models.TinTuc
+
 @{
-    ViewBag.Title = "Blog";
+    ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_LayoutClient.cshtml";
 }
+
 
 <div class="blog_banner">
     <div class="blog_banner_item">
@@ -22,55 +24,37 @@
                 <div class="post-summary">
                     <h2 class="entry-title">
                         <a href="">
-                            7 cách bảo quản giày thể thao tốt nhất
+                            @Model.TenTin
                         </a>
                     </h2>
                 </div>
 
                 <div class="entry-summary">
                     <p>Để giúp cho đôi giày thể thao của bạn được sử dụng lâu bên. XSHOP đưa ra cách bảo quản giày thể thao đúng cách nhất để giữ cho đôi…</p>
-                    <a class="line-hover read-more" href=" # ">Xem chi tiết</a>
+                    <a class="line-hover read-more" href="@Url.Action("Single","NewFeed", new { ma = Model.MaTin})">Xem chi tiết</a>
                     <hr>
                 </div>
 
             </div>
+            @foreach (var item in ViewBag.news)
+            {
+                <div class="main-post--1">
 
-            <div class="main-post--1">
-
-                <img src="~/wwwroot/Images/18.png">
-                <div class="post-summary" style="margin-top: 68px;">
-                    <h2 class="entry-title" style="margin-bottom: 15px;">
-                        <a href="">
-                            Giữ “phong độ” cho Sneaker trắng ra sao
-                        </a>
-                    </h2>
-                    <div class="entry-summary">
-                        <p>Bạn đã biết cách làm sạch giày sneaker trắng thế nào cho đúng cách để vừa giữ được vẻ tinh khôi sành điệu cho đôi giày lại vừa</p>
-                        <a class="line-hover read-more" href=" # ">Xem chi tiết</a>
-                        <hr>
+                    <img src="~/wwwroot/Images/18.png">
+                    <div class="post-summary" style="margin-top: 68px;">
+                        <h2 class="entry-title" style="margin-bottom: 15px;">
+                            <a href="">
+                                @item.TenTin
+                            </a>
+                        </h2>
+                        <div class="entry-summary">
+                            @*<p>Bạn đã biết cách làm sạch giày sneaker trắng thế nào cho đúng cách để vừa giữ được vẻ tinh khôi sành điệu cho đôi giày lại vừa</p>*@
+                            <a class="line-hover read-more" href=" @Url.Action("Single","NewFeed", new { ma = item.MaTin}) ">Xem chi tiết</a>
+                            <hr>
+                        </div>
                     </div>
                 </div>
-
-
-            </div>
-            <div class="main-post--1">
-
-                <img src="~/wwwroot/Images/20.jpg">
-                <div class="post-summary" style="margin-top: 68px;">
-                    <h2 class="entry-title" style="margin-bottom: 15px;">
-                        <a href="">
-                            9 kỹ thuật làm đẹp cho chị em phụ nữ
-                        </a>
-                    </h2>
-                    <div class="entry-summary">
-                        <p>Trang điểm có thể giúp bạn biến đổi diện mạo trong tích tắc, khuôn mặt thon gọn, khuyết điểm đều được che giấu trong nháy</p>
-                        <a class="line-hover read-more" href=" # ">Xem chi tiết</a>
-                        <hr>
-                    </div>
-                </div>
-
-
-            </div>
+            }
 
         </div>
         <div class="col-md-4 ">
@@ -86,17 +70,22 @@
                 <section class="blog-new-next">
                     <h2>Bài viết mới nhất</h2>
                     <ul>
-                        <li>
-                            <a href="#">7 cách bảo quản giày thể thao tốt nhất</a>
-                        </li>
+                        @{
+                            int count = 0;
+                        }
+                        @foreach (var item in ViewBag.news)
+                        {
+                            count++;
+                            <li>
+                                <a href="@Url.Action("Single","NewFeed", new { ma = item.MaTin})">@item.TenTin</a>
+                            </li>
+                            if (count == 3)
+                            {
+                                break;
+                            }
 
-                        <li>
-                            <a href="#">Giữ “phong độ” cho Sneaker trắng ra sao</a>
-                        </li>
+                        }
 
-                        <li>
-                            <a href="#">9 kỹ thuật làm đẹp dành cho chị em phụ nữ</a>
-                        </li>
                     </ul>
                 </section>
 
@@ -118,7 +107,7 @@
                     <h2>Meta</h2>
                     <ul>
                         <li>
-                            <a href="#">Đăng nhập</a>
+                            <a href="@Url.Action("Login","Home")">Đăng nhập</a>
                         </li>
 
                         <li>
@@ -139,6 +128,5 @@
 
     </div>
     <!--//content-->
-    </div>
-
+</div>
 

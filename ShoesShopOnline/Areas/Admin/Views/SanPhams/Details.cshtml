@@ -37,6 +37,7 @@
               <span> @ViewBag.listSize </span>
          </div>
         <div>
+<<<<<<< HEAD
 
               <label for= "NgayTao" > Ngày tạo :</label>
          <span > @Model.NgayTao </span >
@@ -51,4 +52,17 @@
     <a class="btn ThemMoi" style="margin-right:20px" href="~/Admin/SanPhams/Edit/@Model.MaSP">Sửa sản phẩm</a>
     <a class="btn ThemMoi" href="~/Admin/SanPhams/Index">Trở về</a>
 </p>
+=======
+            <label for="NgaySua">Ngày sửa :</label>
+            <span>@Model.NgaySua</span>
+        </div>
+    </div>
+    <p>
+        @*@Html.ActionLink("Sửa sản phẩm", "Edit", new { id = Model.MaSP }) |
+        @Html.ActionLink("Trở về", "Index")*@
+        <hr />
+        <a class="btn ThemMoi" style="margin-right:20px" href="~/Admin/SanPhams/Edit/@Model.MaSP">Sửa sản phẩm</a>
+        <a class="btn ThemMoi" href="~/Admin/SanPhams/Index">Trở về</a>
+    </p>
+>>>>>>> 3ef677c70d3ebdedd570a5cebc28b220eb812637
 

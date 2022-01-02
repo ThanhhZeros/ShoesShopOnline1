@@ -17,21 +17,21 @@ namespace ShoesShopOnline.Areas.Admin.Controllers
     {
         private Shoes db = new Shoes();
 
-        public ActionResult Index(string sortOrder, string searchString, string currentFilter, int ?page)
+        public ActionResult Index(string sortOrder, string searchString, string currentFilter, int? page)
         {
             var result = db.SanPhams.Join(db.AnhMoTas, p => p.MaSP, a => a.MaSP, (p, a) => new ProductDetail
             {
-                MaSP=p.MaSP,
+                MaSP = p.MaSP,
                 TenSP = p.TenSP,
                 MaDM = p.DanhMucSP.TenDanhMuc,
                 Anh = a.HinhAnh,
                 MoTa = p.MoTa,
                 GiaBan = p.GiaBan,
-                NgaySua=p.NgaySua,
+                NgaySua = p.NgaySua,
 
             }).ToList();
             var productDetails = new List<ProductDetail>();
-            foreach(var item in result)
+            foreach (var item in result)
             {
                 int dem = 0;
                 foreach (var t in productDetails)
@@ -39,11 +39,11 @@ namespace ShoesShopOnline.Areas.Admin.Controllers
                     if (item.TenSP.Equals(t.TenSP))
                         dem++;
                 }
-                if(dem==0)
-                    productDetails.Add(item);               
+                if (dem == 0)
+                    productDetails.Add(item);
             }
             ViewBag.CurrentSort = sortOrder;
-            ViewBag.SapTheoTen= String.IsNullOrEmpty(sortOrder) ? "ten_desc" : "";
+            ViewBag.SapTheoTen = String.IsNullOrEmpty(sortOrder) ? "ten_desc" : "";
             ViewBag.SapTheoGia = sortOrder == "gia" ? "gia_desc" : "gia";
             if (searchString != null)
             {
@@ -75,7 +75,7 @@ namespace ShoesShopOnline.Areas.Admin.Controllers
             }
             int pageSize = 4;
             int pageNumber = (page ?? 1);
-            return View(productDetails.ToPagedList(pageNumber,pageSize));
+            return View(productDetails.ToPagedList(pageNumber, pageSize));
         }
 
         public ActionResult Details(string id)
@@ -93,19 +93,19 @@ namespace ShoesShopOnline.Areas.Admin.Controllers
                     return HttpNotFound();
                 }
                 var images = db.AnhMoTas.Where(p => p.MaSP == id).ToList();
-                var maAnh=0;
+                var maAnh = 0;
                 string filePath = "";
                 if (images != null)
                 {
-                    foreach (var item in images )
+                    foreach (var item in images)
                     {
-                        filePath += item.HinhAnh+";";
+                        filePath += item.HinhAnh + ";";
                         maAnh = item.MaAnh;
-                    }    
+                    }
                 }
                 filePath = filePath.Substring(0, filePath.Length - 1);
                 ViewBag.filePath = filePath;
-                var sizes = db.ChiTietSanPhams.Where(p => p.MaAnh== maAnh).ToList();
+                var sizes = db.ChiTietSanPhams.Where(p => p.MaAnh == maAnh).ToList();
                 string listSize = "";
                 if (sizes != null)
                 {
@@ -118,12 +118,12 @@ namespace ShoesShopOnline.Areas.Admin.Controllers
                 ViewBag.listSize = listSize;
                 return View(sanPham);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 ViewBag.Error = "Lỗi !" + ex.Message;
                 return View();
             }
-            
+
         }
 
         public ActionResult Create()
@@ -214,7 +214,7 @@ namespace ShoesShopOnline.Areas.Admin.Controllers
             {
                 return HttpNotFound();
             }
-            int maAnh=0;
+            int maAnh = 0;
             var images = db.AnhMoTas.Where(p => p.MaSP == id).ToList();
             string filePath = "";
             if (images != null)
@@ -248,8 +248,8 @@ namespace ShoesShopOnline.Areas.Admin.Controllers
                 Size = listSize,
                 MoTa = sanPham.MoTa,
                 MaDM = sanPham.MaDM,
-                NgayTao=sanPham.NgayTao,
-                NgaySua=sanPham.NgaySua,
+                NgayTao = sanPham.NgayTao,
+                NgaySua = sanPham.NgaySua,
                 DanhMucSP = sanPham.DanhMucSP
             };
             return View(productDetail);
@@ -270,7 +270,7 @@ namespace ShoesShopOnline.Areas.Admin.Controllers
                 }
                 if (ModelState.IsValid)
                 {
-                    var sanPham=db.SanPhams.Where(p => p.MaSP == id).FirstOrDefault();
+                    var sanPham = db.SanPhams.Where(p => p.MaSP == id).FirstOrDefault();
                     sanPham.TenSP = productDetail.TenSP;
                     sanPham.MoTa = productDetail.MoTa;
                     sanPham.GiaBan = productDetail.GiaBan;
@@ -322,7 +322,11 @@ namespace ShoesShopOnline.Areas.Admin.Controllers
                             db.SaveChanges();
                         }
                     }
+<<<<<<< HEAD
                     
+=======
+
+>>>>>>> 3ef677c70d3ebdedd570a5cebc28b220eb812637
                     //Lưu thêm ảnh mới
                     if (uploadFile != null)
                     {
@@ -352,7 +356,7 @@ namespace ShoesShopOnline.Areas.Admin.Controllers
                             }
                         }
                     }
-                    
+
                 }
                 return RedirectToAction("Index");
             }
@@ -365,7 +369,11 @@ namespace ShoesShopOnline.Areas.Admin.Controllers
             }
         }
 
+<<<<<<< HEAD
         
+=======
+
+>>>>>>> 3ef677c70d3ebdedd570a5cebc28b220eb812637
         [HttpPost]
         public async Task<JsonResult> Delete(string id)
         {

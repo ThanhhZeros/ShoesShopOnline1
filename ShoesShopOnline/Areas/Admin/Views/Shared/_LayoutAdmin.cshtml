@@ -1,5 +1,10 @@
 ﻿@{
+<<<<<<< HEAD
    ShoesShopOnline.Models.TaiKhoanQuanTri tk = (ShoesShopOnline.Models.TaiKhoanQuanTri)HttpContext.Current.Session[ShoesShopOnline.Session.ConstaintUser.ADMIN_SESSION];
+=======
+    ShoesShopOnline.Models.TaiKhoanQuanTri tk =
+            (ShoesShopOnline.Models.TaiKhoanQuanTri)HttpContext.Current.Session[ShoesShopOnline.Session.ConstaintUser.ADMIN_SESSION];
+>>>>>>> 3ef677c70d3ebdedd570a5cebc28b220eb812637
 }
 
 <!DOCTYPE html>
@@ -173,27 +178,21 @@
                         <!-- User profile and search -->
                         <!-- ============================================================== -->
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark pro-pic" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark pro-pic" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style=" color: #6C757D !IMPORTANT;">
                                 <img src="~/Assets/Admin/assets/images/users/4.jpg" alt="user" class="rounded-circle" width="31">
+                               @tk.HoTenUser
                             </a>
                             <ul class="dropdown-menu dropdown-menu-end user-dd animated" aria-labelledby="navbarDropdown">
-                                <
                                 <li>
-                                    <a class="dropdown-item" href="javascript:void(0)">
-                                        <i class="ti-user me-1 ms-1"></i>
-                                        My Profile
-                                    </a>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item" href="javascript:void(0)">
-                                        <i class="ti-wallet me-1 ms-1"></i>
-                                        My Balance
-                                    </a>
-                                </li>
+                                @Html.ActionLink("Thông tin tài khoản", "AdminInfor", "Profile", new { id = tk.MaTK }, new { @class = "dropdown-item" })
+
+                                
+
+</li>
+                                
                                 <li>
                                     <a class="dropdown-item" href="@Url.Action("Index","Login")">
-                                        <i class="ti-email me-1 ms-1"></i>
-                                        Logout
+                                        Đăng xuất
                                     </a>
                                 </li>
                             </ul>
@@ -216,6 +215,7 @@
             <div class="scroll-sidebar">
                 <!-- Sidebar navigation-->
                 <nav class="sidebar-nav">
+                    
                     <ul id="sidebarnav">
                         <li class="sidebar-item">
                             <a class="sidebar-link waves-effect waves-dark sidebar-link" href="@Url.Action("Index","DanhMucSPs")"
@@ -255,7 +255,11 @@
                                 </a>
                             </li>
                         }
+<<<<<<< HEAD
                         
+=======
+
+>>>>>>> 3ef677c70d3ebdedd570a5cebc28b220eb812637
                         <li class="sidebar-item">
                             <a class="sidebar-link waves-effect waves-dark sidebar-link" href="@Url.Action("Index","TinTucs")"
                                aria-expanded="false">
@@ -264,6 +268,8 @@
                             </a>
                         </li>
                     </ul>
+                    
+
                 </nav>
                 <!-- End Sidebar navigation -->
             </div>

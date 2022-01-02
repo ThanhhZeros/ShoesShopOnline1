@@ -12,7 +12,11 @@
             var count = parseInt(total);
             $.ajax({
                 url: '/Cart/AddCart',
+<<<<<<< HEAD
                 data: { MaSP: $(this).data('id'), KichCo:$('#kichco').val() },
+=======
+                data: { MaSP: $(this).data('id'), KichCo: $('#kichco').val() },
+>>>>>>> 3ef677c70d3ebdedd570a5cebc28b220eb812637
                 dataType: 'json',
                 type: 'POST',
                 success: function (response) {
@@ -35,7 +39,11 @@
                             timer: 1500,
                             button: false
                         });
+<<<<<<< HEAD
                         count = count+1
+=======
+                        count = count + 1
+>>>>>>> 3ef677c70d3ebdedd570a5cebc28b220eb812637
                         $("#cartcount").html(count);
                     }
                 },
@@ -124,7 +132,11 @@
                                     $("#cartcount").html(sum);
                                 }
                             },
+<<<<<<< HEAD
                             error: function (res) { 
+=======
+                            error: function (res) {
+>>>>>>> 3ef677c70d3ebdedd570a5cebc28b220eb812637
                                 console.log(xhr.resText);
                                 alert("Error has occurred..");
                             }

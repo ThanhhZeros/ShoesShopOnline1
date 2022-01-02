@@ -49,9 +49,9 @@ namespace ShoesShopOnline.Areas.Admin.Controllers
                 if (ModelState.IsValid)
                 {
                     //Tạo mã danh mục
-                    string madm="";
+                    string madm = "";
                     var list = db.DanhMucSPs.ToList();
-                    var danhmuc=list.LastOrDefault();
+                    var danhmuc = list.LastOrDefault();
                     if (danhmuc == null)
                     {
                         madm = "DM01";
@@ -69,7 +69,7 @@ namespace ShoesShopOnline.Areas.Admin.Controllers
 
                 return View(danhMucSP);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 ViewBag.Error = "Lỗi nhập dữ liệu !" + ex.Message;
                 return View(danhMucSP);

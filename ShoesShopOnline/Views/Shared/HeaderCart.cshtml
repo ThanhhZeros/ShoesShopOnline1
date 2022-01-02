@@ -1,10 +1,19 @@
 ﻿@model List<ShoesShopOnline.Models.CartItem>
+<<<<<<< HEAD
     @{ 
         var sumItem = 0;
         foreach( var item in Model)
         {
             sumItem += item.SoLuong;
         }
+=======
+@{
+    var sumItem = 0;
+    foreach (var item in Model)
+    {
+        sumItem += item.SoLuong;
+    }
+>>>>>>> 3ef677c70d3ebdedd570a5cebc28b220eb812637
 
 
 }
@@ -12,6 +21,7 @@
     <a href="/gio-hang">
         <h3>
             <img src="~/Assets/Client/images/cart.png" alt="" />
+<<<<<<< HEAD
            
             <span>
                 <sup id="cartcount" count="@sumItem" style="background:red; padding:6px 8px; border-radius:20px">@sumItem</sup>
@@ -20,3 +30,13 @@
         </h3>
     </a>
 </div>
+=======
+
+            <span>
+                <sup id="cartcount" count="@sumItem" style="background:red; padding:6px 9px; border-radius:50%">@sumItem</sup>
+            </span>
+
+        </h3>
+    </a>
+</div>
+>>>>>>> 3ef677c70d3ebdedd570a5cebc28b220eb812637

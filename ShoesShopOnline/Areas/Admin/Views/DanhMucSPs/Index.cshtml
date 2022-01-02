@@ -7,9 +7,19 @@
 @section script{
     <script src="~/Areas/Admin/Assets/JS/DanhMuc.js"></script>
 }
+<head>
+    <style>
+        a {
+            color: white;
+        }
+
+            a:hover {
+                color: yellow;
+            }
+    </style>
+</head>
 <p>
-    @*@Html.ActionLink("Thêm danh mục", "Create")*@
-    <a class="btn ThemMoi" href="~/Admin/DanhMucSPs/Create">Thêm danh mục</a>
+    <button style="background-color: black; border-radius: 8px;width:100px">@Html.ActionLink("Thêm mới", "Create")</button>
 </p>
 <table class="table">
     <tr>
@@ -25,12 +35,13 @@
             <td>
                 @Html.DisplayFor(modelItem => item.TenDanhMuc)
             </td>
-            <td style="float:right">
+            <td>
                 @*@Html.ActionLink("Xóa", "Delete", new { id = item.MaDM })*@
                 @*<button type="button" class="btn btn-primary" onclick="deletedata(@item.MaDM)">
-                        open modal
-                    </button>*@
-                <button class="btn btnDelete ThemMoi Crud" dataname="@item.MaDM">Xóa</button>
+            open modal
+        </button>*@
+                <button class="btn btnDelete ThemMoi Crud"style="background-color: red; border-radius: 8px;width:100px" dataname="@item.MaDM">Xóa</button>
+
             </td>
         </tr>
     }
