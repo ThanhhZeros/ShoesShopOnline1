@@ -2186,6 +2186,7 @@
     <Compile Include="Controllers\AccountUserController.cs" />
     <Compile Include="Controllers\CartController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\NewFeedController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -2528,6 +2529,9 @@
     <Content Include="Views\Shared\HeaderCart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Home\SearchBox.cshtml" />
+    <Content Include="Views\NewFeed\Index.cshtml" />
+    <Content Include="Views\NewFeed\Single.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -15,42 +15,75 @@ namespace ShoesShopOnline.Controllers
         // GET: About
         public ActionResult Index()
         {
-            //ViewBag.searchString = searchString;
-            var sanphams = from s in db.SanPhams select new ProductDetail { };
-            sanphams = from p in db.SanPhams
-                       join a in db.AnhMoTas on p.MaSP equals a.MaSP
-                       orderby p.NgayTao
-                       select new ProductDetail()
-                       {
-                           MaDM = p.MaDM,
-                           MaSP = p.MaSP,
-                           TenSP = p.TenSP,
-                           GiaBan = p.GiaBan,
-                           maAnh = a.MaAnh,
-                           Anh = a.HinhAnh,
-                           MoTa = p.MoTa
-                       };
-            var products = new List<ProductDetail>();
-            foreach (ProductDetail item in sanphams)
-            {
-                int dem = 0;
-                foreach (var t in products)
-                {
-                    if (item.MaSP.Equals(t.MaSP))
-                        dem++;
-                }
-                if (dem == 0 && products.Count() < 8)
-                {
-                    products.Add(item);
-                }
-            }
-            /*var topBanChay = (from s in db.SanPhams
-                              join a in db.AnhMoTas on s.MaSP equals a.MaSP
-                              join dh in db.ChiTietHoaDons on a.MaAnh equals dh.MaAnh
-                              group s by s.MaSP into g
-                              select g).ToList();*/
+            ICollection<ProductDetail> sanphamnew = (from s in db.SanPhams select new ProductDetail { }).ToList();
+            sanphamnew = (from p in db.SanPhams
+                          join a in db.AnhMoTas on p.MaSP equals a.MaSP
+                          orderby p.NgayTao descending
+                          select new ProductDetail()
+                          {
+                              MaDM = p.MaDM,
+                              MaSP = p.MaSP,
+                              TenSP = p.TenSP,
+                              GiaBan = p.GiaBan,
+                              maAnh = a.MaAnh,
+                              Anh = a.HinhAnh,
+                              MoTa = p.MoTa
+                          }).ToList();
+            //get products hot
+            ICollection<ProductDetail> sanphamhot = (from hot in db.ChiTietHoaDons
+                                                     join chsp in db.ChiTietSanPhams on hot.MaAnh equals chsp.MaAnh
+                                                     join a in db.AnhMoTas on chsp.MaAnh equals a.MaAnh
+                                                     join p in db.SanPhams on a.MaSP equals p.MaSP
+                                                     select new
+                                                     {
+                                                         hot,
+                                                         chsp,
+                                                         a,
+                                                         p
+                                                     } into t1
+                                                     group t1 by t1.hot.MaAnh into hotsp
+                                                     orderby hotsp.Count()
+                                                     select new ProductDetail
+                                                     {
+                                                         MaDM = hotsp.FirstOrDefault().p.MaDM,
+                                                         MaSP = hotsp.FirstOrDefault().p.MaSP,
+                                                         TenSP = hotsp.FirstOrDefault().p.TenSP,
+                                                         GiaBan = hotsp.FirstOrDefault().p.GiaBan,
+                                                         maAnh = hotsp.FirstOrDefault().chsp.MaAnh,
+                                                         Anh = hotsp.FirstOrDefault().a.HinhAnh,
+                                                         MoTa = hotsp.FirstOrDefault().p.MoTa
+                                                     }).Take(8).ToList();
+            ICollection<ProductDetail> products = new List<ProductDetail>();
+            products = Filter(sanphamnew, 8);
+            //Get newFeed
+            ICollection<TinTuc> newfeed = (from tt in db.TinTucs orderby tt.NgayDang descending select tt).Take(3).ToList();
+            ViewBag.ListNewFeed = newfeed;
+            //ICollection<ProductDetail> Producthot = Filter(sanphamhot,8);
+            ViewBag.ListHot = sanphamhot;
             return View(products.ToList());
 
+        }
+        private ICollection<ProductDetail> Filter(ICollection<ProductDetail> products, int count)
+        {
+            List<ProductDetail> list = new List<ProductDetail>();
+            foreach (var item in products)
+            {
+                int dem = 0;
+                foreach (var t in list)
+                {
+                    if (item.MaSP == t.MaSP)
+                        dem++;
+                }
+                if (dem == 0 && list.Count() < count)
+                    list.Add(item);
+            }
+            return list;
+        }
+        [ChildActionOnly]
+        public ActionResult SearchBox()
+        {
+
+            return PartialView();
         }
         [HttpGet]
         public ActionResult Login()

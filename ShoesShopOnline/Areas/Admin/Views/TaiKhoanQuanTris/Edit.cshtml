@@ -97,10 +97,21 @@
                             <div>
                                 <label for="size">Trạng thái</label>
                                 <div class="col-md-12">
-                                    <div class="checkbox">
-                                        @Html.EditorFor(model => model.TrangThai)
+                                    @if (Model.LoaiTK == "Admin")
+                                    {
+                                        @Html.DisplayFor(model => model.TrangThai)
                                         @Html.ValidationMessageFor(model => model.TrangThai, "", new { @class = "text-danger" })
-                                    </div>
+                                    }
+
+
+                                    @if (Model.LoaiTK != "Admin")
+                                    {
+                                        <div class="checkbox">
+                                            @Html.EditorFor(model => model.TrangThai)
+                                            @Html.ValidationMessageFor(model => model.TrangThai, "", new { @class = "text-danger" })
+                                        </div>
+                                    }
+
                                 </div>
                             </div>
                         </div>

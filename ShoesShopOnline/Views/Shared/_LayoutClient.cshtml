@@ -53,18 +53,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <div class="header">
         <div class="header-top">
             <div class="container">
-                <div class="search" style="margin-top:9px">
-                    <form>
-                        @Html.TextBox("SearchString")
-                        <input type="submit" value="Go">
-                    </form>
-                </div>
+                @{Html.RenderAction("SearchBox", "Home"); }
                 <div class="header-left">
                     <ul class="navbar-nav float-end" style="display:flex;">
                         @if (tk != null)
                         {
                             @*<li><a href="/UsersInformation/UsersInf/@tk.MaTK">Xin chào, @tk.HoTen</a></li>
-                <li><a href="@Url.Action("Logout", "Home")">Thoát</a></li>*@
+                    <li><a href="@Url.Action("Logout", "Home")">Thoát</a></li>*@
                             <li class="nav-item dropdown">
                                 <!-- Cho nay da thay doi them click -->
                                 <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark pro-pic" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -86,9 +81,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             <li><a href="@Url.Action("Login","Home")">Đăng nhập</a></li>
                             <li><a href="@Url.Action("SignUp","Home")">Đăng ký</a></li>
                         }
-                        </ul>
-                        @{ Html.RenderAction("HeaderCart", "Home");}
-                        <div class="clearfix"> </div>
+                    </ul>
+                    @{ Html.RenderAction("HeaderCart", "Home");}
+                    <div class="clearfix"> </div>
                 </div>
                 <div class="clearfix"> </div>
             </div>
@@ -118,7 +113,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             </div>
                         </li>
                         <!---->
-                        <li><a class="color4" href="@Url.Action("Blog","Home")">BLOG</a></li>
+                        <li><a class="color4" href="@Url.Action("Index","NewFeed")">BLOG</a></li>
                         <li><a class="color6" href="@Url.Action("Contact","Home")">CONTACT</a></li>
                     </ul>
                 </div>

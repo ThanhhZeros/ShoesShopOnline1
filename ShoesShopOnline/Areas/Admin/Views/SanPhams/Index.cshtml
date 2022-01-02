@@ -5,34 +5,46 @@
     Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
 }
 @*<style>
-    .ThemMoi {
-        background-color: white;
-        border: 2px solid midnightblue;
-        color: midnightblue;
-        padding:5px;
-        border-radius:3px;
-    }
-    .ThemMoi:hover {
-        background-color:  midnightblue;
-        color:white;
-    }
-    .Crud {
-        border: none;
-        padding: 10px;
-    }
-</style>*@
+        .ThemMoi {
+            background-color: white;
+            border: 2px solid midnightblue;
+            color: midnightblue;
+            padding:5px;
+            border-radius:3px;
+        }
+        .ThemMoi:hover {
+            background-color:  midnightblue;
+            color:white;
+        }
+        .Crud {
+            border: none;
+            padding: 10px;
+        }
+    </style>*@
 @section script{
     <script src="~/Areas/Admin/Assets/JS/SanPham.js"></script>
 }
+<head>
+    <style>
+        a {
+            color: white;
+        }
+
+            a:hover {
+                color: yellow;
+            }
+    </style>
+</head>
+<h2>Danh sách sản phẩm</h2>
 @using (Html.BeginForm())
 {
     <p>
         @*@Html.ActionLink("Create New", "Create")*@
-        <a class="btn ThemMoi" href="~/Admin/SanPhams/Create">Thêm sản phẩm</a>
-        <div style="float:right">
-            Tìm sản phẩm: @Html.TextBox("SearchString", ViewBag.CurrentFilter as string)
-            <input class="ThemMoi" type="submit" value="Tìm" />
-        </div>
+        <button style="background-color: black; border-radius: 8px;width:100px">@Html.ActionLink("Thêm mới", "Create")</button>
+    <div style="float:right">
+        Tìm sản phẩm: @Html.TextBox("SearchString", ViewBag.CurrentFilter as string)
+        <input class="ThemMoi" type="submit" value="Tìm" />
+    </div>
     </p>
 }
 <table class="table">
@@ -84,6 +96,7 @@
                 <a class=" btnDelete ThemMoi Crud" dataname="@item.MaSP">Xóa</a>
                 @*<button class="btn btn-primary btnDelete" dataname="@item.MaSP">Xóa</button>*@
             </td>
+            
         </tr>
     }
 

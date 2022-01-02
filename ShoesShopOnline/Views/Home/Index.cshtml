@@ -2,9 +2,10 @@
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_LayoutClient.cshtml";
+    var info = System.Globalization.CultureInfo.GetCultureInfo("vi-VN");
 }
 
-<div class="banner" style="margin-top:90px">
+<div class="banner">
     <div class="container">
         <script src="~/Assets/Client/js/responsiveslides.min.js"></script>
         <script>
@@ -76,6 +77,7 @@
                 <div class="item1-content">
                     <h5>GIAO HÀNG TOÀN QUỐC</h5>
                     <p>Vận chuyển khắp Việt Nam</p>
+
                 </div>
             </div>
 
@@ -120,15 +122,15 @@
                             }
                             <img class="img-responsive"
                                  src="@Url.Content(filePath)" alt="">
-                            <div class="sale">
-                                <p>GIẢM 20%</p>
-                            </div>
+                            @*<div class="sale">
+                                    <p>GIẢM 20%</p>
+                                </div>*@
                         </a>
 
                         <div class="name">
-                            <h3><a href="single.html">@item.TenSP</a></h3>
+                            <h3><a href="@Url.Action("ProductDetail","Product", new { id = item.MaSP, maImage = item.maAnh,madm = item.MaDM })">@item.TenSP</a></h3>
                             <div class="cost-product">
-                                <span></span><b>@String.Format("{0:0,0}", @item.GiaBan)<u>đ</u></b>
+                                <span></span><b>@string.Format(info, "{0:c0}", item.GiaBan)</b>
                             </div>
                         </div>
                     </div>
@@ -141,7 +143,7 @@
         <div class="content-top">
             <h2>TOP SẢN PHẨM BÁN CHẠY</h2>
             <div class="grid-in">
-                @foreach (var item in Model)
+                @foreach (var item in ViewBag.ListHot)
                 {
                     <div class="col-md-3 grid-top" data-aos="zoom-in">
                         <a href="@Url.Action("ProductDetail","Product", new { id = item.MaSP, maImage = item.maAnh,madm = item.MaDM })" class="b-link-stripe b-animate-go  thickbox">
@@ -150,15 +152,15 @@
                             }
                             <img class="img-responsive"
                                  src="@Url.Content(filePath)" alt="">
-                            <div class="sale">
-                                <p>GIẢM 20%</p>
-                            </div>
+                            @*<div class="sale">
+                                    <p>GIẢM 20%</p>
+                                </div>*@
                         </a>
 
                         <div class="name">
-                            <h3><a href="single.html">@item.TenSP</a></h3>
+                            <h3><a href="@Url.Action("ProductDetail","Product", new { id = item.MaSP, maImage = item.maAnh,madm = item.MaDM })">@item.TenSP</a></h3>
                             <div class="cost-product">
-                                <span></span><b>@String.Format("{0:0,0}", @item.GiaBan)<u>đ</u></b>
+                                <span></span><b>@string.Format(info, "{0:c0}", item.GiaBan)</b>
                             </div>
                         </div>
                     </div>
@@ -196,62 +198,28 @@
             <div class="content-top">
                 <h1>TIN TỨC MỚI NHẤT</h1>
                 <div class="grid-in">
-                    <div class="col-md-4 grid-top" data-aos="flip-up" data-aos-delay="100">
-                        <div class="col-md-4a">
-                            <a href="single.html" class="b-link-stripe b-animate-go thickbox">
-                                <img class="img-responsive" src="~/Assets/Client/images/17.jpg" alt="">
-                                <div class="infor-fashion">
-                                    <p>TIN TỨC THỜI TRANG</p>
-                                </div>
-                            </a>
+                    @foreach (var item in ViewBag.ListNewFeed)
+                    {
+                        <div class="col-md-4 grid-top" data-aos="flip-up" data-aos-delay="100">
+                            <div class="col-md-4a">
+                                <a href="@Url.Action("Single","NewFeed", new { ma = item.MaTin})" class="b-link-stripe b-animate-go thickbox">
+                                    <img class="img-responsive" src="~/Assets/Client/images/17.jpg" alt="">
+                                    @*<div class="infor-fashion">
+                                            <p>TIN TỨC THỜI TRANG</p>
+                                        </div>*@
+                                </a>
 
-                            <div class="name1">
-                                <h3><a href="">7 cách bảo quản giày thể thao tốt nhất</a></h3>
-                                <div class="see-detail">
-                                    <p>Xem chi tiết<span><i class="far fa-arrow-alt-circle-right"></i></span></p>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <div class="col-md-4 grid-top" data-aos="flip-up" data-aos-delay="200">
-                        <div class="col-md-4a">
-                            <a href="single.html" class="b-link-stripe b-animate-go  thickbox">
-                                <img class="img-responsive" src="~/Assets/Client/images/h1.jpg" alt="">
-                                <div class="infor-fashion">
-                                    <p>MẸO SHOPPING</p>
-                                </div>
-
-                            </a>
-                            <div class="name1">
-                                <h3><a href="">Giữ "phong độ" cho sneaker trắng ra sao</a></h3>
-                                <div class="see-detail">
-                                    <p>Xem chi tiết<span><i class="far fa-arrow-alt-circle-right"></i></span></p>
+                                <div class="name1">
+                                    <h3><a href="@Url.Action("Single","NewFeed", new { ma = item.MaTin})">@item.TenTin</a></h3>
+                                    <div class="see-detail">
+                                        <p>Xem chi tiết<span><i class="far fa-arrow-alt-circle-right"></i></span></p>
+                                    </div>
                                 </div>
                             </div>
+
                         </div>
+                    }
 
-                    </div>
-
-
-                    <div class="col-md-4 grid-top" data-aos="flip-up" data-aos-delay="300">
-                        <div class="col-md-4a">
-                            <a href="single.html" class="b-link-stripe b-animate-go  thickbox">
-                                <img class="img-responsive" src="~/Assets/Client/images/20.jpg" alt="">
-                                <div class="infor-fashion">
-                                    <p>MẸO SHOPPING</p>
-                                </div>
-                            </a>
-                            <div class="name1">
-                                <h3><a href="">9 kỹ thuật làm đẹp cho chị em phụ nữ</a></h3>
-                                <div class="see-detail">
-                                    <p>Xem chi tiết<span><i class="far fa-arrow-alt-circle-right"></i></span></p>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
                     <div class="clearfix"> </div>
                 </div>
 
@@ -267,6 +235,4 @@
 
 
 </div>
-
-
 
