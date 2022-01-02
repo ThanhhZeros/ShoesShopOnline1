@@ -12,30 +12,12 @@ namespace ShoesShopOnline.Controllers
     {
         Shoes db = new Shoes();
         // GET: Product
-        public ActionResult Index(string madm, int? page)
+        [HttpGet]
+        public ActionResult Index(string searchString, string searchPrice, string madm, int? page)
         {
-            //ViewBag.searchString = searchString;
-            var sanphams = from s in db.SanPhams select new ProductDetail { };
-            /*if (!String.IsNullOrEmpty(searchString))
-            {
-                sanphams = (from p in db.SanPhams
-                            join a in db.AnhMoTas on p.MaSP equals a.MaSP
-                            where p.TenSP.Contains(searchString)
-                            select new ProductDetail()
-                            {
-                                MaDM = p.MaDM,
-                                MaSP = p.MaSP,
-                                TenSP = p.TenSP,
-                                GiaBan = p.GiaBan,
-                                maAnh = a.MaAnh,
-                                Anh = a.HinhAnh,
-                                MoTa = p.MoTa
-                            });
-            }*/
-                ViewBag.madm = madm;
-                var danhmuc = (from ten in db.DanhMucSPs where ten.MaDM.Equals(madm) select ten).FirstOrDefault();
-                ViewBag.tendm = danhmuc.TenDanhMuc;
-                sanphams = (from p in db.SanPhams
+            
+            ViewBag.searchString = searchString;
+            var sanphams = (from p in db.SanPhams
                             join a in db.AnhMoTas on p.MaSP equals a.MaSP
                             where p.MaDM == madm
                             select new ProductDetail()
@@ -48,8 +30,67 @@ namespace ShoesShopOnline.Controllers
                                 Anh = a.HinhAnh,
                                 MoTa = p.MoTa
                             });
-            //var sanphams = db.SanPhams.Select(p => p);
-
+            ViewBag.madm = madm;
+            var danhmuc = (from ten in db.DanhMucSPs where ten.MaDM.Equals(madm) select ten).FirstOrDefault();
+            try
+            {
+                
+                if (!String.IsNullOrEmpty(searchString) && !String.IsNullOrEmpty(searchPrice))
+                {
+                    decimal Gia = Convert.ToDecimal(searchPrice);
+                    sanphams = (from p in db.SanPhams
+                                join a in db.AnhMoTas on p.MaSP equals a.MaSP
+                                where p.TenSP.Contains(searchString) && p.GiaBan <= Gia
+                                select new ProductDetail()
+                                {
+                                    MaDM =  p.MaDM,
+                                    MaSP =  p.MaSP,
+                                    TenSP =  p.TenSP,
+                                    GiaBan =  p.GiaBan,
+                                    maAnh =  a.MaAnh,
+                                    Anh =  a.HinhAnh,
+                                    MoTa =  p.MoTa
+                                });
+                }
+                else if (!String.IsNullOrEmpty(searchString))
+                {
+                    //decimal Gia = Convert.ToDecimal(searchPrice);
+                    sanphams = (from p in db.SanPhams
+                                join a in db.AnhMoTas on p.MaSP equals a.MaSP
+                                where p.TenSP.Contains(searchString)
+                                select new ProductDetail()
+                                {
+                                    MaDM = p.MaDM,
+                                    MaSP = p.MaSP,
+                                    TenSP = p.TenSP,
+                                    GiaBan = p.GiaBan,
+                                    maAnh = a.MaAnh,
+                                    Anh = a.HinhAnh,
+                                    MoTa = p.MoTa
+                                });
+                }
+                else if (!String.IsNullOrEmpty(searchPrice))
+                {
+                    decimal Gia = Convert.ToDecimal(searchPrice);
+                    sanphams = (from p in db.SanPhams
+                                join a in db.AnhMoTas on p.MaSP equals a.MaSP
+                                where p.TenSP.Contains(searchString) && p.GiaBan <= Gia
+                                select new ProductDetail()
+                                {
+                                    MaDM = p.MaDM,
+                                    MaSP = p.MaSP,
+                                    TenSP = p.TenSP,
+                                    GiaBan = p.GiaBan,
+                                    maAnh = a.MaAnh,
+                                    Anh = a.HinhAnh,
+                                    MoTa = p.MoTa
+                                });
+                }
+            }
+            catch (Exception)
+            {
+                
+            }
             var products = new List<ProductDetail>();
             foreach (var item in sanphams)
             {
@@ -63,30 +104,15 @@ namespace ShoesShopOnline.Controllers
                     products.Add(item);
             }
             var danhsachSP = products.OrderBy(sp => sp.MaSP);
+            if (danhsachSP.Count()==0)
+            {
+                ViewBag.Error = "Không tìm được sản phẩm phù hợp!";
+            }
             int pageSize = 9;
             int pageNumber = (page ?? 1);
             return View(danhsachSP.ToPagedList(pageNumber, pageSize));
-
         }
 
-        /*public ActionResult SearchProduct(string search)
-        {
-            ICollection<ProductDetail> sanphams = (from p in db.SanPhams
-                        join a in db.AnhMoTas on p.MaSP equals a.MaSP
-                        where p.TenSP.Contains(search)
-                        select new ProductDetail()
-                        {
-                            MaDM = p.MaDM,
-                            MaSP = p.MaSP,
-                            TenSP = p.TenSP,
-                            GiaBan = p.GiaBan,
-                            maAnh = a.MaAnh,
-                            Anh = a.HinhAnh,
-                            MoTa = p.MoTa
-                        }).ToList();
-            ICollection<ProductDetail> products = Filter(sanphams);
-            return View();
-        }*/
 
         public ActionResult ProductDetail(string id, int maImage, string madm)
         {
@@ -127,10 +153,6 @@ namespace ShoesShopOnline.Controllers
                                                    }).ToList();
             ICollection<ProductDetail> RelateProducts = Filter(Products);
             ViewBag.Images = listAnh;
-            /* foreach (var item in listAnh)
-             {
-                 item.MaAnh
-             }*/
             ViewBag.SizeList = listSize;
             ViewBag.ListRelate = RelateProducts;
             ViewBag.check = RelateProducts.Count();

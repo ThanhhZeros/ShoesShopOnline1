@@ -50,12 +50,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <div class="header">
         <div class="header-top">
             <div class="container">
-                <div class="search">
-                    <form>
-                        @Html.TextBox("SearchString")
-                        <input type="submit" value="Go">
-                    </form>
-                </div>
+                @{Html.RenderAction("SearchBox", "Home"); }
                 <div class="header-left">
                     <ul>
                         <li><a href="@Url.Action("Login","Home")">Đăng nhập</a></li>
@@ -109,7 +104,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             <a class="color6" href="products.html">SALE OFF</a>
 
                         </li>
-                        <li><a class="color4" href="@Url.Action("Blog","Home")">BLOG</a></li>
+                        <li><a class="color4" href="@Url.Action("Index","NewFeed")">BLOG</a></li>
                         <li><a class="color6" href="@Url.Action("Contact","Home")">CONTACT</a></li>
                     </ul>
                 </div>

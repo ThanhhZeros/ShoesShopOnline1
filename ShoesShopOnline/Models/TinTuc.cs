@@ -15,11 +15,11 @@ namespace ShoesShopOnline.Models
         [StringLength(100)]
         public string TenTin { get; set; }
 
-        public DateTime NgayDang { get; set; }
+        public DateTime? NgayDang { get; set; }
 
         public int? MaTK { get; set; }
 
-        [StringLength(4000)]
+        [Column(TypeName = "ntext")]
         public string NoiDung { get; set; }
 
         public virtual TaiKhoanQuanTri TaiKhoanQuanTri { get; set; }

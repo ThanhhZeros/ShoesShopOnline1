@@ -111,22 +111,22 @@ insert into DanhMucSP(MaDM, TenDanhMuc) values
 
 
 insert into SanPham(MaSP, TenSP, MaDM, MoTa, GiaBan, NgayTao, NgaySua) values
-('SP001', N'Giày Thể Thao XSPORT Ni.ke air force 1 Rep 1:1 HFV753','DM01',N'Giày Thể Thao XSPORT Ni.ke air force 1 Rep 1:1 thiết kế đẹp mắt, kiểu dáng hiện đại. Với đôi giày thời trang này chắc chắn bạn sẽ trở nên nổi bật và cuốn hút hơn.','550000','10-12-2021','10-12-2021'),
-('SP002', N'Giày Thể Thao XSPORT Ni.ke Jordan 1 F1 Running','DM01',N'Giày Thể Thao XSPORT Ni.ke Jordan 1 F1 chất liệu cao cấp, bền đẹp theo thời gian. Thiết kế thời trang. Kiểu dáng phong cách.Phối màu tinh tế và đẹp mắt. Độ bền cao. Dễ phối đồ. Với đôi giày thời trang này chắc chắn bạn sẽ trở nên nổi bật và cuốn hút hơn.','350000','10-12-2021','10-12-2021'),
-('SP003', N'Giày Thể Thao XSPORT Ni.ke Jordan Low REP Running','DM01',N'Giày Thể Thao XSPORT Ni.ke Jordan Low REP có thiết kế trẻ trung, năng động đến từ thương hiệu Nike nổi tiếng của Mỹ được làm từ chất liệu cao cấp, bền đẹp trong suốt quá trình sử dụng.','750000','10-12-2021','10-12-2021'),
-('SP004', N'Giày Thể Thao Nike Air Max Verona Running','DM01',N'Giày Thể Thao Nike Air Max Verona Pink/Black Màu Đen Hồng thiết kế đẹp mắt, kiểu dáng hiện đại. Với đôi giày thời trang này chắc chắn bạn sẽ trở nên nổi bật và cuốn hút hơn.','325000','10-12-2021','10-12-2021'),
-('SP005', N'Giày Thể Thao Nike Air Force 1 Shadow Crimson Tint','DM01',N'Giày Thể Thao Nike Air Force 1 Shadow Crimson Tint CI0919-107 với thiết kế thời trang từ thương hiệu Nike nổi tiếng của Mỹ. Giày Thể Thao Nike Air Force 1 Shadow Crimson Tint CI0919-107  sở hữu gam màu trẻ trung cùng chất liệu cao cấp sẽ cho bạn trải nghiệm tuyệt vời khi đi lên chân.','330000','10-12-2021','10-12-2021'),
-('SP006', N'Giày Nike Jordan 1 Mid University 76WBFHW','DM01',N'Giày Thể Thao Nike Air Jordan 1 Mid GS  554725-175 có thiết kế trẻ trung, năng động đến từ thương hiệu Nike nổi tiếng của Mỹ. Giày Nike Air Jordan 1 Mid GS  554725-175 được làm từ chất liệu cao cấp, bền đẹp trong suốt quá trình sử dụng.','550000','10-12-2021','10-12-2021'),
+('SP001', N'Giày Thể Thao XSPORT Ni.ke air force 1 Rep 1:1 HFV753','DM01',N'Giày Thể Thao XSPORT Ni.ke air force 1 Rep 1:1 thiết kế đẹp mắt, kiểu dáng hiện đại. Với đôi giày thời trang này chắc chắn bạn sẽ trở nên nổi bật và cuốn hút hơn.','5550000','10-12-2021','10-12-2021'),
+('SP002', N'Giày Thể Thao XSPORT Ni.ke Jordan 1 F1 Running','DM01',N'Giày Thể Thao XSPORT Ni.ke Jordan 1 F1 chất liệu cao cấp, bền đẹp theo thời gian. Thiết kế thời trang. Kiểu dáng phong cách.Phối màu tinh tế và đẹp mắt. Độ bền cao. Dễ phối đồ. Với đôi giày thời trang này chắc chắn bạn sẽ trở nên nổi bật và cuốn hút hơn.','3500000','10-12-2021','10-12-2021'),
+('SP003', N'Giày Thể Thao XSPORT Ni.ke Jordan Low REP Running','DM01',N'Giày Thể Thao XSPORT Ni.ke Jordan Low REP có thiết kế trẻ trung, năng động đến từ thương hiệu Nike nổi tiếng của Mỹ được làm từ chất liệu cao cấp, bền đẹp trong suốt quá trình sử dụng.','7500000','10-12-2021','10-12-2021'),
+('SP004', N'Giày Thể Thao Nike Air Max Verona Running','DM01',N'Giày Thể Thao Nike Air Max Verona Pink/Black Màu Đen Hồng thiết kế đẹp mắt, kiểu dáng hiện đại. Với đôi giày thời trang này chắc chắn bạn sẽ trở nên nổi bật và cuốn hút hơn.','3250000','10-12-2021','10-12-2021'),
+('SP005', N'Giày Thể Thao Nike Air Force 1 Shadow Crimson Tint','DM01',N'Giày Thể Thao Nike Air Force 1 Shadow Crimson Tint CI0919-107 với thiết kế thời trang từ thương hiệu Nike nổi tiếng của Mỹ. Giày Thể Thao Nike Air Force 1 Shadow Crimson Tint CI0919-107  sở hữu gam màu trẻ trung cùng chất liệu cao cấp sẽ cho bạn trải nghiệm tuyệt vời khi đi lên chân.','3300000','10-12-2021','10-12-2021'),
+('SP006', N'Giày Nike Jordan 1 Mid University 76WBFHW','DM01',N'Giày Thể Thao Nike Air Jordan 1 Mid GS  554725-175 có thiết kế trẻ trung, năng động đến từ thương hiệu Nike nổi tiếng của Mỹ. Giày Nike Air Jordan 1 Mid GS  554725-175 được làm từ chất liệu cao cấp, bền đẹp trong suốt quá trình sử dụng.','5500000','10-12-2021','10-12-2021'),
 ('SP007', N'Giày Thể Thao Nike Air Jordan 1 HG9WEFRHW','DM01',N'Giày Thể Thao Nike Air Jordan 1 có thiết kế trẻ trung, năng động đến từ thương hiệu Nike nổi tiếng của Mỹ được làm từ chất liệu cao cấp, bền đẹp trong suốt quá trình sử dụng.','5900000','10-12-2021','10-12-2021'),
-('SP008', N'Giày Nike Air Jordan 1 Mid Se Union Black Toe','DM01',N'Giày Nike Air Jordan 1 Mid Se Union Black Toe có thiết kế trẻ trung, năng động đến từ thương hiệu Nike nổi tiếng của Mỹ được làm từ chất liệu cao cấp, bền đẹp trong suốt quá trình sử dụng.','590000','10-12-2021','10-12-2021'),
+('SP008', N'Giày Nike Air Jordan 1 Mid Se Union Black Toe','DM01',N'Giày Nike Air Jordan 1 Mid Se Union Black Toe có thiết kế trẻ trung, năng động đến từ thương hiệu Nike nổi tiếng của Mỹ được làm từ chất liệu cao cấp, bền đẹp trong suốt quá trình sử dụng.','5900000','10-12-2021','10-12-2021'),
 ('SP009', N'Giày Nike Dunk Low SE Multi Camo 97HFSJGW','DM01',N'Giày Nike Dunk Low SE Multi Camocó thiết kế trẻ trung, năng động đến từ thương hiệu Nike nổi tiếng của Mỹ được làm từ chất liệu cao cấp, bền đẹp trong suốt quá trình sử dụng.','720000','10-12-2021','10-12-2021'),
-('SP010', N'Giày Thể Thao Nike Air Max 1 Se Volt Rush','DM01',N'Giày Thể Thao Nike Air Max 1 Se Volt Rush có thiết kế trẻ trung, năng động đến từ thương hiệu Nike nổi tiếng của Mỹ được làm từ chất liệu cao cấp, bền đẹp trong suốt quá trình sử dụng.','320000','10-12-2021','10-12-2021'),
-('SP011', N'GiàyThể Thao Nike Air Zoom Structure GHKS97463','DM01',N'GiàyThể Thao Nike Air Zoom Structure có thiết kế trẻ trung, năng động đến từ thương hiệu Nike nổi tiếng của Mỹ được làm từ chất liệu cao cấp, bền đẹp trong suốt quá trình sử dụng.','340000','10-12-2021','10-12-2021'),
-('SP012', N'Giày Thể Thao Nike Downshifter 10 Running SHGFSK963','DM01',N'Giày Thể Thao Nike Downshifter 10 Running có thiết kế trẻ trung, năng động đến từ thương hiệu Nike nổi tiếng của Mỹ được làm từ chất liệu cao cấp, bền đẹp trong suốt quá trình sử dụng.','170000','10-12-2021','10-12-2021'),
-('SP013', N'Giày Thể Thao Nike Epic React Infinity Fk Phối Màu','DM01',N'Giày Thể Thao Nike Epic React Infinity Fk Phối Màu có thiết kế trẻ trung, năng động đến từ thương hiệu Nike nổi tiếng của Mỹ được làm từ chất liệu cao cấp, bền đẹp trong suốt quá trình sử dụng.','350000','10-12-2021','10-12-2021'),
+('SP010', N'Giày Thể Thao Nike Air Max 1 Se Volt Rush','DM01',N'Giày Thể Thao Nike Air Max 1 Se Volt Rush có thiết kế trẻ trung, năng động đến từ thương hiệu Nike nổi tiếng của Mỹ được làm từ chất liệu cao cấp, bền đẹp trong suốt quá trình sử dụng.','3200000','10-12-2021','10-12-2021'),
+('SP011', N'GiàyThể Thao Nike Air Zoom Structure GHKS97463','DM01',N'GiàyThể Thao Nike Air Zoom Structure có thiết kế trẻ trung, năng động đến từ thương hiệu Nike nổi tiếng của Mỹ được làm từ chất liệu cao cấp, bền đẹp trong suốt quá trình sử dụng.','3400000','10-12-2021','10-12-2021'),
+('SP012', N'Giày Thể Thao Nike Downshifter 10 Running SHGFSK963','DM01',N'Giày Thể Thao Nike Downshifter 10 Running có thiết kế trẻ trung, năng động đến từ thương hiệu Nike nổi tiếng của Mỹ được làm từ chất liệu cao cấp, bền đẹp trong suốt quá trình sử dụng.','1700000','10-12-2021','10-12-2021'),
+('SP013', N'Giày Thể Thao Nike Epic React Infinity Fk Phối Màu','DM01',N'Giày Thể Thao Nike Epic React Infinity Fk Phối Màu có thiết kế trẻ trung, năng động đến từ thương hiệu Nike nổi tiếng của Mỹ được làm từ chất liệu cao cấp, bền đẹp trong suốt quá trình sử dụng.','3500000','10-12-2021','10-12-2021'),
 
-('SP014', N'Giày Thể Thao XSPORT Adi.das Alpha.bounce Instinct M','DM02',N'Giày Thể Thao XSPORT Adi.das Alpha.bounce Instinct M Phối Màu là đôi giày dành cho các chàng trai đam mê thể thao được thiết kế vô cùng hiện đại đến từ thương hiệu Adidas nổi tiếng. Sở hữu gam màu nổi bật cùng chất liệu cao cấp Adidas Harden Vol5 Futurenatural White FZ1071 mang lại cảm giác thoải mái khi vận động, chạy nhảy nhiều.','350000','10-12-2021','10-12-2021'),
-('SP015', N'Giày Thể Thao XSPORT Prophere Rep 1:1 57GFH','DM02',N'Giày Thể Thao XSPORT Prophere Replà mẫu giày hoài niệm phong cách hầm hố lấy cảm hứng từ nền văn hóa đại chúng của thập niên 90 của thương hiệu Adidas nổi tiếng.','500000','10-12-2021','10-12-2021'),
+('SP014', N'Giày Thể Thao XSPORT Adi.das Alpha.bounce Instinct M','DM02',N'Giày Thể Thao XSPORT Adi.das Alpha.bounce Instinct M Phối Màu là đôi giày dành cho các chàng trai đam mê thể thao được thiết kế vô cùng hiện đại đến từ thương hiệu Adidas nổi tiếng. Sở hữu gam màu nổi bật cùng chất liệu cao cấp Adidas Harden Vol5 Futurenatural White FZ1071 mang lại cảm giác thoải mái khi vận động, chạy nhảy nhiều.','3500000','10-12-2021','10-12-2021'),
+('SP015', N'Giày Thể Thao XSPORT Prophere Rep 1:1 57GFH','DM02',N'Giày Thể Thao XSPORT Prophere Replà mẫu giày hoài niệm phong cách hầm hố lấy cảm hứng từ nền văn hóa đại chúng của thập niên 90 của thương hiệu Adidas nổi tiếng.','5000000','10-12-2021','10-12-2021'),
 ('SP016', N'Giày Thể Thao XSPORT Ultra Boost 74321','DM03',N'Giày Thể Thao XSPORT Ultra Boost là đôi giày cao cấp đến từ thương hiệu Adias nổi tiếng của nước Mỹ. Với đôi giày Vans Classic Sk8-Hi Black/White này chắc chắn bạn sẽ trở nên nổi bật và cuốn hút hơn.','1600000','10-12-2021','10-12-2021'),
 ('SP017', N'Giày Thể Thao Adidas Runfalcon 125473','DM02',N'Giày Thể Thao Adidas Runfalcon Màu Đen Trắng là đôi giày thể thao dành cho nam đến từ thương hiệu Adidas nổi tiếng của Đức. Adidas Runfalcon được thiết kế mang nét thể thao phóng đại, khỏe khoắn mang đầy nét năng động.','1600000','10-12-2021','10-12-2021'),
 ('SP018', N'Giày Thể Thao Adidas Original Stan Smith','DM02',N'Giày Thể Thao Adidas Original Stan Smith M20324 Màu Trắng đến từ thương hiệu Adidas nổi tiếng của Đức. Adidas Original Stan Smith được thiết kế mang nét thể thao khỏe khoắn, năng động cho bạn trải nghiệm tuyệt vời khi đi lên chân.','1600000','10-12-2021','10-12-2021'),
@@ -350,6 +350,54 @@ insert into TinTuc (TenTin,MaTK,NgayDang,NoiDung) values
 (N'7 cách bảo quản giày thể thao tốt nhất',1,'2/3/2020','This is a content'),
 (N'9 kỹ thuật làm đẹp cho u30',1,'2/3/2020','This is a content')
 
+insert into HoaDon (MaTK,DiaChiNhan,EmailNguoiNhan,HoTenNguoiNhan,GhiChu,NgayLap,SDTNguoiNhan,TrangThai) VALUES
+(1,N'Cầu Giấy, Hà Nội','hgfeafhkj@gmail.com',N'Nguyễn Văn Nam','Nhận hàng vào 1/20/2022','4/2/2022','09876543','Chờ nhận hàng'),
+(2,N'Cầu Giấy, Hà Nội','hgfeafhkj@gmail.com',N'Nguyễn Văn Nam','Nhận hàng vào 1/20/2022','4/2/2022','09876543','Chờ nhận hàng'),
+(1,N'Cầu Giấy, Hà Nội','hgfeafhkj@gmail.com',N'Nguyễn Văn Nam','Nhận hàng vào 1/20/2022','4/2/2022','09876543','Chờ nhận hàng'),
+(1,N'Cầu Giấy, Hà Nội','hgfeafhkj@gmail.com',N'Nguyễn Văn Nam','Nhận hàng vào 1/20/2022','4/2/2022','09876543','Chờ nhận hàng'),
+(2,N'Cầu Giấy, Hà Nội','hgfeafhkj@gmail.com',N'Nguyễn Văn Nam','Nhận hàng vào 1/20/2022','4/2/2022','09876543','Chờ nhận hàng'),
+(2,N'Cầu Giấy, Hà Nội','hgfeafhkj@gmail.com',N'Nguyễn Văn Nam','Nhận hàng vào 1/20/2022','4/2/2022','09876543','Chờ nhận hàng'),
+(2,N'Cầu Giấy, Hà Nội','hgfeafhkj@gmail.com',N'Nguyễn Văn Nam','Nhận hàng vào 1/20/2022','4/2/2022','09876543','Chờ nhận hàng'),
+(1,N'Cầu Giấy, Hà Nội','hgfeafhkj@gmail.com',N'Nguyễn Văn Nam','Nhận hàng vào 1/20/2022','4/2/2022','09876543','Chờ nhận hàng'),
+(1,N'Cầu Giấy, Hà Nội','hgfeafhkj@gmail.com',N'Nguyễn Văn Nam','Nhận hàng vào 1/20/2022','4/2/2022','09876543','Chờ nhận hàng'),
+(2,N'Cầu Giấy, Hà Nội','hgfeafhkj@gmail.com',N'Nguyễn Văn Nam','Nhận hàng vào 1/20/2022','4/2/2022','09876543','Chờ nhận hàng'),
+(2,N'Cầu Giấy, Hà Nội','hgfeafhkj@gmail.com',N'Nguyễn Văn Nam','Nhận hàng vào 1/20/2022','4/2/2022','09876543','Chờ nhận hàng'),
+(2,N'Cầu Giấy, Hà Nội','hgfeafhkj@gmail.com',N'Nguyễn Văn Nam','Nhận hàng vào 1/20/2022','4/2/2022','09876543','Chờ nhận hàng'),
+(1,N'Cầu Giấy, Hà Nội','hgfeafhkj@gmail.com',N'Nguyễn Văn Nam','Nhận hàng vào 1/20/2022','4/2/2022','09876543','Chờ nhận hàng')
 
-select * from SanPham
+insert into  ChiTietHoaDon (MaHD, MaAnh, KichCo, SoLuongMua) VALUES
+(1,1,37,1),
+(1,8,37,1),
+(1,10,37,1),
+(2,1,37,1),
+(3,1,37,1),
+(3,8,37,1),
+(3,5,37,1),
+(4,5,37,1),
+(4,2,37,1),
+(4,8,37,1),
+(5,11,37,1),
+(5,12,37,1),
+(6,2,37,1),
+(6,6,37,1),
+(7,6,37,1),
+(8,1,37,1),
+(8,2,37,1),
+(9,2,37,1),
+(9,1,37,1),
+(10,2,37,1),
+(10,5,37,1),
+(10,11,37,1),
+(11,10,37,1),
+(12,2,37,1),
+(12,1,37,1),
+(13,2,37,1)
+
+
+select MaAnh, count(MaAnh) AS So_SP from ChiTietHoaDon
+GROUP BY MaAnh 
+ORDER BY count(MaAnh) DESC
+
+
+select MaSP, GiaBan, (GiaBan-2000000)  AS ChechLech from SanPham WHERE (GiaBan-2000000)>0  ORDER BY (GiaBan-20)
 

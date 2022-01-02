@@ -1,0 +1,12 @@
+﻿
+<div class="search"  >
+        @using (Html.BeginForm("Index", "Product", FormMethod.Get) )
+        {
+        <div style="display:flex">
+             <input type="text" name="searchString" placeholder="Tìm tên" > 
+             <input type="text" name="searchPrice" placeholder="Tìm giá" style="border-left: 1px solid black;"> 
+             <button type="submit" style=" border: none; border-left: 1px solid black;"><i class="fas fa-search" ></i></button>
+        </div>
+        }
+</div>
+

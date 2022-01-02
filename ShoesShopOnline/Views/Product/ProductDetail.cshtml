@@ -3,7 +3,9 @@
 @{
     ViewBag.Title = "ProductDetail";
     Layout = "~/Views/Shared/_LayoutClient.cshtml";
+    var info = System.Globalization.CultureInfo.GetCultureInfo("vi-VN");
 }
+
 
 <!--content-->
 <!---->
@@ -182,15 +184,15 @@
                         }
                         <a href="@Url.Action("ProductDetail","Product", new { id = item.MaSP, maImage = item.maAnh,madm = item.MaDM })" class="b-link-stripe b-animate-go  thickbox">
                             <img class="img-responsive" src="@Url.Content(productRelatePath)" alt="">
-                            <div class="sale">
+                            @*<div class="sale">
                                 <p>GIẢM 20%</p>
-                            </div>
+                            </div>*@
                         </a>
 
                         <div class="name">
-                            <h3><a href="">@item.TenSP</a></h3>
+                            <h3><a href="@Url.Action("ProductDetail","Product", new { id = item.MaSP, maImage = item.maAnh,madm = item.MaDM })">@item.TenSP</a></h3>
                             <div class="cost-product">
-                                <span><del>850.000<u>đ</u></del></span><b>@item.GiaBan<u>đ</u></b>
+                                <span></span><b>@string.Format(info, "{0:c0}", item.GiaBan)</b>
                             </div>
                         </div>
                     </div>
