@@ -211,6 +211,7 @@
             <div class="scroll-sidebar">
                 <!-- Sidebar navigation-->
                 <nav class="sidebar-nav">
+                    
                     <ul id="sidebarnav">
                         <li class="sidebar-item">
                             <a class="sidebar-link waves-effect waves-dark sidebar-link" href="@Url.Action("Index","DanhMucSPs")"
@@ -240,13 +241,17 @@
                                 <span class="hide-menu">Quản lý khách hàng</span>
                             </a>
                         </li>
-                        <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="@Url.Action("Index","TaiKhoanQuanTris")"
-                               aria-expanded="false">
-                                <i class="mdi mdi-arrange-bring-forward"></i>
-                                <span class="hide-menu">Quản lý tài khoản</span>
-                            </a>
-                        </li>
+                        @if (tk.LoaiTK == "Admin")
+                        {
+                            <li class="sidebar-item">
+                                <a class="sidebar-link waves-effect waves-dark sidebar-link" href="@Url.Action("Index","TaiKhoanQuanTris")"
+                                   aria-expanded="false">
+                                    <i class="mdi mdi-arrange-bring-forward"></i>
+                                    <span class="hide-menu">Quản lý tài khoản</span>
+                                </a>
+                            </li>
+                        }
+
                         <li class="sidebar-item">
                             <a class="sidebar-link waves-effect waves-dark sidebar-link" href="@Url.Action("Index","TinTucs")"
                                aria-expanded="false">
@@ -255,6 +260,8 @@
                             </a>
                         </li>
                     </ul>
+                    
+
                 </nav>
                 <!-- End Sidebar navigation -->
             </div>

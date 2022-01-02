@@ -92,7 +92,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                 
                 .cart.box_1 {
                     float: right;
-                    margin-top: 2px;
+                    margin-top: 6px;
                 }
                 /*----*/
                 
@@ -108,6 +108,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                 
                 .header-top {
                     background: #000;
+                    height:50px;
                 }
                 
                 .search {
@@ -155,11 +156,13 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 .header-left {
     float: right;
-    margin-top: 4px;
+    margin-top: 6px;
 }
 
     .header-left ul {
         float: left;
+        margin-top: 6px;
+        font-size: 15px;
     }
 
         .header-left ul li {
@@ -185,12 +188,12 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                 }
                 
                 .logo img {
-                    height: 60px;
+                    height: 55px;
                 }
                 /* start menu */
 
                  .h_menu4 {
-                        margin: 13px 0 0px;
+                        margin: 9px 0 0px;
                         float: right;
                     }
                 
@@ -1300,7 +1303,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                 
                 .blog_banner {
                     position: relative;
-                    margin-top: 110px;
+                    margin-top: 90px;
                     margin-bottom:50px;
                 }
                 
@@ -2043,7 +2046,7 @@ p.tun{
                 /*--account--*/
                 
                 .account {
-                    margin-top: 127px;
+                    margin-top: 50px;
                 }
                 
                 .login {
