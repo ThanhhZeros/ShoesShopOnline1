@@ -8,56 +8,6 @@
 
 <div class="container">
     <div class="account">
-<<<<<<< HEAD
-        <h1>Đăng nhập</h1>
-        <div class="account-pass">
-            <div class="col-md-8 account-top">
-               
-                    @using (Html.BeginForm("Login", "Home", FormMethod.Post))
-                    {
-                        @Html.ValidationMessage("ErrorLogin", new { @class = "text-danger" })
-                        <hr />
-                        <form action="Login" class="signin-form" method="post">
-                            <div>
-                                <span>Tài khoản *</span>
-                                @Html.TextBoxFor(model => model.username,
-                                            new { @class = "form-control", @name = "username", @autoforcus = "autofocus", @required = "required", @placeholder = "Tài khoản" })
-                                
-                            </div>
-                            <div>
-                                <span>Mật khẩu *</span>
-                                @Html.PasswordFor(model => model.password,
-                                           new { @class = "form-control", @name = "password", @required = "required", @placeholder = "Mật khẩu" })
-                            </div>
-                            <!-- <p class="lost-password"><a href="forgot-password.html">Forgot password?</a></p> -->
-                            <input type="submit" value="ĐĂNG NHẬP" />
-                        </form>
-          
-                     }
-                       
-                        <p><i>Quên mật khẩu</i></p>
-                        <div class="loginby">
-                            <p>Hoặc đăng nhập bằng</p>
-                            <div class="face">
-                                <a href="http://www.facebook.com"><img src="~/Assets/Client/images/face.PNG" /></a>
-
-                                <a href="http://www.google.com">
-                                    <img src="~/Assets/Client/images/google.PNG" />
-                                </a>
-                            </div>
-                        </div>
-
-</div>
-            <div class="col-md-4 left-account ">
-                <a href="single.html"><img class="img-responsive " src="~/Assets/Client/images/s1.jpg" alt=""></a>
-                <div class="five">
-                    <h2>25% </h2><span>discount</span>
-                </div>
-                <a href="@Url.Action("SignUp","Home")" class="create">Create an account</a>
-                <div class="clearfix"> </div>
-            </div>
-            <div class="clearfix"> </div>
-=======
         <div class="col-md-12 col-sm-12 col-xs-12">
             <div class="login">
                 <h1 class="account-title">Đăng nhập</h1>
@@ -88,10 +38,10 @@
                         <a href="@Url.Action("SignUp","Home")">Chưa có tài khoản? Đăng ký </a>
                     </div>
                     @*<div class="req_pass">
-                        <a href="">
-                            <i>Quên mật khẩu</i>
-                        </a>
-                    </div>*@
+                            <a href="">
+                                <i>Quên mật khẩu</i>
+                            </a>
+                        </div>*@
                     <div class="login-face">
                         <div class="face">
                             <i class="fab fa-facebook-square"></i>
@@ -108,7 +58,6 @@
 
 
             </div>
->>>>>>> 3ef677c70d3ebdedd570a5cebc28b220eb812637
         </div>
 
     </div>
@@ -148,4 +97,3 @@
         </div>
     </div>
 </div>
-

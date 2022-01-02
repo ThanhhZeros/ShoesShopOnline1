@@ -322,11 +322,7 @@ namespace ShoesShopOnline.Areas.Admin.Controllers
                             db.SaveChanges();
                         }
                     }
-<<<<<<< HEAD
-                    
-=======
 
->>>>>>> 3ef677c70d3ebdedd570a5cebc28b220eb812637
                     //Lưu thêm ảnh mới
                     if (uploadFile != null)
                     {
@@ -369,11 +365,7 @@ namespace ShoesShopOnline.Areas.Admin.Controllers
             }
         }
 
-<<<<<<< HEAD
-        
-=======
 
->>>>>>> 3ef677c70d3ebdedd570a5cebc28b220eb812637
         [HttpPost]
         public async Task<JsonResult> Delete(string id)
         {

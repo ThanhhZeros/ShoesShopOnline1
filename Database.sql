@@ -343,14 +343,6 @@ insert into TaiKhoanNguoiDung(DiaChi, Email, HoTen, SDT, TenDangNhap,MatKhau, Tr
 ('Ha Noi', 'NguyenB@gmail.com', N'Nguyen Van B', '098765543','NguyenB','456', '1')
 
 
-<<<<<<< HEAD
-insert into TaiKhoanQuanTri(HoTenUser,TenDangNhap,MatKhau,LoaiTK,TrangThai) values
-(N'Quách Phương Thảo', 'QuachThao','123','QuanLy','1'),
-(N'Lê Thị Thanh Mỹ', 'ThanhMy','123','QuanLy','1'),
-(N'Phạm Thị Thanh', 'PhamThanh','123','QuanLy','1'),
-(N'Vũ Ngọc Tâm', 'NgocTam','123','QuanLy','1'),
-(N'Admin', 'Admin','123','Admin','1')
-=======
 insert into TaiKhoanQuanTri(HoTenUser,TenDangNhap,MatKhau,LoaiTK,TrangThai,DiaChi,Email,SDT) values
 (N'Quách Phương Thảo', 'QuachThao','123','QuanLy','1',N'Hà Nội','quachthao@gmail.com','0987654345'),
 (N'Lê Thị Thanh Mỹ', 'ThanhMy','123','QuanLy','1',N'Thanh Hóa','thanhmy@gmail.com','0987654345'),
@@ -386,7 +378,6 @@ insert into  ChiTietHoaDon (MaHD, MaAnh, KichCo, SoLuongMua) VALUES
 (12,2,37,1),
 (12,1,37,1),
 (13,2,37,1)
->>>>>>> 3ef677c70d3ebdedd570a5cebc28b220eb812637
 --insert into LienHe(MaLienHe, )
 insert into TinTuc (TenTin,MaTK,NgayDang,NoiDung) values
 (N'Mua giày ở đâu?',3,'2/3/2020',N'<h2 style="font-style:normal; text-align:left">1 SneakerLand</h2>

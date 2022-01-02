@@ -74,11 +74,7 @@ namespace ShoesShopOnline.Controllers
             if (cart != null)
             {
                 var list = (List<CartItem>)cart;
-<<<<<<< HEAD
-                if (list.Exists(x => x.ChiTietSanPham.MaAnh == maSP && x.KichCo==kichCo))
-=======
                 if (list.Exists(x => x.ChiTietSanPham.MaAnh == maSP && x.KichCo == kichCo))
->>>>>>> 3ef677c70d3ebdedd570a5cebc28b220eb812637
                 {
                     foreach (var item in list)
                     {
@@ -122,11 +118,7 @@ namespace ShoesShopOnline.Controllers
             var sessionCart = (List<CartItem>)Session[ConstainCart.CartSession];
             foreach (var item in sessionCart)
             {
-<<<<<<< HEAD
-                var jsonItem = jsonCart.SingleOrDefault(x => x.ChiTietSanPham.MaAnh == item.MaAnh && x.KichCo==item.KichCo);
-=======
                 var jsonItem = jsonCart.SingleOrDefault(x => x.ChiTietSanPham.MaAnh == item.MaAnh && x.KichCo == item.KichCo);
->>>>>>> 3ef677c70d3ebdedd570a5cebc28b220eb812637
                 if (jsonItem != null)
                 {
                     item.SoLuong = jsonItem.SoLuong;
@@ -140,11 +132,7 @@ namespace ShoesShopOnline.Controllers
         public JsonResult Delete(int MaAnh, int KichCo)
         {
             var sessionCart = (List<CartItem>)Session[ConstainCart.CartSession];
-<<<<<<< HEAD
-            sessionCart.RemoveAll(x => x.MaAnh == MaAnh&&x.KichCo==KichCo);
-=======
             sessionCart.RemoveAll(x => x.MaAnh == MaAnh && x.KichCo == KichCo);
->>>>>>> 3ef677c70d3ebdedd570a5cebc28b220eb812637
             Session[ConstainCart.CartSession] = sessionCart;
             return Json(sessionCart, JsonRequestBehavior.AllowGet);
         }
@@ -152,11 +140,7 @@ namespace ShoesShopOnline.Controllers
         [HttpGet]
         public ActionResult Payment()
         {
-<<<<<<< HEAD
-            
-=======
 
->>>>>>> 3ef677c70d3ebdedd570a5cebc28b220eb812637
             if (Session[ShoesShopOnline.Session.ConstaintUser.USER_SESSION] == null || Session[ShoesShopOnline.Session.ConstaintUser.USER_SESSION].ToString() == "")
             {
                 return RedirectToAction("Login", "Home");
@@ -192,11 +176,7 @@ namespace ShoesShopOnline.Controllers
             var cart = Session[ConstainCart.CartSession];
             var list = new List<CartItem>();
             list = (List<CartItem>)cart;
-<<<<<<< HEAD
-            foreach(var item in list)
-=======
             foreach (var item in list)
->>>>>>> 3ef677c70d3ebdedd570a5cebc28b220eb812637
             {
                 ChiTietHoaDon cthd = new ChiTietHoaDon();
                 cthd.MaHD = hoaDon.MaHD;

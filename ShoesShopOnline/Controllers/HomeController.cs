@@ -97,17 +97,9 @@ namespace ShoesShopOnline.Controllers
         }
 
         [HttpPost]
-<<<<<<< HEAD
-        public ActionResult Login(LoginAccount user)
-        {
-            TaiKhoanNguoiDung kh = db.TaiKhoanNguoiDungs.Where
-            (a => a.TenDangNhap.Equals(user.username) && a.MatKhau.Equals(user.password)).FirstOrDefault();
-            if (kh != null)
-=======
         public ActionResult Login(LoginAccount loginAccount)
         {
             if (ModelState.IsValid)
->>>>>>> 3ef677c70d3ebdedd570a5cebc28b220eb812637
             {
                 TaiKhoanNguoiDung tk = db.TaiKhoanNguoiDungs.Where
                 (a => a.TenDangNhap.Equals(loginAccount.username) && a.MatKhau.Equals(loginAccount.password)).FirstOrDefault();
@@ -125,13 +117,7 @@ namespace ShoesShopOnline.Controllers
                 }
                 else
                 {
-<<<<<<< HEAD
-                    Session.Add(ConstaintUser.USER_SESSION, kh);
-                    //Session["Taikhoan"] = kh;
-                    return RedirectToAction("Index", "Home");
-=======
                     ModelState.AddModelError("ErrorLogin", "Tài khoản hoặc mật khẩu không đúng!");
->>>>>>> 3ef677c70d3ebdedd570a5cebc28b220eb812637
                 }
             }
             return View(loginAccount);

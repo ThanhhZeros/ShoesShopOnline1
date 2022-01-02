@@ -2183,10 +2183,7 @@
     <Compile Include="Areas\Admin\Controllers\TaiKhoanQuanTrisController.cs" />
     <Compile Include="Areas\Admin\Controllers\TinTucsController.cs" />
     <Compile Include="Areas\Admin\Data\LoginAccount.cs" />
-<<<<<<< HEAD
-=======
     <Compile Include="Controllers\AccountUserController.cs" />
->>>>>>> 3ef677c70d3ebdedd570a5cebc28b220eb812637
     <Compile Include="Controllers\CartController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\NewFeedController.cs" />
@@ -2524,25 +2521,17 @@
     <Content Include="Views\Home\DanhMuc.cshtml" />
     <Content Include="Views\Product\Index.cshtml" />
     <Content Include="Views\Product\ProductDetail.cshtml" />
-<<<<<<< HEAD
-    <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="Views\Shared\_Layout.cshtml" />
-=======
     <Content Include="Views\AccountUser\UserInfor.cshtml" />
     <Content Include="Views\AccountUser\ChangePassWord.cshtml" />
->>>>>>> 3ef677c70d3ebdedd570a5cebc28b220eb812637
     <Content Include="Views\Cart\Index.cshtml" />
     <Content Include="Views\Cart\Payment.cshtml" />
     <Content Include="Views\Cart\SubmitOrder.cshtml" />
     <Content Include="Views\Shared\HeaderCart.cshtml" />
-<<<<<<< HEAD
-=======
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Home\SearchBox.cshtml" />
     <Content Include="Views\NewFeed\Index.cshtml" />
     <Content Include="Views\NewFeed\Single.cshtml" />
->>>>>>> 3ef677c70d3ebdedd570a5cebc28b220eb812637
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -2552,13 +2541,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-<<<<<<< HEAD
-    <Folder Include="Areas\Admin\Views\BaseController\" />
     <Folder Include="Areas\Admin\Views\Base\" />
-    <Folder Include="wwwroot\Images\" />
-=======
-    <Folder Include="Areas\Admin\Views\Base\" />
->>>>>>> 3ef677c70d3ebdedd570a5cebc28b220eb812637
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
