@@ -5,10 +5,8 @@ using System.Web;
 
 namespace ShoesShopOnline.Session
 {
-    public class ConstaintUser
+    public class ConstainCart
     {
-        public static string ADMIN_SESSION = "ADMIN";
-        public static string USER_SESSION = "USER";
+        public static string CartSession = "CartSession";
     }
-
 }

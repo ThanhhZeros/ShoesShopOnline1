@@ -1,0 +1,22 @@
+﻿@model List<ShoesShopOnline.Models.CartItem>
+@{
+    var sumItem = 0;
+    foreach (var item in Model)
+    {
+        sumItem += item.SoLuong;
+    }
+
+
+}
+<div class="cart box_1">
+    <a href="/gio-hang">
+        <h3>
+            <img src="~/Assets/Client/images/cart.png" alt="" />
+
+            <span>
+                <sup id="cartcount" count="@sumItem" style="background:red; padding:6px 8px; border-radius:20px">@sumItem</sup>
+            </span>
+
+        </h3>
+    </a>
+</div>

@@ -4,14 +4,13 @@ using System.Data;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
-using System.Web;
 using System.Web.Mvc;
 using PagedList;
 using ShoesShopOnline.Models;
 
 namespace ShoesShopOnline.Areas.Admin.Controllers
 {
-    public class TaiKhoanNguoiDungsController : Controller
+    public class TaiKhoanNguoiDungsController : BaseController
     {
         private Shoes db = new Shoes();
 
@@ -87,25 +86,15 @@ namespace ShoesShopOnline.Areas.Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, bool TrangThai)
+        public ActionResult Edit([Bind(Include = "MaTK,TenDangNhap,MatKhau,HoTen,SDT,DiaChi,Email,TrangThai")] TaiKhoanNguoiDung taiKhoanNguoiDung)
         {
-            try
+            if (ModelState.IsValid)
             {
-                if (ModelState.IsValid)
-                {
-                    var taiKhoanNguoiDung = db.TaiKhoanNguoiDungs.Find(id);
-                    taiKhoanNguoiDung.TrangThai = TrangThai;
-                    db.Entry(taiKhoanNguoiDung).State = EntityState.Modified;
-                    db.SaveChanges();
-
-                }
+                db.Entry(taiKhoanNguoiDung).State = EntityState.Modified;
+                db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            catch (Exception ex)
-            {
-                ViewBag.Error = "Lỗi edit dữ liệu! " + ex.Message;
-                return View();
-            }
+            return View(taiKhoanNguoiDung);
         }
 
         // GET: Admin/TaiKhoanNguoiDungs/Delete/5

@@ -153,5 +153,18 @@ namespace ShoesShopOnline.Controllers
             IEnumerable<DanhMucSP> danhmucs = db.DanhMucSPs.Select(p => p);
             return PartialView(danhmucs);
         }
+
+        [ChildActionOnly]
+        public PartialViewResult HeaderCart()
+        {
+            var cart = Session[ConstainCart.CartSession];
+            var list = new List<CartItem>();
+
+            if (cart != null)
+            {
+                list = (List<CartItem>)cart;
+            }
+            return PartialView(list);
+        }
     }
 }

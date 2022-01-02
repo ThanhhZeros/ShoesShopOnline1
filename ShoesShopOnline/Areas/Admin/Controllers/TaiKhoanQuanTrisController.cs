@@ -10,7 +10,7 @@ using ShoesShopOnline.Models;
 
 namespace ShoesShopOnline.Areas.Admin.Controllers
 {
-    public class TaiKhoanQuanTrisController : Controller
+    public class TaiKhoanQuanTrisController : BaseController
     {
         private Shoes db = new Shoes();
 
@@ -78,25 +78,15 @@ namespace ShoesShopOnline.Areas.Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, bool TrangThai)
+        public ActionResult Edit([Bind(Include = "MaTK,TenDangNhap,MatKhau,HoTenUser,LoaiTK,TrangThai")] TaiKhoanQuanTri taiKhoanQuanTri)
         {
-            try
+            if (ModelState.IsValid)
             {
-                if (ModelState.IsValid)
-                {
-                    var taiKhoanQuanTri = db.TaiKhoanQuanTris.Find(id);
-                    taiKhoanQuanTri.TrangThai = TrangThai;
-                    db.Entry(taiKhoanQuanTri).State = EntityState.Modified;
-                    db.SaveChanges();
-
-                }
+                db.Entry(taiKhoanQuanTri).State = EntityState.Modified;
+                db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            catch (Exception ex)
-            {
-                ViewBag.Error = "Lỗi edit dữ liệu! " + ex.Message;
-                return View();
-            }
+            return View(taiKhoanQuanTri);
         }
 
         // GET: Admin/TaiKhoanQuanTris/Delete/5
@@ -132,41 +122,6 @@ namespace ShoesShopOnline.Areas.Admin.Controllers
                 db.Dispose();
             }
             base.Dispose(disposing);
-        }
-
-        [HttpGet]
-        public ActionResult AdminInfor(int id)
-        {
-            TaiKhoanQuanTri session = (TaiKhoanQuanTri)Session[ShoesShopOnline.Session.ConstaintUser.ADMIN_SESSION];
-            if (session == null)
-            {
-                return RedirectToAction("PageNotFound", "Error");
-            }
-            else
-            {
-                TaiKhoanQuanTri tk = db.TaiKhoanQuanTris.Where(a => a.MaTK.Equals(id)).FirstOrDefault();
-                return View(tk);
-            }
-        }
-
-        [HttpPost]
-        public ActionResult AdminInfor([Bind(Include = "MaTK,HoTenUser,TenDangNhap,MatKhau,LoaiTK")] TaiKhoanQuanTri tk)
-        {
-            TaiKhoanQuanTri edit = db.TaiKhoanQuanTris.Where(a => a.MaTK.Equals(tk.MaTK)).FirstOrDefault();
-            try
-            {
-                edit.HoTenUser = tk.HoTenUser;
-                edit.TenDangNhap = tk.TenDangNhap;
-                edit.MatKhau = tk.MatKhau;
-                edit.LoaiTK = tk.LoaiTK;
-                db.SaveChanges();
-                Session[ShoesShopOnline.Session.ConstaintUser.USER_SESSION] = edit;
-            }
-            catch (Exception)
-            {
-                ModelState.AddModelError("ErrorUpdate", "Cập nhật thông tin không thành công ! Thử lại sau !");
-            }
-            return View(edit);
         }
     }
 }

@@ -41,8 +41,13 @@
         <div class="form-group">
             @Html.LabelFor(model => model.LoaiTK, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.LoaiTK, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.LoaiTK, "", new { @class = "text-danger" })
+                @Html.RadioButtonFor(model => model.LoaiTK, "Admin")
+                <span>Admin</span>
+
+                @Html.RadioButtonFor(model => model.LoaiTK, "Quản lý")
+                <span>Quản lý</span>
+            </div>
+
             </div>
         </div>
 
@@ -58,12 +63,12 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
+                <input type="submit" value="Thêm mới" class="btn btn-default" style="background-color:darkgreen" />
             </div>
         </div>
-    </div>
+    
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Trở về", "Index")
 </div>

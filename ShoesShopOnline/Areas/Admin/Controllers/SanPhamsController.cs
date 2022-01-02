@@ -13,25 +13,25 @@ using ShoesShopOnline.Models;
 
 namespace ShoesShopOnline.Areas.Admin.Controllers
 {
-    public class SanPhamsController : Controller
+    public class SanPhamsController : BaseController
     {
         private Shoes db = new Shoes();
 
-        public ActionResult Index(string sortOrder, string searchString, string currentFilter, int ?page)
+        public ActionResult Index(string sortOrder, string searchString, string currentFilter, int? page)
         {
             var result = db.SanPhams.Join(db.AnhMoTas, p => p.MaSP, a => a.MaSP, (p, a) => new ProductDetail
             {
-                MaSP=p.MaSP,
+                MaSP = p.MaSP,
                 TenSP = p.TenSP,
                 MaDM = p.DanhMucSP.TenDanhMuc,
                 Anh = a.HinhAnh,
                 MoTa = p.MoTa,
                 GiaBan = p.GiaBan,
-                NgaySua=p.NgaySua,
+                NgaySua = p.NgaySua,
 
             }).ToList();
             var productDetails = new List<ProductDetail>();
-            foreach(var item in result)
+            foreach (var item in result)
             {
                 int dem = 0;
                 foreach (var t in productDetails)
@@ -39,11 +39,11 @@ namespace ShoesShopOnline.Areas.Admin.Controllers
                     if (item.TenSP.Equals(t.TenSP))
                         dem++;
                 }
-                if(dem==0)
-                    productDetails.Add(item);               
+                if (dem == 0)
+                    productDetails.Add(item);
             }
             ViewBag.CurrentSort = sortOrder;
-            ViewBag.SapTheoTen= String.IsNullOrEmpty(sortOrder) ? "ten_desc" : "";
+            ViewBag.SapTheoTen = String.IsNullOrEmpty(sortOrder) ? "ten_desc" : "";
             ViewBag.SapTheoGia = sortOrder == "gia" ? "gia_desc" : "gia";
             if (searchString != null)
             {
@@ -75,7 +75,7 @@ namespace ShoesShopOnline.Areas.Admin.Controllers
             }
             int pageSize = 4;
             int pageNumber = (page ?? 1);
-            return View(productDetails.ToPagedList(pageNumber,pageSize));
+            return View(productDetails.ToPagedList(pageNumber, pageSize));
         }
 
         public ActionResult Details(string id)
@@ -93,19 +93,19 @@ namespace ShoesShopOnline.Areas.Admin.Controllers
                     return HttpNotFound();
                 }
                 var images = db.AnhMoTas.Where(p => p.MaSP == id).ToList();
-                var maAnh=0;
+                var maAnh = 0;
                 string filePath = "";
                 if (images != null)
                 {
-                    foreach (var item in images )
+                    foreach (var item in images)
                     {
-                        filePath += item.HinhAnh+";";
+                        filePath += item.HinhAnh + ";";
                         maAnh = item.MaAnh;
-                    }    
+                    }
                 }
                 filePath = filePath.Substring(0, filePath.Length - 1);
                 ViewBag.filePath = filePath;
-                var sizes = db.ChiTietSanPhams.Where(p => p.MaAnh== maAnh).ToList();
+                var sizes = db.ChiTietSanPhams.Where(p => p.MaAnh == maAnh).ToList();
                 string listSize = "";
                 if (sizes != null)
                 {
@@ -118,19 +118,17 @@ namespace ShoesShopOnline.Areas.Admin.Controllers
                 ViewBag.listSize = listSize;
                 return View(sanPham);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 ViewBag.Error = "Lỗi !" + ex.Message;
                 return View();
             }
-            
+
         }
 
         public ActionResult Create()
         {
             ViewBag.MaDM = new SelectList(db.DanhMucSPs, "MaDM", "TenDanhMuc");
-            //ViewBag.MaDM = db.DanhMucSPs.ToList();
-
             return View();
         }
 
@@ -142,21 +140,6 @@ namespace ShoesShopOnline.Areas.Admin.Controllers
             try
             {
                 productDetail.Anh = "";
-               // HttpFileCollectionBase images = Request.Files;
-               //var f=Request.Files["ImageFile"];
-               
-                //var t = Request.Files["ImageFile"];
-                //if (f != null)
-                //{
-                //    for(int i=0;i<f.Count;i++)
-                //    {
-                //        var t = f[i];
-                //    }    
-                    //string FileName = System.IO.Path.GetFileName(f.);
-                    //string UploadPath = Server.MapPath("~/wwwroot/Images/" + FileName);
-                    //f.SaveAs(UploadPath);
-                    //productDetail.Anh = FileName;
-                //}
                 if (ModelState.IsValid)
                 {
                     SanPham sanPham = new SanPham();
@@ -231,7 +214,7 @@ namespace ShoesShopOnline.Areas.Admin.Controllers
             {
                 return HttpNotFound();
             }
-            int maAnh=0;
+            int maAnh = 0;
             var images = db.AnhMoTas.Where(p => p.MaSP == id).ToList();
             string filePath = "";
             if (images != null)
@@ -265,8 +248,8 @@ namespace ShoesShopOnline.Areas.Admin.Controllers
                 Size = listSize,
                 MoTa = sanPham.MoTa,
                 MaDM = sanPham.MaDM,
-                NgayTao=sanPham.NgayTao,
-                NgaySua=sanPham.NgaySua,
+                NgayTao = sanPham.NgayTao,
+                NgaySua = sanPham.NgaySua,
                 DanhMucSP = sanPham.DanhMucSP
             };
             return View(productDetail);
@@ -287,7 +270,7 @@ namespace ShoesShopOnline.Areas.Admin.Controllers
                 }
                 if (ModelState.IsValid)
                 {
-                    var sanPham=db.SanPhams.Where(p => p.MaSP == id).FirstOrDefault();
+                    var sanPham = db.SanPhams.Where(p => p.MaSP == id).FirstOrDefault();
                     sanPham.TenSP = productDetail.TenSP;
                     sanPham.MoTa = productDetail.MoTa;
                     sanPham.GiaBan = productDetail.GiaBan;
@@ -297,62 +280,79 @@ namespace ShoesShopOnline.Areas.Admin.Controllers
                     string[] sizes = productDetail.Size.Split(';');
                     //Xóa ảnh cũ bị loại bỏ
                     var listimages = db.AnhMoTas.Where(p => p.MaSP == id).ToList();
-                    string[] newimages = productDetail.Anh.Split(';');
-                    foreach (var item in listimages)
+
+                    //string[] newimages = productDetail.Anh;
+                    if (productDetail.Anh != null)
                     {
-                        int dem = 0;
-                        for (int i = 0; i < newimages.Length; i++)
-                            if (item.HinhAnh == newimages[i])
-                                dem++;
-                        if (dem == 0)
+                        string[] newimages = productDetail.Anh.Split(';');
+                        foreach (var item in listimages)
+                        {
+                            int dem = 0;
+                            for (int i = 0; i < newimages.Length; i++)
+                                if (item.HinhAnh == newimages[i])
+                                    dem++;
+                            if (dem == 0)
+                            {
+                                db.AnhMoTas.Remove(item);
+                                db.SaveChanges();
+                            }
+                            else
+                            {
+                                //Cập nhật lại size cho ảnh cũ
+                                var sizecu = db.ChiTietSanPhams.Where(p => p.MaAnh == item.MaAnh);
+                                foreach (var itemcu in sizecu)
+                                {
+                                    db.ChiTietSanPhams.Remove(itemcu);
+                                }
+                                for (int j = 0; j < sizes.Length; j++)
+                                {
+                                    ChiTietSanPham chiTietSanPham = new ChiTietSanPham();
+                                    chiTietSanPham.MaAnh = item.MaAnh;
+                                    chiTietSanPham.KichCo = int.Parse(sizes[j]);
+                                    db.ChiTietSanPhams.Add(chiTietSanPham);
+                                }
+                            }
+                        }
+                    }
+                    else
+                    {
+                        foreach (var item in listimages)
                         {
                             db.AnhMoTas.Remove(item);
                             db.SaveChanges();
                         }
-                        else
-                        {
-                            //Cập nhật lại size cho ảnh cũ
-                            var sizecu = db.ChiTietSanPhams.Where(p => p.MaAnh == item.MaAnh);
-                            foreach (var itemcu in sizecu)
-                            {
-                                db.ChiTietSanPhams.Remove(itemcu);
-                            }
-                            for (int j = 0; j < sizes.Length; j++)
-                            {
-                                ChiTietSanPham chiTietSanPham = new ChiTietSanPham();
-                                chiTietSanPham.MaAnh = item.MaAnh;
-                                chiTietSanPham.KichCo = int.Parse(sizes[j]);
-                                db.ChiTietSanPhams.Add(chiTietSanPham);
-                            }
-                        }
                     }
+
                     //Lưu thêm ảnh mới
                     if (uploadFile != null)
                     {
                         foreach (var item in uploadFile)
                         {
-                            AnhMoTa anhMoTa = new AnhMoTa();
-                            string FileName = item.FileName;
-                            string filePath = Path.Combine(HttpContext.Server.MapPath("/wwwroot/Images"),
-                                                           Path.GetFileName(item.FileName));
-                            item.SaveAs(filePath);
-                            anhMoTa.HinhAnh = FileName;
-                            anhMoTa.MaSP = id;
-                            db.AnhMoTas.Add(anhMoTa);
-                            db.SaveChanges();
-
-                            //Add san pham chi tiet
-                            for (int j = 0; j < sizes.Length; j++)
+                            if (item != null)
                             {
-                                ChiTietSanPham chiTietSanPham = new ChiTietSanPham();
-                                chiTietSanPham.MaAnh = anhMoTa.MaAnh;
-                                chiTietSanPham.KichCo = int.Parse(sizes[j]);
-                                db.ChiTietSanPhams.Add(chiTietSanPham);
+                                AnhMoTa anhMoTa = new AnhMoTa();
+                                string FileName = item.FileName;
+                                string filePath = Path.Combine(HttpContext.Server.MapPath("/wwwroot/Images"),
+                                                               Path.GetFileName(item.FileName));
+                                item.SaveAs(filePath);
+                                anhMoTa.HinhAnh = FileName;
+                                anhMoTa.MaSP = id;
+                                db.AnhMoTas.Add(anhMoTa);
+                                db.SaveChanges();
+
+                                //Add san pham chi tiet
+                                for (int j = 0; j < sizes.Length; j++)
+                                {
+                                    ChiTietSanPham chiTietSanPham = new ChiTietSanPham();
+                                    chiTietSanPham.MaAnh = anhMoTa.MaAnh;
+                                    chiTietSanPham.KichCo = int.Parse(sizes[j]);
+                                    db.ChiTietSanPhams.Add(chiTietSanPham);
+                                }
+                                db.SaveChanges();
                             }
-                            db.SaveChanges();
                         }
                     }
-                    
+
                 }
                 return RedirectToAction("Index");
             }
@@ -365,51 +365,6 @@ namespace ShoesShopOnline.Areas.Admin.Controllers
             }
         }
 
-        //public ActionResult Delete(string id)
-        //{
-        //    try
-        //    {
-        //        if (id == null)
-        //        {
-        //            return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-        //        }
-
-        //        SanPham sanPham = db.SanPhams.Find(id);
-        //        if (sanPham == null)
-        //        {
-        //            return HttpNotFound();
-        //        }
-        //        var images = db.AnhMoTas.Where(p => p.MaSP == id).ToList();
-        //        string filePath = "";
-        //        if (images != null)
-        //        {
-        //            foreach (var item in images)
-        //            {
-        //                filePath += item.HinhAnh + ";";
-        //            }
-        //        }
-        //        filePath = filePath.Substring(0, filePath.Length - 1);
-        //        ViewBag.filePath = filePath;
-        //        return View(sanPham);
-
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        ViewBag.Error = "Lỗi !" + ex.Message;
-        //        return View();
-        //    }
-
-        //}
-
-        //[HttpPost, ActionName("Delete")]
-        //[ValidateAntiForgeryToken]
-        //public ActionResult DeleteConfirmed(string id)
-        //{
-        //    SanPham sanPham = db.SanPhams.Find(id);
-        //    db.SanPhams.Remove(sanPham);
-        //    db.SaveChanges();
-        //    return RedirectToAction("Index");
-        //}
 
         [HttpPost]
         public async Task<JsonResult> Delete(string id)
