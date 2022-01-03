@@ -78,19 +78,19 @@
                     </div>
 
                     <div class="cost-product1">
-                        <span><del>350.000<u>đ</u></del></span><b>@Model.GiaBan<u>đ</u></b>
+                        <b>@string.Format(info, "{0:c0}", Model.GiaBan)</b>
                     </div>
                     <div class="color_container ">
                         <p class="color_title">Màu sắc</p>
                         <div class="color_image">
                             @foreach (var item in ViewBag.Images)
-                            {
+                                {
 
                                 <div class="color_image--1">
                                     <a href="@Url.Action("ProductDetail","Product", new { id = item.MaSP, maImage = item.MaAnh,madm = Model.MaDM })">
                                         @{
                                             string filePathColor = "~/wwwroot/images/" + item.HinhAnh;
-                                        }
+                            }
                                         <img src="@Url.Content(filePathColor)">
                                     </a>
                                 </div>
@@ -103,14 +103,14 @@
                         <div class="attribute-swatch">
                             @foreach (var item in ViewBag.SizeList)
                             {
-                                if (item == @ViewBag.SizeList[0])
-                                {
+                            if (item == @ViewBag.SizeList[0])
+                            {
                                     <div class="swatchinput">
                                         <label class="kich-co active" style="width: 65px; margin: 0;padding:10px" data="@item.KichCo">@item.KichCo</label>
                                     </div>
                                 }
                                 else
-                                {
+                        {
                                     <div class="swatchinput">
                                         <label class="kich-co" style="width: 65px; margin: 0;padding:10px " data="@item.KichCo">@item.KichCo</label>
                                     </div>

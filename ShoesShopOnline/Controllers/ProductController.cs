@@ -17,6 +17,7 @@ namespace ShoesShopOnline.Controllers
         {
 
             ViewBag.searchString = searchString;
+            ViewBag.searchPrice = searchPrice;
             var sanphams = (from p in db.SanPhams
                             join a in db.AnhMoTas on p.MaSP equals a.MaSP
                             where p.MaDM == madm
@@ -74,7 +75,7 @@ namespace ShoesShopOnline.Controllers
                     decimal Gia = Convert.ToDecimal(searchPrice);
                     sanphams = (from p in db.SanPhams
                                 join a in db.AnhMoTas on p.MaSP equals a.MaSP
-                                where p.TenSP.Contains(searchString) && p.GiaBan <= Gia
+                                where p.GiaBan <= Gia
                                 select new ProductDetail()
                                 {
                                     MaDM = p.MaDM,

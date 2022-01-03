@@ -1,7 +1,9 @@
 ﻿@model ShoesShopOnline.Models.HoaDon
 
 @{ ViewBag.Title = "Hóa đơn";
-                Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml"; }
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+    var info = System.Globalization.CultureInfo.GetCultureInfo("vi-VN");
+    }
 
 <h2>Chi tiết hóa đơn</h2>
 
@@ -92,27 +94,27 @@
                                             @{ decimal tongtien = 0;}
                                             @foreach (var item in Model.ChiTietHoaDons)
                                             {
-                            <tr class="group-info">
-                                <td>
-                                    <img src="~/wwwroot/images/@item.ChiTietSanPham.AnhMoTa.HinhAnh" style="width:80px;height:80px" />
-                                </td>
-                                <td>
-                                    <span class="font-weight-normal">@item.ChiTietSanPham.AnhMoTa.SanPham.TenSP</span>
-                                </td>
-                                <td><span class="font-weight-normal">@item.ChiTietSanPham.AnhMoTa.SanPham.GiaBan</span></td>
-                                <td><span class="font-weight-normal">@item.SoluongMua</span></td>
-                                <td><span class="font-weight-normal">@item.ChiTietSanPham.KichCo</span></td>
-                                <td>
-                                    <span class="font-weight-normal">@(item.ChiTietSanPham.AnhMoTa.SanPham.GiaBan*item.SoluongMua)</span>
-                                </td>
+                                            <tr class="group-info">
+                                                <td>
+                                                    <img src="~/wwwroot/images/@item.ChiTietSanPham.AnhMoTa.HinhAnh" style="width:80px;height:80px" />
+                                                </td>
+                                                <td>
+                                                    <span class="font-weight-normal">@item.ChiTietSanPham.AnhMoTa.SanPham.TenSP</span>
+                                                </td>
+                                                <td><span class="font-weight-normal">@String.Format(info, "{0:c0}",item.ChiTietSanPham.AnhMoTa.SanPham.GiaBan)</span></td>
+                                                <td><span class="font-weight-normal">@item.SoluongMua</span></td>
+                                                <td><span class="font-weight-normal">@item.ChiTietSanPham.KichCo</span></td>
+                                                <td>
+                                                    <span class="font-weight-normal">@String.Format(info, "{0:c0}", item.ChiTietSanPham.AnhMoTa.SanPham.GiaBan*item.SoluongMua)</span>
+                                                </td>
 
-                            </tr>tongtien += item.ChiTietSanPham.AnhMoTa.SanPham.GiaBan * item.SoluongMua;
+                                            </tr>tongtien += item.ChiTietSanPham.AnhMoTa.SanPham.GiaBan * item.SoluongMua;
                                             }
                                         </tbody>
                                         <tfoot>
                                             <tr>
                                                 <th colspan="5" style="text-align:center">Tổng tiền</th>
-                                                <th>@tongtien</th>
+                                                <th>@String.Format(info, "{0:c0}", tongtien)</th>
                                             </tr>
                                         </tfoot>
                                     </table>

@@ -17,12 +17,19 @@ namespace ShoesShopOnline.Areas.Admin.Controllers
         // GET: Admin/HoaDons
         public ActionResult Index(int? page, DateTime? searchString)
         {
+
             List<HoaDon> hoaDons = db.HoaDons.Include(h => h.TaiKhoanNguoiDung).Select(p => p).ToList();
+            /*HoaDon hoaDonss = (from hd in db.HoaDons where hd.MaHD == 1 select hd).FirstOrDefault();*/
             if (searchString != null)
             {
-                ViewBag.searchString = searchString.Value.ToString("yyyy-MM-dd");
-                string search = searchString.Value.ToString("dd/MM/yyyy");
-                hoaDons = hoaDons.Where(hd => hd.NgayLap.ToString().Contains(search)).ToList();
+                ViewBag.searchString = searchString.Value.ToShortDateString();
+                string search = searchString.Value.ToShortDateString()/*ToString("MM/dd/yyyy")*/;
+                hoaDons = hoaDons.Where(hd => hd.NgayLap.ToShortDateString().Equals(search)).ToList();
+                /*hoaDonss = (from hd in db.HoaDons where hd.MaHD == 1 select hd).FirstOrDefault();*/
+            }
+            if (hoaDons.Count() == 0)
+            {
+                ViewBag.Error = "Oops, Không thấy đơn hàng nào cậu ạ!";
             }
             int pageSize = 10;
             int pageNumber = (page ?? 1);

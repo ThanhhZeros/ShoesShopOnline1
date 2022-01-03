@@ -351,19 +351,19 @@ insert into TaiKhoanQuanTri(HoTenUser,TenDangNhap,MatKhau,LoaiTK,TrangThai,DiaCh
 (N'Admin', 'admin','123','Admin','1',null,null,null)
 
 insert into HoaDon (MaTK,DiaChiNhan,EmailNguoiNhan,HoTenNguoiNhan,GhiChu,NgayLap,SDTNguoiNhan,TrangThai) VALUES
-(1,N'Cầu Giấy, Hà Nội','hgfeafhkj@gmail.com',N'Nguyễn Văn Nam',N'Nhận hàng vào 1/20/2022','4/2/2022','09876543',N'Đang chuẩn bị'),
-(2,N'Cầu Giấy, Hà Nội','hgfeafhkj@gmail.com',N'Nguyễn Văn Nam',N'Nhận hàng vào 1/20/2022','4/2/2022','09876543',N'Chờ xác nhận'),
-(1,N'Cầu Giấy, Hà Nội','hgfeafhkj@gmail.com',N'Nguyễn Văn Nam',N'Nhận hàng vào 1/20/2022','4/2/2022','09876543',N'Đang giao hàng'),
-(1,N'Cầu Giấy, Hà Nội','hgfeafhkj@gmail.com',N'Nguyễn Văn Nam',N'Nhận hàng vào 1/20/2022','4/2/2022','09876543',N'Đang chuẩn bị'),
-(2,N'Cầu Giấy, Hà Nội','hgfeafhkj@gmail.com',N'Nguyễn Văn Nam',N'Nhận hàng vào 1/20/2022','4/2/2022','09876543',N'Chờ xác nhận'),
-(2,N'Cầu Giấy, Hà Nội','hgfeafhkj@gmail.com',N'Nguyễn Văn Nam',N'Nhận hàng vào 1/20/2022','4/2/2022','09876543',N'Đang giao hàng'),
-(2,N'Cầu Giấy, Hà Nội','hgfeafhkj@gmail.com',N'Nguyễn Văn Nam',N'Nhận hàng vào 1/20/2022','4/2/2022','09876543',N'Đang chuẩn bị'),
-(1,N'Cầu Giấy, Hà Nội','hgfeafhkj@gmail.com',N'Nguyễn Văn Nam',N'Nhận hàng vào 1/20/2022','4/2/2022','09876543',N'Đã giao hàng'),
-(1,N'Cầu Giấy, Hà Nội','hgfeafhkj@gmail.com',N'Nguyễn Văn Nam',N'Nhận hàng vào 1/20/2022','4/2/2022','09876543',N'Chờ xác nhận'),
-(2,N'Cầu Giấy, Hà Nội','hgfeafhkj@gmail.com',N'Nguyễn Văn Nam',N'Nhận hàng vào 1/20/2022','4/2/2022','09876543',N'Đang chuẩn bị'),
-(2,N'Cầu Giấy, Hà Nội','hgfeafhkj@gmail.com',N'Nguyễn Văn Nam',N'Nhận hàng vào 1/20/2022','4/2/2022','09876543',N'Đã giao hàng'),
-(2,N'Cầu Giấy, Hà Nội','hgfeafhkj@gmail.com',N'Nguyễn Văn Nam',N'Nhận hàng vào 1/20/2022','4/2/2022','09876543',N'Chờ xác nhận'),
-(1,N'Cầu Giấy, Hà Nội','hgfeafhkj@gmail.com',N'Nguyễn Văn Nam',N'Nhận hàng vào 1/20/2022','4/2/2022','09876543',N'Đang giao hàng')
+(1,N'Cầu Giấy, Hà Nội','hgfeafhkj@gmail.com',N'Nguyễn Văn Nam',N'Nhận hàng vào 1/20/2022','12/12/2021','09876543',N'Đang chuẩn bị'),
+(2,N'Cầu Giấy, Hà Nội','hgfeafhkj@gmail.com',N'Nguyễn Văn Nam',N'Nhận hàng vào 1/20/2022','5/12/2021','09876543',N'Chờ xác nhận'),
+(1,N'Cầu Giấy, Hà Nội','hgfeafhkj@gmail.com',N'Nguyễn Văn Nam',N'Nhận hàng vào 1/20/2022','10/10/2021','09876543',N'Đang giao hàng'),
+(1,N'Cầu Giấy, Hà Nội','hgfeafhkj@gmail.com',N'Nguyễn Văn Nam',N'Nhận hàng vào 1/20/2022','11/2/2021','09876543',N'Đang chuẩn bị'),
+(2,N'Cầu Giấy, Hà Nội','hgfeafhkj@gmail.com',N'Nguyễn Văn Nam',N'Nhận hàng vào 1/20/2022','9/2/2021','09876543',N'Chờ xác nhận'),
+(2,N'Cầu Giấy, Hà Nội','hgfeafhkj@gmail.com',N'Nguyễn Văn Nam',N'Nhận hàng vào 1/20/2022','11/11/2021','09876543',N'Đang giao hàng'),
+(2,N'Cầu Giấy, Hà Nội','hgfeafhkj@gmail.com',N'Nguyễn Văn Nam',N'Nhận hàng vào 1/20/2022','11/11/2021','09876543',N'Đang chuẩn bị'),
+(1,N'Cầu Giấy, Hà Nội','hgfeafhkj@gmail.com',N'Nguyễn Văn Nam',N'Nhận hàng vào 1/20/2022','12/12/2021','09876543',N'Đã giao hàng'),
+(1,N'Cầu Giấy, Hà Nội','hgfeafhkj@gmail.com',N'Nguyễn Văn Nam',N'Nhận hàng vào 1/20/2022','5/12/2021','09876543',N'Chờ xác nhận'),
+(2,N'Cầu Giấy, Hà Nội','hgfeafhkj@gmail.com',N'Nguyễn Văn Nam',N'Nhận hàng vào 1/20/2022','4/2/2021','09876543',N'Đang chuẩn bị'),
+(2,N'Cầu Giấy, Hà Nội','hgfeafhkj@gmail.com',N'Nguyễn Văn Nam',N'Nhận hàng vào 1/20/2022','4/2/2021','09876543',N'Đã giao hàng'),
+(2,N'Cầu Giấy, Hà Nội','hgfeafhkj@gmail.com',N'Nguyễn Văn Nam',N'Nhận hàng vào 1/20/2022','4/2/2021','09876543',N'Chờ xác nhận'),
+(1,N'Cầu Giấy, Hà Nội','hgfeafhkj@gmail.com',N'Nguyễn Văn Nam',N'Nhận hàng vào 1/20/2022','4/2/2021','09876543',N'Đang giao hàng')
 
 insert into  ChiTietHoaDon (MaHD, MaAnh, KichCo, SoLuongMua) VALUES
 (1,1,37,1),

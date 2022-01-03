@@ -157,7 +157,9 @@
                 @Html.PagedListPager(Model, page => Url.Action("Index", new
            {
                page,
-               madm = ViewBag.madm
+               madm = ViewBag.madm,
+               searchPrice = ViewBag.searchPrice,
+               searchString = ViewBag.searchString
            }))
             </nav>
         </div>
