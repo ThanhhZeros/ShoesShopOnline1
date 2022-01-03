@@ -320,6 +320,7 @@ D:\ASP.NET\BTL\nhom4_v3\ShoesShopOnline1\ShoesShopOnline\obj\Debug\ShoesShopOnli
 D:\ASP.NET\BTL\nhom4_v3\ShoesShopOnline1\ShoesShopOnline\obj\Debug\ShoesShopOnline.csproj.CopyComplete
 D:\ASP.NET\BTL\nhom4_v3\ShoesShopOnline1\ShoesShopOnline\obj\Debug\ShoesShopOnline.dll
 D:\ASP.NET\BTL\nhom4_v3\ShoesShopOnline1\ShoesShopOnline\obj\Debug\ShoesShopOnline.pdb
+<<<<<<< HEAD
 C:\Lap trinh ung dung web\BTL\ShoesShopOnline1\ShoesShopOnline\bin\ShoesShopOnline.dll.config
 C:\Lap trinh ung dung web\BTL\ShoesShopOnline1\ShoesShopOnline\bin\ShoesShopOnline.dll
 C:\Lap trinh ung dung web\BTL\ShoesShopOnline1\ShoesShopOnline\bin\ShoesShopOnline.pdb
@@ -402,3 +403,6 @@ C:\Lap trinh ung dung web\BTL\ShoesShopOnline1\ShoesShopOnline\bin\roslyn\vbc.ex
 C:\Lap trinh ung dung web\BTL\ShoesShopOnline1\ShoesShopOnline\bin\roslyn\vbc.rsp
 C:\Lap trinh ung dung web\BTL\ShoesShopOnline1\ShoesShopOnline\bin\roslyn\VBCSCompiler.exe
 C:\Lap trinh ung dung web\BTL\ShoesShopOnline1\ShoesShopOnline\bin\roslyn\VBCSCompiler.exe.config
+=======
+D:\ASP.NET\BTL\ShoesShopOnline1\ShoesShopOnline\obj\Debug\ShoesShopOnline.csproj.CopyComplete
+>>>>>>> 38ac53a469fcb3dc786934b22e0eddd688a2eac5
