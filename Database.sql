@@ -350,7 +350,21 @@ insert into TaiKhoanQuanTri(HoTenUser,TenDangNhap,MatKhau,LoaiTK,TrangThai,DiaCh
 (N'Vũ Ngọc Tâm', 'NgocTam','123','QuanLy','1',N'Nam Định','ngoctam@gmail.com','0987654345'),
 (N'Admin', 'admin','123','Admin','1',null,null,null)
 
---delete from HoaDon
+insert into HoaDon (MaTK,DiaChiNhan,EmailNguoiNhan,HoTenNguoiNhan,GhiChu,NgayLap,SDTNguoiNhan,TrangThai) VALUES
+(1,N'Cầu Giấy, Hà Nội','hgfeafhkj@gmail.com',N'Nguyễn Văn Nam','Nhận hàng vào 1/20/2022','4/2/2022','09876543','Chờ nhận hàng'),
+(2,N'Cầu Giấy, Hà Nội','hgfeafhkj@gmail.com',N'Nguyễn Văn Nam','Nhận hàng vào 1/20/2022','4/2/2022','09876543','Chờ nhận hàng'),
+(1,N'Cầu Giấy, Hà Nội','hgfeafhkj@gmail.com',N'Nguyễn Văn Nam','Nhận hàng vào 1/20/2022','4/2/2022','09876543','Chờ nhận hàng'),
+(1,N'Cầu Giấy, Hà Nội','hgfeafhkj@gmail.com',N'Nguyễn Văn Nam','Nhận hàng vào 1/20/2022','4/2/2022','09876543','Chờ nhận hàng'),
+(2,N'Cầu Giấy, Hà Nội','hgfeafhkj@gmail.com',N'Nguyễn Văn Nam','Nhận hàng vào 1/20/2022','4/2/2022','09876543','Chờ nhận hàng'),
+(2,N'Cầu Giấy, Hà Nội','hgfeafhkj@gmail.com',N'Nguyễn Văn Nam','Nhận hàng vào 1/20/2022','4/2/2022','09876543','Chờ nhận hàng'),
+(2,N'Cầu Giấy, Hà Nội','hgfeafhkj@gmail.com',N'Nguyễn Văn Nam','Nhận hàng vào 1/20/2022','4/2/2022','09876543','Chờ nhận hàng'),
+(1,N'Cầu Giấy, Hà Nội','hgfeafhkj@gmail.com',N'Nguyễn Văn Nam','Nhận hàng vào 1/20/2022','4/2/2022','09876543','Chờ nhận hàng'),
+(1,N'Cầu Giấy, Hà Nội','hgfeafhkj@gmail.com',N'Nguyễn Văn Nam','Nhận hàng vào 1/20/2022','4/2/2022','09876543','Chờ nhận hàng'),
+(2,N'Cầu Giấy, Hà Nội','hgfeafhkj@gmail.com',N'Nguyễn Văn Nam','Nhận hàng vào 1/20/2022','4/2/2022','09876543','Chờ nhận hàng'),
+(2,N'Cầu Giấy, Hà Nội','hgfeafhkj@gmail.com',N'Nguyễn Văn Nam','Nhận hàng vào 1/20/2022','4/2/2022','09876543','Chờ nhận hàng'),
+(2,N'Cầu Giấy, Hà Nội','hgfeafhkj@gmail.com',N'Nguyễn Văn Nam','Nhận hàng vào 1/20/2022','4/2/2022','09876543','Chờ nhận hàng'),
+(1,N'Cầu Giấy, Hà Nội','hgfeafhkj@gmail.com',N'Nguyễn Văn Nam','Nhận hàng vào 1/20/2022','4/2/2022','09876543','Chờ nhận hàng')
+
 insert into  ChiTietHoaDon (MaHD, MaAnh, KichCo, SoLuongMua) VALUES
 (1,1,37,1),
 (1,8,37,1),
