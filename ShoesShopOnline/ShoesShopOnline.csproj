@@ -1899,6 +1899,7 @@
     <Content Include="Assets\Admin\plugin\ckfinder\skins\v1\richcombo.css" />
     <Content Include="Assets\Admin\plugin\ckfinder\skins\v1\skin.js" />
     <Content Include="Assets\Admin\plugin\ckfinder\skins\v1\uipanel.css" />
+    <Content Include="Assets\Client\controller\BillController.js" />
     <Content Include="Assets\Client\controller\cartController.js" />
     <Content Include="Assets\Client\css\bootstrap.css" />
     <Content Include="Assets\Client\css\CustomButton.css" />
@@ -2010,6 +2011,7 @@
     <Compile Include="Areas\Admin\Controllers\TaiKhoanQuanTrisController.cs" />
     <Compile Include="Areas\Admin\Controllers\TinTucsController.cs" />
     <Compile Include="Areas\Admin\Data\LoginAccount.cs" />
+    <Compile Include="Controllers\BillController.cs" />
     <Compile Include="Controllers\CartController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
@@ -2351,6 +2353,8 @@
     <Content Include="Views\Cart\Payment.cshtml" />
     <Content Include="Views\Cart\SubmitOrder.cshtml" />
     <Content Include="Views\Shared\HeaderCart.cshtml" />
+    <Content Include="Views\Bill\Index.cshtml" />
+    <Content Include="Views\Bill\Details.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -2360,7 +2364,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\Admin\Views\BaseController\" />
     <Folder Include="Areas\Admin\Views\Base\" />
     <Folder Include="wwwroot\Images\" />
   </ItemGroup>

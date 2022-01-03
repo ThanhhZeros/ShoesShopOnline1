@@ -24,6 +24,7 @@ namespace ShoesShopOnline.Models
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+
             modelBuilder.Entity<AnhMoTa>()
                 .Property(e => e.MaSP)
                 .IsUnicode(false);

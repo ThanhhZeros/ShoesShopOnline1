@@ -147,6 +147,7 @@ namespace ShoesShopOnline.Areas.Admin.Controllers
             }
             base.Dispose(disposing);
         }
+
         [HttpPost]
         public ActionResult ChangeStatus()
         {
