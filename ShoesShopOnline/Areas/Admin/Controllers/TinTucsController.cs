@@ -6,6 +6,7 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using PagedList;
 using ShoesShopOnline.Models;
 
 namespace ShoesShopOnline.Areas.Admin.Controllers
@@ -15,7 +16,7 @@ namespace ShoesShopOnline.Areas.Admin.Controllers
         private Shoes db = new Shoes();
 
         // GET: Admin/TinTucs
-        public ActionResult Index(string searchString)
+        public ActionResult Index(string searchString,int? page)
         {
             //var tinTucs = db.TinTucs.Include(t => t.TaiKhoanQuanTri);
             ViewBag.searchString = searchString;
@@ -24,7 +25,9 @@ namespace ShoesShopOnline.Areas.Admin.Controllers
             {
                 tinTucs = tinTucs.Where(tk => tk.TenTin.Contains(searchString));
             }
-            return View(tinTucs.OrderBy(tk => tk.NgayDang).ToList());
+            int pageSize = 10;
+            int pageNumber = (page ?? 1);
+            return View(tinTucs.OrderBy(tk => tk.NgayDang).ToPagedList(pageNumber, pageSize));
         }
 
         // GET: Admin/TinTucs/Details/5

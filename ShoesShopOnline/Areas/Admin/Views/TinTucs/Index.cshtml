@@ -1,4 +1,7 @@
-﻿@model IEnumerable<ShoesShopOnline.Models.TinTuc>
+﻿
+@model PagedList.IPagedList<ShoesShopOnline.Models.TinTuc>
+@using PagedList.Mvc;
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css">
 
 @{
     ViewBag.Title = "Tin tức";
@@ -8,11 +11,11 @@
 <h2>Danh sách tin tức</h2>
 <head>
     <style>
-        a {
+        button a {
             color: white;
         }
 
-            a:hover {
+            button a:hover {
                 color: yellow;
             }
     </style>
@@ -64,3 +67,7 @@
         </tbody>
     </table>
 </div>
+@(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) / @Model.PageCount
+
+@Html.PagedListPager(Model, page => Url.Action("Index",
+    new { page, pageSize = Model.PageSize, searchString = ViewBag.searchString }))

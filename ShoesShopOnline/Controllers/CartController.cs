@@ -169,7 +169,7 @@ namespace ShoesShopOnline.Controllers
             hoaDon.DiaChiNhan = collection["address"];
             hoaDon.GhiChu = collection["note"];
             hoaDon.NgayLap = DateTime.Now;
-            hoaDon.TrangThai = "Đang chuẩn bị";
+            hoaDon.TrangThai = "Chờ xác nhận";
             db.HoaDons.Add(hoaDon);
             db.SaveChanges();
             //Thêm chi tiết đơn hàng

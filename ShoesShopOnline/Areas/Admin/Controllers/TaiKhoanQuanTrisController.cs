@@ -6,6 +6,7 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using PagedList;
 using ShoesShopOnline.Models;
 
 namespace ShoesShopOnline.Areas.Admin.Controllers
@@ -15,9 +16,13 @@ namespace ShoesShopOnline.Areas.Admin.Controllers
         private Shoes db = new Shoes();
 
         // GET: Admin/TaiKhoanQuanTris
-        public ActionResult Index()
+        public ActionResult Index(int? page)
         {
-            return View(db.TaiKhoanQuanTris.ToList());
+            var taikhoans = db.TaiKhoanQuanTris.Select(tk => tk);
+            
+            int pageSize = 10;
+            int pageNumber = (page ?? 1);
+            return View(taikhoans.OrderBy(tk => tk.MaTK).ToPagedList(pageNumber, pageSize));
         }
 
         // GET: Admin/TaiKhoanQuanTris/Details/5

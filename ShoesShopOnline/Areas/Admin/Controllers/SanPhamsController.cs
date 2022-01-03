@@ -73,7 +73,7 @@ namespace ShoesShopOnline.Areas.Admin.Controllers
                     productDetails = productDetails.OrderBy(p => p.TenSP).ToList();
                     break;
             }
-            int pageSize = 4;
+            int pageSize = 10;
             int pageNumber = (page ?? 1);
             return View(productDetails.ToPagedList(pageNumber, pageSize));
         }

@@ -23,7 +23,7 @@ namespace ShoesShopOnline.Areas.Admin.Controllers
             {
                 taikhoans = taikhoans.Where(tk => tk.TenDangNhap.Contains(searchString));
             }
-            int pageSize = 3;
+            int pageSize = 10;
             int pageNumber = (page ?? 1);
             return View(taikhoans.OrderBy(tk => tk.MaTK).ToPagedList(pageNumber, pageSize));
         }
