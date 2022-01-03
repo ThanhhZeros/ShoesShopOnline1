@@ -4,9 +4,15 @@
     ViewBag.Title = "ProductDetail";
     Layout = "~/Views/Shared/_LayoutClient.cshtml";
     var info = System.Globalization.CultureInfo.GetCultureInfo("vi-VN");
+    var listAnh = ViewBag.Images;
+    int maAnh = listAnh[0].MaAnh;
+    int KichCo;
 }
 
-
+@section jsFooter{
+    <script src="~/Assets/Client/controller/cartController.js"></script>
+}
+<link href="~/Assets/Client/css/CustomButton.css" rel="stylesheet" />
 <!--content-->
 <!---->
 <div class="product">
@@ -17,7 +23,8 @@
                     <ul class="slides">
                         @{
                             string filePath = "~/wwwroot/images/" + Model.Anh;
-                        }
+                            maAnh = Model.maAnh;
+                            }
                         <li data-thumb="">
                             <img src="@Url.Content(filePath)">
                         </li>
@@ -31,6 +38,18 @@
                 <script>
                     // Can also be used with $(document).ready()
                     $(window).load(function () {
+                        $('.flexslider').flexslider({
+                            animation: "slide",
+                            controlNav: "thumbnails"
+                        });
+                    });
+                    $(document).ready(function () {
+                        $('.kich-co').off('click').on('click', function () {
+                            var kickco = $(this).attr('data');
+                            $('.kich-co').removeClass('active');
+                            $(this).addClass('active');
+                            $('#kichco').val(kickco);
+                        });
                         $('.flexslider').flexslider({
                             animation: "slide",
                             controlNav: "thumbnails"
@@ -84,19 +103,29 @@
                         <div class="attribute-swatch">
                             @foreach (var item in ViewBag.SizeList)
                             {
-                                <div class="swatchinput">
-                                    <label style="min-width: 69px;">@item.KichCo</label>
-                                </div>
-                            }
+                                if (item == @ViewBag.SizeList[0])
+                                {
+                                    <div class="swatchinput">
+                                        <label class="kich-co active" style="width: 65px; margin: 0;padding:10px" data="@item.KichCo">@item.KichCo</label>
+                                    </div>
+                                }
+                                else
+                                {
+                                    <div class="swatchinput">
+                                        <label class="kich-co" style="width: 65px; margin: 0;padding:10px " data="@item.KichCo">@item.KichCo</label>
+                                    </div>
+                                }
 
+                            }
+                            <input id="kichco" style="visibility:hidden;width:10px;height:4px" value="@ViewBag.SizeList[0].KichCo" />
                         </div>
                     </div>
-
-                    <a href="checkout.html" class="add-cart item_add">
-                        MUA NGAY
-                        <p class="ship">	<span>Giao tận nhà - Đổi trả dễ dàng</span></p>
-
-                    </a>
+                    <div class="star-on">
+                        <button class="btnAddCart" data-id="@maAnh" style="width:91%; margin:0% 4%;font-size:25px; padding:5px">
+                            MUA NGAY
+                            <div class="ship"><span style="font-size:15px">Giao tận nhà - Đổi trả dễ dàng</span></div>
+                        </button>
+                    </div>
                 </div>
                 <div class="clearfix"> </div>
 
