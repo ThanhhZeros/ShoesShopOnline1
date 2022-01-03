@@ -1,160 +1,0 @@
-MBRSC'   aC:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\mscorlib.dll    wo˚í’        normidna.nlpnormnfc.nlpnormnfd.nlpnormnfkc.nlpnormnfkd.nlp
-v4.0.30319 cD:\ASP.NET\BTL\ShoesShopOnline1\ShoesShopOnline\Assets\Admin\plugin\ckfinder\bin\Debug\CKFinder.dll    øî=1≈ŸCKFinder         g
-           Ä     kfile:///D:/ASP.NET/BTL/ShoesShopOnline1/ShoesShopOnline/Assets/Admin/plugin/ckfinder/bin/Debug/CKFinder.dll†    $  Ä  î      $  RSA1     ≈1 Á	¬y«Â3Ê:∂€%'€A“É°x=Oõ±ñÙ†≠€§>ãsémz’ñ@≥ÏàXΩ…´8uﬂçﬁ·¨≈Ää¬ev9àlä¯˘u∫ç˘»‡fÒ,» PàÂ˚r6ı])˛µƒ¶÷æπÂÍaÉ,‘‰i|˘*ƒ‘{°áí·"î   Wûz‹qö#NCKFinder, Version=2.4.1.2663, Culture=neutral, PublicKeyToken=579e7adc719a1423       mscorlib                                      ∑z\V4‡â        
-System.Web                                      ∞?_’
-:        
-System.Design                                      ∞?_’
-:        System                                      ∑z\V4‡â        
-System.Xml                                      ∑z\V4‡â        System.Drawing                                      ∞?_’
-:            
-v2.0.50727 \D:\ASP.NET\BTL\ShoesShopOnline1\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll    1…Ì‚"“EntityFramework                        Ä     dfile:///D:/ASP.NET/BTL/ShoesShopOnline1/packages/EntityFramework.6.1.3/lib/net45/EntityFramework.dll                     ∑z\V4‡âREntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089       mscorlib                                      ∑z\V4‡â        System.Core                                      ∑z\V4‡â        System.Data                                      ∑z\V4‡â        System.Configuration                                      ∞?_’
-:        System                                      ∑z\V4‡â        
-System.Xml                                      ∑z\V4‡â        System.Runtime.Serialization                                      ∑z\V4‡â        %System.ComponentModel.DataAnnotations                                      1ø8V≠6N5        System.Transactions                                      ∑z\V4‡â        System.Xml.Linq                                      ∑z\V4‡â        Microsoft.CSharp                                      ∞?_’
-:            
-v4.0.30319
-.NETFramework      ˇˇˇˇˇˇˇˇ fD:\ASP.NET\BTL\ShoesShopOnline1\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll    1…Ì‚"“EntityFramework.SqlServer                        Ä     nfile:///D:/ASP.NET/BTL/ShoesShopOnline1/packages/EntityFramework.6.1.3/lib/net45/EntityFramework.SqlServer.dll                     ∑z\V4‡â\EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089       mscorlib                                      ∑z\V4‡â        EntityFramework                                      ∑z\V4‡â        System                                      ∑z\V4‡â        System.Core                                      ∑z\V4‡â        System.Data                                      ∑z\V4‡â        
-System.Xml                                      ∑z\V4‡â        Microsoft.CSharp                                      ∞?_’
-:            
-v4.0.30319
-.NETFramework      ˇˇˇˇˇˇˇˇ iC:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\Microsoft.CSharp.dll    wo˚í’    mscorlib                                      ∑z\V4‡â     System                                      ∑z\V4‡â     System.Core                                      ∑z\V4‡â     System.Dynamic                                      ∞?_’
-:         
-v4.0.30319 SD:\ASP.NET\BTL\ShoesShopOnline1\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll    &¿å–	PagedList                       Ä     [file:///D:/ASP.NET/BTL/ShoesShopOnline1/packages/PagedList.1.17.0.0/lib/net40/PagedList.dll†    $  Ä  î      $  RSA1     Éhg≈¯ò‘T_[§vcR£MF85jÛæ&DyÉΩÕ=å~§K÷~—<veemT‡\ôôÀˇ¡mò<»π4•Ô≥˜‚4dÄ√lw¶c—ê°"OJÔR®ïmAœÚÏGdk$TÔv∞wÃ[≥é≤c®LÖﬁ|Ø+4˙6j"Ÿ   ´ªÜ>ìó≈·MPagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1       mscorlib                                      ∑z\V4‡â        System.Core                                      ∑z\V4‡â            
-v4.0.30319
-.NETFramework       ˇˇˇˇˇˇˇˇ ZD:\ASP.NET\BTL\ShoesShopOnline1\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll    ,+( å–
-PagedList.Mvc                       Ä     bfile:///D:/ASP.NET/BTL/ShoesShopOnline1/packages/PagedList.Mvc.4.5.0.0/lib/net40/PagedList.Mvc.dll†    $  Ä  î      $  RSA1     Éhg≈¯ò‘T_[§vcR£MF85jÛæ&DyÉΩÕ=å~§K÷~—<veemT‡\ôôÀˇ¡mò<»π4•Ô≥˜‚4dÄ√lw¶c—ê°"OJÔR®ïmAœÚÏGdk$TÔv∞wÃ[≥é≤c®LÖﬁ|Ø+4˙6j"Ÿ   ´ªÜ>ìó≈·PPagedList.Mvc, Version=4.5.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1       mscorlib                                      ∑z\V4‡â        System.Web.WebPages                                      1ø8V≠6N5        	PagedList                                     ´ªÜ>ìó≈·        System.Web.Mvc                                      1ø8V≠6N5        System.Core                                      ∑z\V4‡â            
-v4.0.30319
-.NETFramework       ˇˇˇˇˇˇˇˇ uC:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Runtime.Serialization.dll    wo˚í’    mscorlib                                      ∑z\V4‡â     
-System.Xml                                      ∑z\V4‡â     System                                      ∑z\V4‡â     System.ServiceModel.Internals                                      1ø8V≠6N5     
-SMDiagnostics                                      ∑z\V4‡â     System.Configuration                                      ∞?_’
-:         
-v4.0.30319 hC:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Security.dll    wo˚í’    mscorlib                                      ∑z\V4‡â     System                                      ∑z\V4‡â     
-System.Xml                                      ∑z\V4‡â         
-v4.0.30319 oC:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Web.DynamicData.dll    wo˚í’    mscorlib                                      ∑z\V4‡â     System.Drawing                                      ∞?_’
-:     System                                      ∑z\V4‡â     
-System.Web                                      ∞?_’
-:     System.Web.Extensions                                      1ø8V≠6N5     System.Core                                      ∑z\V4‡â     System.Data.Linq                                      ∑z\V4‡â     %System.ComponentModel.DataAnnotations                                      1ø8V≠6N5     System.Web.Entity                                      ∑z\V4‡â     System.Data.Entity                                      ∑z\V4‡â     System.Data                                      ∑z\V4‡â     System.Xml.Linq                                      ∑z\V4‡â         
-v4.0.30319 jC:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Web.Entity.dll    wo˚í’    mscorlib                                      ∑z\V4‡â     System.Drawing                                      ∞?_’
-:     
-System.Web                                      ∞?_’
-:     System                                      ∑z\V4‡â     System.Web.Extensions                                      1ø8V≠6N5     System.Data.Entity                                      ∑z\V4‡â     System.Data                                      ∑z\V4‡â     System.Core                                      ∑z\V4‡â         
-v4.0.30319 wC:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Web.ApplicationServices.dll    wo˚í’    mscorlib                                      ∑z\V4‡â     System                                      ∑z\V4‡â     System.Configuration                                      ∞?_’
-:         
-v4.0.30319 ~C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.ComponentModel.DataAnnotations.dll    wo˚í’    mscorlib                                      ∑z\V4‡â     System                                      ∑z\V4‡â     System.Configuration                                      ∞?_’
-:     System.Core                                      ∑z\V4‡â         
-v4.0.30319 _C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll    wo˚í’    mscorlib                                      ∑z\V4‡â     System.Configuration                                      ∞?_’
-:     
-System.Xml                                      ∑z\V4‡â         
-v4.0.30319 dC:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Data.dll    wo˚í’ 	   mscorlib                                      ∑z\V4‡â     System                                      ∑z\V4‡â     
-System.Xml                                      ∑z\V4‡â     System.Transactions                                      ∑z\V4‡â     System.Numerics                                      ∑z\V4‡â     System.Configuration                                      ∞?_’
-:     System.Runtime.Caching                                      ∞?_’
-:     System.Core                                      ∑z\V4‡â     System.EnterpriseServices                                      ∞?_’
-:         
-v4.0.30319 vC:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Data.DataSetExtensions.dll    wo˚í’    mscorlib                                      ∑z\V4‡â     System.Data                                      ∑z\V4‡â     System                                      ∑z\V4‡â     System.Core                                      ∑z\V4‡â         
-v4.0.30319 nC:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Web.Extensions.dll    wo˚í’    mscorlib                                      ∑z\V4‡â     
-System.Web                                      ∞?_’
-:     System.Drawing                                      ∞?_’
-:     System                                      ∑z\V4‡â     System.Web.Services                                      ∞?_’
-:     System.Data.Services.Design                                      ∑z\V4‡â     System.Configuration                                      ∞?_’
-:     System.ServiceModel                                      ∑z\V4‡â     
-System.Xml                                      ∑z\V4‡â     System.Core                                      ∑z\V4‡â     System.Runtime.Serialization                                      ∑z\V4‡â     
-System.Design                                      ∞?_’
-:     System.Data.Linq                                      ∑z\V4‡â     System.Web.ApplicationServices                                      1ø8V≠6N5     System.Data                                      ∑z\V4‡â     System.ServiceModel.Activation                                      1ø8V≠6N5     System.Data.Services.Client                                      ∑z\V4‡â     System.Data.Entity                                      ∑z\V4‡â     System.Windows.Forms                                      ∑z\V4‡â         
-v4.0.30319 hC:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Xml.Linq.dll    wo˚í’    mscorlib                                      ∑z\V4‡â     
-System.Xml                                      ∑z\V4‡â     System                                      ∑z\V4‡â     System.Runtime.Serialization                                      ∑z\V4‡â     System.Core                                      ∑z\V4‡â         
-v4.0.30319 gC:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Drawing.dll    wo˚í’    mscorlib                                      ∑z\V4‡â     System                                      ∑z\V4‡â     System.Configuration                                      ∞?_’
-:         
-v4.0.30319 cC:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Web.dll    wo˚í’    mscorlib                                      ∑z\V4‡â     System.Drawing                                      ∞?_’
-:     System                                      ∑z\V4‡â     System.Configuration                                      ∞?_’
-:     System.Core                                      ∑z\V4‡â     System.Data                                      ∑z\V4‡â     
-System.Xml                                      ∑z\V4‡â     System.DirectoryServices                                      ∞?_’
-:     System.EnterpriseServices                                      ∞?_’
-:     System.Web.RegularExpressions                                      ∞?_’
-:     
-System.Design                                      ∞?_’
-:     System.Web.ApplicationServices                                      1ø8V≠6N5     %System.ComponentModel.DataAnnotations                                      1ø8V≠6N5     "System.DirectoryServices.Protocols                                      ∞?_’
-:     System.Security                                      ∞?_’
-:     System.ServiceProcess                                      ∞?_’
-:     System.Web.Services                                      ∞?_’
-:     Microsoft.Build.Utilities.v4.0                                      ∞?_’
-:     System.Runtime.Caching                                      ∞?_’
-:     Microsoft.Build.Framework                                      ∞?_’
-:     Microsoft.Build.Tasks.v4.0                                      ∞?_’
-:     System.Windows.Forms                                      ∑z\V4‡â         
-v4.0.30319 cC:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Xml.dll    wo˚í’    mscorlib                                      ∑z\V4‡â     System                                      ∑z\V4‡â     System.Data.SqlXml                                      ∑z\V4‡â     System.Configuration                                      ∞?_’
-:         
-v4.0.30319 mC:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Configuration.dll    wo˚í’    mscorlib                                      ∑z\V4‡â     System                                      ∑z\V4‡â     
-System.Xml                                      ∑z\V4‡â     System.Security                                      ∞?_’
-:     System.Core                                      ∑z\V4‡â         
-v4.0.30319 lC:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Web.Services.dll    wo˚í’ 	   mscorlib                                      ∑z\V4‡â     System.EnterpriseServices                                      ∞?_’
-:     
-System.Xml                                      ∑z\V4‡â     System                                      ∑z\V4‡â     
-System.Web                                      ∞?_’
-:     System.Configuration                                      ∞?_’
-:     
-System.Design                                      ∞?_’
-:     System.DirectoryServices                                      ∞?_’
-:     System.Data                                      ∑z\V4‡â         
-v4.0.30319 rC:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.EnterpriseServices.dll    wo˚í’    mscorlib                                      ∑z\V4‡â     System.Transactions                                      ∑z\V4‡â     System                                      ∑z\V4‡â     
-System.Xml                                      ∑z\V4‡â     System.DirectoryServices                                      ∞?_’
-:     System.Runtime.Remoting                                      ∑z\V4‡â        %System.EnterpriseServices.Wrapper.dll
-v4.0.30319 dD:\ASP.NET\BTL\ShoesShopOnline1\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll     n1U÷System.Web.Razor                        Ä     lfile:///D:/ASP.NET/BTL/ShoesShopOnline1/packages/Microsoft.AspNet.Razor.3.2.7/lib/net45/System.Web.Razor.dll†    $  Ä  î      $  RSA1     µ¸êÁgáw:èﬁâ8»‘∫eπ `Y>ñƒíeàú¡?Îµ?¨1Æ”3≈Ó`!g-óÍ1®ÆΩ
-†/%ÿ}∫o…˝Yé‘⁄5‰L9åECË„;Ñ&=Æ…ıñÉoó»˜GPÂó\d‚üEﬁÙk*+G≠√e+ı√]©   1ø8V≠6N5SSystem.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35       mscorlib                                      ∑z\V4‡â        System                                      ∑z\V4‡â        System.Core                                      ∑z\V4‡â            
-v4.0.30319
-.NETFramework      ˇˇˇˇˇˇˇˇ jD:\ASP.NET\BTL\ShoesShopOnline1\packages\Microsoft.AspNet.Webpages.3.2.7\lib\net45\System.Web.Webpages.dll    <˛2U÷System.Web.WebPages                        Ä     rfile:///D:/ASP.NET/BTL/ShoesShopOnline1/packages/Microsoft.AspNet.Webpages.3.2.7/lib/net45/System.Web.Webpages.dll†    $  Ä  î      $  RSA1     µ¸êÁgáw:èﬁâ8»‘∫eπ `Y>ñƒíeàú¡?Îµ?¨1Æ”3≈Ó`!g-óÍ1®ÆΩ
-†/%ÿ}∫o…˝Yé‘⁄5‰L9åECË„;Ñ&=Æ…ıñÉoó»˜GPÂó\d‚üEﬁÙk*+G≠√e+ı√]©   1ø8V≠6N5VSystem.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35       mscorlib                                      ∑z\V4‡â        
-System.Web                                      ∞?_’
-:        System.Core                                      ∑z\V4‡â        System                                      ∑z\V4‡â        System.Xml.Linq                                      ∑z\V4‡â        System.Web.Razor                                      1ø8V≠6N5        %System.ComponentModel.DataAnnotations                                      1ø8V≠6N5        System.Data.Linq                                      ∑z\V4‡â        Microsoft.Web.Infrastructure                                      1ø8V≠6N5        System.Web.WebPages.Deployment                                      1ø8V≠6N5        Microsoft.CSharp                                      ∞?_’
-:            
-v4.0.30319
-.NETFramework      ˇˇˇˇˇˇˇˇ uD:\ASP.NET\BTL\ShoesShopOnline1\packages\Microsoft.AspNet.Webpages.3.2.7\lib\net45\System.Web.Webpages.Deployment.dll    <˛2U÷System.Web.WebPages.Deployment                        Ä     }file:///D:/ASP.NET/BTL/ShoesShopOnline1/packages/Microsoft.AspNet.Webpages.3.2.7/lib/net45/System.Web.Webpages.Deployment.dll†    $  Ä  î      $  RSA1     µ¸êÁgáw:èﬁâ8»‘∫eπ `Y>ñƒíeàú¡?Îµ?¨1Æ”3≈Ó`!g-óÍ1®ÆΩ
-†/%ÿ}∫o…˝Yé‘⁄5‰L9åECË„;Ñ&=Æ…ıñÉoó»˜GPÂó\d‚üEﬁÙk*+G≠√e+ı√]©   1ø8V≠6N5aSystem.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35       mscorlib                                      ∑z\V4‡â        
-System.Web                                      ∞?_’
-:        System                                      ∑z\V4‡â        System.Configuration                                      ∞?_’
-:        System.Core                                      ∑z\V4‡â        Microsoft.Web.Infrastructure                                      1ø8V≠6N5            
-v4.0.30319
-.NETFramework      ˇˇˇˇˇˇˇˇ pD:\ASP.NET\BTL\ShoesShopOnline1\packages\Microsoft.AspNet.Webpages.3.2.7\lib\net45\System.Web.Webpages.Razor.dll    <˛2U÷System.Web.WebPages.Razor                        Ä     xfile:///D:/ASP.NET/BTL/ShoesShopOnline1/packages/Microsoft.AspNet.Webpages.3.2.7/lib/net45/System.Web.Webpages.Razor.dll†    $  Ä  î      $  RSA1     µ¸êÁgáw:èﬁâ8»‘∫eπ `Y>ñƒíeàú¡?Îµ?¨1Æ”3≈Ó`!g-óÍ1®ÆΩ
-†/%ÿ}∫o…˝Yé‘⁄5‰L9åECË„;Ñ&=Æ…ıñÉoó»˜GPÂó\d‚üEﬁÙk*+G≠√e+ı√]©   1ø8V≠6N5\System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35       mscorlib                                      ∑z\V4‡â        
-System.Web                                      ∞?_’
-:        System                                      ∑z\V4‡â        System.Web.Razor                                      1ø8V≠6N5        System.Configuration                                      ∞?_’
-:        System.Core                                      ∑z\V4‡â        System.Web.WebPages                                      1ø8V≠6N5            
-v4.0.30319
-.NETFramework      ˇˇˇˇˇˇˇˇ iD:\ASP.NET\BTL\ShoesShopOnline1\packages\Microsoft.AspNet.Webpages.3.2.7\lib\net45\System.Web.Helpers.dll    <˛2U÷System.Web.Helpers                        Ä     qfile:///D:/ASP.NET/BTL/ShoesShopOnline1/packages/Microsoft.AspNet.Webpages.3.2.7/lib/net45/System.Web.Helpers.dll†    $  Ä  î      $  RSA1     µ¸êÁgáw:èﬁâ8»‘∫eπ `Y>ñƒíeàú¡?Îµ?¨1Æ”3≈Ó`!g-óÍ1®ÆΩ
-†/%ÿ}∫o…˝Yé‘⁄5‰L9åECË„;Ñ&=Æ…ıñÉoó»˜GPÂó\d‚üEﬁÙk*+G≠√e+ı√]©   1ø8V≠6N5USystem.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35       mscorlib                                      ∑z\V4‡â        Microsoft.CSharp                                      ∞?_’
-:        System.Core                                      ∑z\V4‡â        
-System.Web                                      ∞?_’
-:        System.Web.DataVisualization                                      1ø8V≠6N5        
-System.Xml                                      ∑z\V4‡â        System.Web.WebPages                                      1ø8V≠6N5        System                                      ∑z\V4‡â        System.Drawing                                      ∞?_’
-:        System.Web.Extensions                                      1ø8V≠6N5        System.Runtime.Caching                                      ∞?_’
-:            
-v4.0.30319
-.NETFramework      ˇˇˇˇˇˇˇˇ xD:\ASP.NET\BTL\ShoesShopOnline1\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll    Ñ˘ör8œMicrosoft.Web.Infrastructure                        Ä     Äfile:///D:/ASP.NET/BTL/ShoesShopOnline1/packages/Microsoft.Web.Infrastructure.1.0.0.0/lib/net40/Microsoft.Web.Infrastructure.dll†    $  Ä  î      $  RSA1     µ¸êÁgáw:èﬁâ8»‘∫eπ `Y>ñƒíeàú¡?Îµ?¨1Æ”3≈Ó`!g-óÍ1®ÆΩ
-†/%ÿ}∫o…˝Yé‘⁄5‰L9åECË„;Ñ&=Æ…ıñÉoó»˜GPÂó\d‚üEﬁÙk*+G≠√e+ı√]©   1ø8V≠6N5_Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35       mscorlib                                      ∑z\V4‡â        System                                      ∑z\V4‡â        
-System.Web                                      ∞?_’
-:        System.Configuration                                      ∞?_’
-:        System.Core                                      ∑z\V4‡â            
-v4.0.30319
-.NETFramework       ˇˇˇˇˇˇˇˇ `D:\ASP.NET\BTL\ShoesShopOnline1\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll    ÕJ_1U÷System.Web.Mvc                      Ä     hfile:///D:/ASP.NET/BTL/ShoesShopOnline1/packages/Microsoft.AspNet.Mvc.5.2.7/lib/net45/System.Web.Mvc.dll†    $  Ä  î      $  RSA1     µ¸êÁgáw:èﬁâ8»‘∫eπ `Y>ñƒíeàú¡?Îµ?¨1Æ”3≈Ó`!g-óÍ1®ÆΩ
-†/%ÿ}∫o…˝Yé‘⁄5‰L9åECË„;Ñ&=Æ…ıñÉoó»˜GPÂó\d‚üEﬁÙk*+G≠√e+ı√]©   1ø8V≠6N5QSystem.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35       mscorlib                                      ∑z\V4‡â        
-System.Web                                      ∞?_’
-:        System.Core                                      ∑z\V4‡â        %System.ComponentModel.DataAnnotations                                      1ø8V≠6N5        System.Web.WebPages                                      1ø8V≠6N5        System.Runtime.Caching                                      ∞?_’
-:        System                                      ∑z\V4‡â        System.Web.WebPages.Razor                                      1ø8V≠6N5        
-System.Xml                                      ∑z\V4‡â        System.Web.Extensions                                      1ø8V≠6N5        System.Web.Razor                                      1ø8V≠6N5        System.Data.Linq                                      ∑z\V4‡â        System.Drawing                                      ∞?_’
-:        Microsoft.Web.Infrastructure                                      1ø8V≠6N5        System.Data.Entity                                      ∑z\V4‡â        System.Configuration                                      ∞?_’
-:            
-v4.0.30319
-.NETFramework      ˇˇˇˇˇˇˇˇ ¢D:\ASP.NET\BTL\ShoesShopOnline1\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll    a´%J÷2Microsoft.CodeDom.Providers.DotNetCompilerPlatform                       Ä     ™file:///D:/ASP.NET/BTL/ShoesShopOnline1/packages/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1/lib/net45/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll†    $  Ä  î      $  RSA1     µ¸êÁgáw:èﬁâ8»‘∫eπ `Y>ñƒíeàú¡?Îµ?¨1Æ”3≈Ó`!g-óÍ1®ÆΩ
-†/%ÿ}∫o…˝Yé‘⁄5‰L9åECË„;Ñ&=Æ…ıñÉoó»˜GPÂó\d‚üEﬁÙk*+G≠√e+ı√]©   1ø8V≠6N5uMicrosoft.CodeDom.Providers.DotNetCompilerPlatform, Version=2.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35       mscorlib                                      ∑z\V4‡â        System                                      ∑z\V4‡â        
-System.Web                                      ∞?_’
-:        System.Core                                      ∑z\V4‡â        System.Configuration                                      ∞?_’
-:            
-v4.0.30319
-.NETFramework      ˇˇˇˇˇˇˇˇ dC:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Core.dll    wo˚í’    mscorlib                                      ∑z\V4‡â     System                                      ∑z\V4‡â     
-System.Xml                                      ∑z\V4‡â     System.Numerics                                      ∑z\V4‡â     System.Security                                      ∞?_’
-:         
-v4.0.30319 fC:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Design.dll    wo˚í’   
-v4.0.30319 lC:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Transactions.dll    wo˚í’   
-v4.0.30319 iC:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Data.Linq.dll    wo˚í’   
-v4.0.30319 uC:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Web.DataVisualization.dll    wo˚í’   
-v4.0.30319 oC:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Runtime.Caching.dll    wo˚í’   
-v4.0.30319 kC:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Data.Entity.dll    wo˚í’   
-v4.0.30319 
