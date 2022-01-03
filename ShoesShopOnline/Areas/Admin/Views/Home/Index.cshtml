@@ -1,0 +1,21 @@
+﻿
+@{
+    ShoesShopOnline.Models.TaiKhoanQuanTri tk = (ShoesShopOnline.Models.TaiKhoanQuanTri)HttpContext.Current.Session[ShoesShopOnline.Session.ConstaintUser.ADMIN_SESSION];
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+
+}
+
+<h2>
+    Xin chào, <span style="color:red">@tk.HoTenUser</span> !
+    <br />Wellcome to XShop.
+</h2>
+@using (Html.BeginForm())
+{
+    <div class="alert alert-success">
+        Bạn có <span style="font-weight: bold">@ViewBag.tong</span> đơn hàng mới !
+    </div>
+
+
+
+}
