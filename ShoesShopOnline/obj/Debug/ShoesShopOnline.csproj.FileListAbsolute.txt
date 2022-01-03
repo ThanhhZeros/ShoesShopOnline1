@@ -320,4 +320,3 @@ D:\ASP.NET\BTL\nhom4_v3\ShoesShopOnline1\ShoesShopOnline\obj\Debug\ShoesShopOnli
 D:\ASP.NET\BTL\nhom4_v3\ShoesShopOnline1\ShoesShopOnline\obj\Debug\ShoesShopOnline.csproj.CopyComplete
 D:\ASP.NET\BTL\nhom4_v3\ShoesShopOnline1\ShoesShopOnline\obj\Debug\ShoesShopOnline.dll
 D:\ASP.NET\BTL\nhom4_v3\ShoesShopOnline1\ShoesShopOnline\obj\Debug\ShoesShopOnline.pdb
-D:\ASP.NET\BTL\ShoesShopOnline1\ShoesShopOnline\obj\Debug\ShoesShopOnline.csproj.CopyComplete

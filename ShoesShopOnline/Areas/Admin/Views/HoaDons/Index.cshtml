@@ -55,26 +55,30 @@
                 <!-- Item -->
                 @foreach (var item in Model)
                 {
-                    <tr class="group-info">
-                        <td>
-                            @item.TaiKhoanNguoiDung.HoTen
-                        </td>
-                        <td>
-                            <span class="font-weight-normal">@item.HoTenNguoiNhan</span>
-                        </td>
-                        <td><span class="font-weight-normal">@item.NgayLap</span></td>
-                        <td><span class="font-weight-normal">@item.DiaChiNhan</span></td>
-                        <td>
-                            <span class="font-weight-normal text-danger"><a href="#" style="color:blue">@item.TrangThai</a></span>
-                        </td>
+                   
+                        <tr class="group-info">
+                            <td>
+                                @item.TaiKhoanNguoiDung.HoTen
+                            </td>
+                            <td>
+                                <span class="font-weight-normal">@item.HoTenNguoiNhan</span>
+                            </td>
+                            <td><span class="font-weight-normal">@item.NgayLap</span></td>
+                            <td><span class="font-weight-normal">@item.DiaChiNhan</span></td>
+
+                            <td>
+
+                                <span class="font-weight-normal text-danger"><a href="#" style="color:blue">@item.TrangThai</a></span>
 
 
-                        <td>
-                            <button style="background-color: midnightblue; border-radius: 8px;width:100px">@Html.ActionLink("Xem chi tiết", "Edit", new { id = item.MaHD })</button>
-                        </td>
-                    </tr>
-                }
-            </tbody>
+                            </td>
+
+                            <td>
+                                <button style="background-color: midnightblue; border-radius: 8px;width:100px">@Html.ActionLink("Xem chi tiết", "Edit", new { id = item.MaHD })</button>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
         </table>
 
     </div>

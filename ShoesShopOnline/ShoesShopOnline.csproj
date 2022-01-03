@@ -1899,6 +1899,7 @@
     <Content Include="Assets\Admin\plugin\ckfinder\skins\v1\richcombo.css" />
     <Content Include="Assets\Admin\plugin\ckfinder\skins\v1\skin.js" />
     <Content Include="Assets\Admin\plugin\ckfinder\skins\v1\uipanel.css" />
+    <Content Include="Assets\Client\controller\BillController.js" />
     <Content Include="Assets\Client\controller\cartController.js" />
     <Content Include="Assets\Client\css\bootstrap.css" />
     <Content Include="Assets\Client\css\CustomButton.css" />
@@ -2184,6 +2185,7 @@
     <Compile Include="Areas\Admin\Controllers\TinTucsController.cs" />
     <Compile Include="Areas\Admin\Data\LoginAccount.cs" />
     <Compile Include="Controllers\AccountUserController.cs" />
+    <Compile Include="Controllers\BillController.cs" />
     <Compile Include="Controllers\CartController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\NewFeedController.cs" />
@@ -2532,6 +2534,8 @@
     <Content Include="Views\Home\SearchBox.cshtml" />
     <Content Include="Views\NewFeed\Index.cshtml" />
     <Content Include="Views\NewFeed\Single.cshtml" />
+    <Content Include="Views\Bill\Index.cshtml" />
+    <Content Include="Views\Bill\Details.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -67,7 +67,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                     <span><strong style="font-size: 12px;">@tk.HoTen</strong></span>
                                 </a>
                                 <ul class="dropdown-menu dropdown-menu-end user-dd animated" aria-labelledby="navbarDropdown" style="background-color: #CDC0B0; font-size: 12px;margin-top:-7px!important">
-                                    <li>@Html.ActionLink("Đơn hàng của bạn", "ListBills", "Bill", null, new { @class = "dropdown-item" })</li>
+                                    <li>@Html.ActionLink("Đơn hàng của bạn", "Index", "Bill", null, new { @class = "dropdown-item" })</li>
                                     <li>@Html.ActionLink("Thông tin tài khoản", "UserInfor", "AccountUser", new { id = tk.MaTK }, new { @class = "dropdown-item" })</li>
                                     <li>@Html.ActionLink("Đổi mật khẩu", "ChangePassWord", "AccountUser", null, new { @class = "dropdown-item" })</li>
                                     <li><a class="dropdown-item" href="@Url.Action("Logout","Home")">Đăng xuất</a></li>

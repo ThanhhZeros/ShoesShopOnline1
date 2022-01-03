@@ -17,7 +17,6 @@ namespace ShoesShopOnline.Areas.Admin.Controllers
         // GET: Admin/HoaDons
         public ActionResult Index(int? page, DateTime? searchString)
         {
-
             List<HoaDon> hoaDons = db.HoaDons.Include(h => h.TaiKhoanNguoiDung).Select(p => p).ToList();
             if (searchString != null)
             {
@@ -28,7 +27,7 @@ namespace ShoesShopOnline.Areas.Admin.Controllers
             int pageSize = 10;
             int pageNumber = (page ?? 1);
 
-            return View(hoaDons.OrderBy(hd => hd.NgayLap).ToPagedList(pageNumber, pageSize));
+            return View(hoaDons.OrderByDescending(hd => hd.NgayLap).ToPagedList(pageNumber, pageSize));
         }
 
         // GET: Admin/HoaDons/Details/5
