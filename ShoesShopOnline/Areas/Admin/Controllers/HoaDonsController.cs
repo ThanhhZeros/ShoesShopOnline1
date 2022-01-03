@@ -25,7 +25,7 @@ namespace ShoesShopOnline.Areas.Admin.Controllers
                 string search = searchString.Value.ToString("dd/MM/yyyy");
                 hoaDons = hoaDons.Where(hd => hd.NgayLap.ToString().Contains(search)).ToList();
             }
-            int pageSize = 6;
+            int pageSize = 10;
             int pageNumber = (page ?? 1);
 
             return View(hoaDons.OrderBy(hd => hd.NgayLap).ToPagedList(pageNumber, pageSize));
